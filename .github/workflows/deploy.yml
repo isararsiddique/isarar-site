@@ -1,16 +1,18 @@
 name: Deploy isarar.com
 
-# Push to main and the site goes live. No manual step.
+# Push to main and the site goes live.
 #
-# Two repository secrets are required:
-#   CF_API_TOKEN   Cloudflare token with Workers KV Storage:Edit and Cache Purge:Purge
+# Optional repository secrets:
+#   CF_API_TOKEN   Workers KV Storage:Edit + Cache Purge:Purge
 #   CF_ACCOUNT_ID  Cloudflare account id
 #
-# How it works: the Worker reads the current commit SHA from a KV key instead of
-# having the SHA baked in. This job rebuilds the generated files, commits any
-# changes, then writes the new SHA to KV and purges the edge cache. Content is
-# served from an immutable SHA URL, so it can be cached hard and still update
-# instantly.
+# With both set, this pins the Worker to the exact commit and purges the edge,
+# so the change is live immediately and can be cached hard. Without them the
+# Worker tracks the main branch and picks the change up within about a minute,
+# so the site still updates and this workflow still passes.
+#
+# Note: the secrets context is not available inside an `if:` expression, so the
+# secrets are mapped into job level env first and the conditions test env.
 
 on:
   push:
@@ -24,13 +26,15 @@ concurrency:
 permissions:
   contents: write
 
-env:
-  KV_NAMESPACE_ID: 49e602c2752042328f7b041d3e641a1d
-  CF_ZONE_ID: eb390dfb9df18aa4c13203646778d7a7
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+      CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+      KV_NAMESPACE_ID: 49e602c2752042328f7b041d3e641a1d
+      CF_ZONE_ID: eb390dfb9df18aa4c13203646778d7a7
+
     steps:
       - name: Check out
         uses: actions/checkout@v4
@@ -45,6 +49,31 @@ jobs:
       - name: Regenerate sitemap, feed, llms.txt and JSON endpoints
         run: python3 build.py
 
+      - name: Validate before publishing
+        run: |
+          python3 - <<'PY'
+          import glob, json, re, sys
+          import xml.dom.minidom as minidom
+          bad = 0
+          for f in ['sitemap.xml', 'feed.xml']:
+              minidom.parse(f)
+              print('ok xml', f)
+          for f in glob.glob('api/*.json') + ['.well-known/agent.json', 'posts.json']:
+              json.load(open(f))
+              print('ok json', f)
+          for f in sorted(glob.glob('**/*.html', recursive=True)):
+              s = open(f, encoding='utf-8').read()
+              for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>', s, re.S):
+                  try:
+                      json.loads(b)
+                  except json.JSONDecodeError as e:
+                      print('FAIL invalid JSON-LD in', f, e); bad = 1
+              if '\u2014' in s or '\u2013' in s:
+                  print('FAIL em or en dash in', f); bad = 1
+          print('validation', 'failed' if bad else 'passed')
+          sys.exit(bad)
+          PY
+
       - name: Commit regenerated files if they changed
         id: regen
         run: |
@@ -55,74 +84,53 @@ jobs:
             git commit -m "chore: regenerate metadata [skip ci]"
             git push
             echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+            echo "regenerated and pushed $(git rev-parse --short HEAD)"
           else
             echo "sha=${GITHUB_SHA}" >> "$GITHUB_OUTPUT"
+            echo "nothing to regenerate, using ${GITHUB_SHA}"
           fi
 
-      - name: Validate before publishing
-        run: |
-          python3 - <<'PY'
-          import glob, json, re, sys
-          import xml.dom.minidom as minidom
-          bad = 0
-          for f in ['sitemap.xml', 'feed.xml']:
-              minidom.parse(f)
-          for f in glob.glob('api/*.json') + ['.well-known/agent.json', 'posts.json']:
-              json.load(open(f))
-          for f in glob.glob('**/*.html', recursive=True):
-              s = open(f, encoding='utf-8').read()
-              for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>', s, re.S):
-                  try:
-                      json.loads(b)
-                  except json.JSONDecodeError as e:
-                      print(f'{f}: invalid JSON-LD: {e}'); bad = 1
-              if '\u2014' in s or '\u2013' in s:
-                  print(f'{f}: contains an em or en dash'); bad = 1
-          sys.exit(bad)
-          PY
-
-      # ------------------------------------------------------------------
-      # Without CF_API_TOKEN the Worker tracks the main branch and picks the
-      # change up within about a minute on its own. With the token, we pin the
-      # exact commit and purge, which makes it instant and hard cacheable.
-      # ------------------------------------------------------------------
       - name: Pin the Worker to this commit
-        if: ${{ secrets.CF_API_TOKEN != '' }}
+        if: env.CF_API_TOKEN != '' && env.CF_ACCOUNT_ID != ''
         run: |
           curl -sS --fail-with-body -X PUT \
-            "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CF_ACCOUNT_ID }}/storage/kv/namespaces/${KV_NAMESPACE_ID}/values/current_sha" \
-            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" \
+            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/storage/kv/namespaces/${KV_NAMESPACE_ID}/values/current_sha" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}" \
             -F "value=${{ steps.regen.outputs.sha }}" \
-            -F 'metadata={}' | head -c 300
+            -F 'metadata={}' | head -c 200
           echo
 
       - name: Purge the edge cache
-        if: ${{ secrets.CF_API_TOKEN != '' }}
+        if: env.CF_API_TOKEN != ''
         run: |
           curl -sS --fail-with-body -X POST \
             "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" \
-            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}" \
             -H "Content-Type: application/json" \
-            --data '{"purge_everything":true}' | head -c 300
+            --data '{"purge_everything":true}' | head -c 200
           echo
 
       - name: Note when running without a Cloudflare token
-        if: ${{ secrets.CF_API_TOKEN == '' }}
+        if: env.CF_API_TOKEN == ''
         run: |
           echo "CF_API_TOKEN is not set."
-          echo "The Worker is tracking the main branch, so this change goes live"
-          echo "within about a minute without any further action."
-          echo "Add CF_API_TOKEN (Workers KV Storage:Edit + Cache Purge:Purge) to"
-          echo "make deploys instant and enable immutable edge caching."
+          echo "The Worker tracks the main branch, so this change goes live within"
+          echo "about a minute with no further action. Add CF_API_TOKEN scoped to"
+          echo "Workers KV Storage:Edit and Cache Purge:Purge to make it instant."
 
       - name: Confirm it is live
         run: |
-          sleep 75
+          if [ -n "${CF_API_TOKEN}" ]; then sleep 15; else sleep 80; fi
           fail=0
-          for path in / /blog/ /llms.txt /api/posts.json /.well-known/agent.json /sitemap.xml; do
+          for path in / /blog/ /blog/the-booth-is-the-cost/ /llms.txt /llms-full.txt \
+                      /api/posts.json /api/profile.json /.well-known/agent.json \
+                      /.well-known/ai.txt /feed.xml /sitemap.xml /robots.txt \
+                      /google1c46eeaf51fdfca4.html; do
             code=$(curl -s -o /dev/null -w '%{http_code}' "https://isarar.com${path}")
-            mode=$(curl -sI "https://isarar.com${path}" | tr -d '\r' | awk '/^x-mode:/{print $2}')
-            printf '%-32s %s  mode=%s\n' "$path" "$code" "$mode"
+            hdr=$(curl -sI "https://isarar.com${path}" | tr -d '\r')
+            mode=$(printf '%s' "$hdr" | awk '/^x-mode:/{print $2}')
+            build=$(printf '%s' "$hdr" | awk '/^x-build:/{print $2}')
+            printf '%-38s %s  mode=%-8s build=%s\n' "$path" "$code" "$mode" "$build"
             [ "$code" = "200" ] || fail=1
           done
           exit $fail
