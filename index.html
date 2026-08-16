@@ -4,17 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Isarar Siddique</title>
-<meta name="description" content="Isarar Siddique — I build AI for clinical medicine: early screening, medical imaging, and physiological signals. Writing about health AI, research, and building from a small town in India.">
+<meta name="description" content="Isarar Siddique — I build AI for clinical medicine. Dementia screening in hospital trials, supplement interaction modelling, ophthalmic imaging, cancer registries. What I'm building and how each system works.">
 <link rel="canonical" href="https://isarar.com/">
 <meta name="author" content="Isarar Siddique">
 <meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="preconnect" href="https://avatars.githubusercontent.com" crossorigin>
 <link rel="stylesheet" href="/style.css">
 
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Isarar Siddique">
 <meta property="og:title" content="Isarar Siddique">
-<meta property="og:description" content="I build AI for clinical medicine — early screening, medical imaging, and physiological signals.">
+<meta property="og:description" content="I build AI for clinical medicine — screening systems in hospital trials, ophthalmic imaging, and physiological signals.">
 <meta property="og:url" content="https://isarar.com/">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/58565681?v=4">
 <meta property="profile:first_name" content="Isarar">
 <meta property="profile:last_name" content="Siddique">
 <meta name="twitter:card" content="summary">
@@ -29,22 +31,11 @@
   "familyName": "Siddique",
   "alternateName": "Isarar",
   "url": "https://isarar.com/",
-  "image": "https://isarar.com/isarar.jpg",
+  "image": "https://avatars.githubusercontent.com/u/58565681?v=4",
   "jobTitle": "Founder & AI Healthcare Researcher",
   "description": "Builds AI for clinical medicine — early disease screening, medical imaging, and physiological signal analysis.",
-  "knowsAbout": [
-    "Multimodal artificial intelligence",
-    "Medical imaging",
-    "Clinical decision support",
-    "Bioinformatics",
-    "Wearable physiological signals",
-    "Personalized medicine",
-    "Neurodegenerative disease"
-  ],
-  "alumniOf": {
-    "@type": "CollegeOrUniversity",
-    "name": "Dr. A.P.J. Abdul Kalam Technical University"
-  },
+  "knowsAbout": ["Multimodal artificial intelligence","Medical imaging","Clinical decision support","Bioinformatics","Wearable physiological signals","Ophthalmic imaging","Neurodegenerative disease"],
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Dr. A.P.J. Abdul Kalam Technical University" },
   "worksFor": [
     { "@type": "Organization", "name": "Biotech Wallah Private Limited", "url": "https://biotechwallah.com" },
     { "@type": "Organization", "name": "Convolity AI Private Limited", "url": "https://convolity.com" }
@@ -77,20 +68,22 @@
 <nav class="nav" aria-label="Primary">
   <div class="wrap">
     <a class="mark" href="/">Isarar Siddique</a>
-    <a href="#about">About</a>
+    <a href="#building">Building</a>
     <a href="/blog/">Writing</a>
-    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
 <main id="main">
 
-  <!-- ---------- hero ---------- -->
+  <!-- ============ hero ============ -->
   <header class="hero">
     <div class="wrap stagger">
       <div class="hero-top">
         <div class="avatar">
-          <img src="/isarar.jpg" alt="Isarar Siddique" width="88" height="88" decoding="async">
+          <img src="https://avatars.githubusercontent.com/u/58565681?v=4"
+               alt="Isarar Siddique" width="88" height="88"
+               loading="eager" decoding="async">
           <span class="initials" aria-hidden="true">IS</span>
         </div>
         <div>
@@ -100,10 +93,10 @@
       </div>
 
       <p class="lede">
-        I build AI that has to work on real patients — <strong>early screening, medical imaging,
-        and physiological signals</strong>. Two of my systems are in clinical trials right now.
-        Lately I've been moving down the stack into hardware, because a model is only
-        as good as the sensor feeding it.
+        I build diagnostic AI that has to survive contact with real hospitals.
+        Two of my systems are in <strong>clinical trial at SGPGI Lucknow</strong>
+        right now. Below is what I'm actually working on and how each piece works —
+        including the parts I can't open-source.
       </p>
 
       <ul class="pills">
@@ -116,194 +109,483 @@
     </div>
   </header>
 
-  <!-- ---------- about ---------- -->
+  <!-- ============ projects ============ -->
+  <section id="building">
+  <div class="wrap">
+
+    <!-- ---- Zero Dementia ---- -->
+    <div class="proj reveal">
+      <div class="proj-head">
+        <h3>Zero Dementia</h3>
+        <span class="status trial">In clinical trial</span>
+      </div>
+      <p class="proj-sub">Biotech Wallah · with SGPGI Lucknow, Integral Medical College, ERA Medical College</p>
+
+      <p>
+        Screening for early mild cognitive impairment using nothing but a stock
+        smartphone. No MRI, no lumbar puncture, no specialist. Four signal streams
+        are captured in a single sitting — a spoken passage, facial video during
+        prompted expression, fine-motor tapping, and a short cognitive battery —
+        and fused into one risk score in under fifteen minutes.
+      </p>
+
+      <figure class="fig reveal">
+        <svg viewBox="0 0 640 200" role="img" aria-label="Four smartphone signal streams feed a fusion model that outputs a risk score reviewed by a clinician">
+          <defs>
+            <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5"
+                    markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z" fill="var(--muted)"/>
+            </marker>
+          </defs>
+
+          <text class="sv-s" x="8" y="14">CAPTURE — one sitting, ~15 min</text>
+
+          <g class="sv-pop">
+            <rect class="sv-box" x="8"  y="26" width="124" height="30" rx="6"/>
+            <text class="sv-t" x="20" y="45">Voice · passage read</text>
+            <rect class="sv-box" x="8"  y="62" width="124" height="30" rx="6"/>
+            <text class="sv-t" x="20" y="81">Facial expression</text>
+            <rect class="sv-box" x="8"  y="98" width="124" height="30" rx="6"/>
+            <text class="sv-t" x="20" y="117">Fine motor · tapping</text>
+            <rect class="sv-box" x="8"  y="134" width="124" height="30" rx="6"/>
+            <text class="sv-t" x="20" y="153">Cognitive battery</text>
+          </g>
+
+          <path class="sv-arrow" d="M136,41  C170,41 175,80 205,88"/>
+          <path class="sv-arrow" d="M136,77  C170,77 178,84 205,92"/>
+          <path class="sv-arrow" d="M136,113 C170,113 178,102 205,98"/>
+          <path class="sv-arrow" d="M136,149 C170,149 175,106 205,102"/>
+
+          <g class="sv-pop">
+            <rect class="sv-box-a" x="209" y="62" width="120" height="66" rx="8"/>
+            <text class="sv-ta" x="228" y="88">Feature</text>
+            <text class="sv-ta" x="228" y="103">extraction</text>
+            <text class="sv-s"  x="228" y="118">per modality</text>
+          </g>
+
+          <path class="sv-arrow" d="M333,95 L369,95"/>
+
+          <g class="sv-pop">
+            <rect class="sv-box-a" x="373" y="62" width="112" height="66" rx="8"/>
+            <text class="sv-ta" x="390" y="88">Late fusion</text>
+            <text class="sv-s"  x="390" y="103">+ per-signal</text>
+            <text class="sv-s"  x="390" y="116">contribution</text>
+          </g>
+
+          <path class="sv-arrow" d="M489,95 L525,95"/>
+
+          <g class="sv-pop">
+            <rect class="sv-box" x="529" y="52" width="103" height="42" rx="6"/>
+            <text class="sv-t" x="543" y="70">Risk score</text>
+            <text class="sv-s" x="543" y="84">+ explanation</text>
+            <rect class="sv-box" x="529" y="102" width="103" height="42" rx="6"/>
+            <text class="sv-t" x="543" y="120">Clinician</text>
+            <text class="sv-s" x="543" y="134">review &amp; referral</text>
+          </g>
+          <path class="sv-line" d="M580,94 L580,102"/>
+        </svg>
+        <figcaption>
+          Late fusion rather than early: each modality is scored independently so the
+          output can say <em>which</em> signal drove the risk. A clinician who can't
+          see why won't act on it.
+        </figcaption>
+      </figure>
+
+      <p>
+        Two trial tracks are running at SGPGI — cognitive screening and audiometry —
+        both nearing completion. The hard part was never the model. It was consent
+        infrastructure, recruitment workflow, and getting signal quality out of
+        rooms with bad lighting and background noise.
+      </p>
+
+      <ul class="stack">
+        <li>Multimodal fusion</li><li>Speech features</li><li>Video</li>
+        <li>Python</li><li>On-device inference</li><li>DPIIT DIPP217345</li>
+      </ul>
+    </div>
+
+    <!-- ---- SuppliAi ---- -->
+    <div class="proj reveal">
+      <div class="proj-head">
+        <h3>SuppliAi</h3>
+        <span class="status live">Live</span>
+      </div>
+      <p class="proj-sub">Convolity AI · <a href="https://convolity.com" rel="noopener">convolity.com</a></p>
+
+      <p>
+        Most supplement advice ignores the two things that matter: what else you're
+        taking, and who you are. SuppliAi builds a single patient representation from
+        lab results, prescriptions (via OCR), and wearable time series, then reasons
+        over drug–supplement interaction pathways against it.
+      </p>
+
+      <figure class="fig reveal">
+        <svg viewBox="0 0 640 210" role="img" aria-label="Labs, prescriptions and wearable data merge into a patient model, checked against a CYP450 docking pipeline to produce ranked recommendations">
+          <text class="sv-s" x="8" y="14">INPUTS</text>
+          <g class="sv-pop">
+            <rect class="sv-box" x="8" y="26" width="118" height="28" rx="6"/>
+            <text class="sv-t" x="20" y="44">Lab panels</text>
+            <rect class="sv-box" x="8" y="60" width="118" height="28" rx="6"/>
+            <text class="sv-t" x="20" y="78">Prescription OCR</text>
+            <rect class="sv-box" x="8" y="94" width="118" height="28" rx="6"/>
+            <text class="sv-t" x="20" y="112">Wearables</text>
+            <text class="sv-s" x="20" y="126">Oura · WHOOP · Watch</text>
+          </g>
+
+          <path class="sv-arrow" d="M130,40 C160,40 168,66 196,72"/>
+          <path class="sv-arrow" d="M130,74 C160,74 170,74 196,76"/>
+          <path class="sv-arrow" d="M130,108 C160,108 170,88 196,82"/>
+
+          <g class="sv-pop">
+            <rect class="sv-box-a" x="200" y="52" width="120" height="52" rx="8"/>
+            <text class="sv-ta" x="216" y="74">Unified patient</text>
+            <text class="sv-ta" x="216" y="89">representation</text>
+          </g>
+
+          <path class="sv-arrow" d="M324,78 L360,78"/>
+
+          <g class="sv-pop">
+            <rect class="sv-box" x="364" y="30" width="140" height="46" rx="7"/>
+            <text class="sv-t" x="378" y="49">Interaction graph</text>
+            <text class="sv-s" x="378" y="64">5 CYP450 enzymes</text>
+
+            <rect class="sv-box" x="364" y="84" width="140" height="46" rx="7"/>
+            <text class="sv-t" x="378" y="103">Docking pipeline</text>
+            <text class="sv-s" x="378" y="118">DiffDock · DeepDTA</text>
+
+            <rect class="sv-box" x="364" y="138" width="140" height="46" rx="7"/>
+            <text class="sv-t" x="378" y="157">Evidence check</text>
+            <text class="sv-s" x="378" y="172">PubMed · Lexicomp</text>
+          </g>
+
+          <path class="sv-arrow" d="M508,53 C528,53 534,88 552,96"/>
+          <path class="sv-arrow" d="M508,107 C528,107 536,102 552,100"/>
+          <path class="sv-arrow" d="M508,161 C528,161 536,112 552,104"/>
+
+          <g class="sv-pop">
+            <rect class="sv-box-a" x="556" y="74" width="78" height="52" rx="8"/>
+            <text class="sv-ta" x="568" y="96">Ranked</text>
+            <text class="sv-ta" x="568" y="110">guidance</text>
+          </g>
+        </svg>
+        <figcaption>
+          Interactions are cross-validated against Natural Medicines, Lexicomp and
+          FDA MedWatch before surfacing — concordance above 85% on the validated set.
+          Anything below that threshold is withheld rather than shown with a caveat.
+        </figcaption>
+      </figure>
+
+      <p>
+        There's also a longitudinal biological-age model scoring six body systems
+        over time, which is the part I'm least confident about and most interested in.
+        Composite ageing scores are easy to make and hard to validate.
+      </p>
+
+      <ul class="stack">
+        <li>Chain-of-thought reasoning</li><li>Molecular docking</li>
+        <li>Supabase · RLS · pgcrypto</li><li>Time-series fusion</li><li>HIPAA-aligned</li>
+      </ul>
+    </div>
+
+    <!-- ---- Corneal endothelium (private) ---- -->
+    <div class="proj reveal">
+      <div class="proj-head">
+        <h3>Corneal endothelium analysis</h3>
+        <span class="status priv">Private</span>
+        <span class="status pat">Patent filed</span>
+      </div>
+      <p class="proj-sub">Ophthalmology · specular microscopy</p>
+
+      <p>
+        Automated cell morphometry from specular microscopy images — endothelial cell
+        density, polymegathism (size variation) and pleomorphism (shape variation).
+        These three numbers decide whether a cornea is viable for transplant, and
+        they're currently counted semi-manually.
+      </p>
+
+      <figure class="fig reveal">
+        <svg viewBox="0 0 640 180" role="img" aria-label="A hexagonal endothelial cell mosaic is segmented and reduced to density, polymegathism and pleomorphism metrics">
+          <text class="sv-s" x="8" y="14">SPECULAR MICROGRAPH → SEGMENTED MOSAIC</text>
+          <g class="sv-pop">
+            <rect class="sv-box" x="8" y="24" width="200" height="140" rx="8"/>
+            <g class="sv-cell">
+              <path d="M40,50 l18,-10 l18,10 l0,20 l-18,10 l-18,-10 z"/>
+              <path d="M76,50 l18,-10 l18,10 l0,20 l-18,10 l-18,-10 z"/>
+              <path d="M112,50 l18,-10 l18,10 l0,20 l-18,10 l-18,-10 z"/>
+              <path d="M58,80 l18,-10 l18,10 l0,20 l-18,10 l-18,-10 z"/>
+              <path d="M94,80 l18,-10 l18,10 l0,20 l-18,10 l-18,-10 z"/>
+              <path d="M40,110 l18,-10 l18,10 l0,20 l-18,10 l-18,-10 z"/>
+              <path d="M112,110 l18,-10 l18,10 l0,20 l-18,10 l-18,-10 z"/>
+            </g>
+            <path class="sv-cell-b" d="M76,80 l18,-10 l18,10 l0,20 l-18,10 l-18,-10 z"/>
+            <text class="sv-s" x="150" y="150">enlarged cell</text>
+          </g>
+
+          <path class="sv-arrow" d="M212,94 L250,94"/>
+
+          <g class="sv-pop">
+            <rect class="sv-box-a" x="254" y="70" width="112" height="48" rx="8"/>
+            <text class="sv-ta" x="270" y="90">Segmentation</text>
+            <text class="sv-s"  x="270" y="105">per-cell borders</text>
+          </g>
+
+          <path class="sv-arrow" d="M370,94 L406,94"/>
+
+          <g class="sv-pop">
+            <rect class="sv-box" x="410" y="30" width="120" height="38" rx="6"/>
+            <text class="sv-t" x="424" y="47">Cell density</text>
+            <text class="sv-s" x="424" y="60">cells/mm²</text>
+            <rect class="sv-box" x="410" y="76" width="120" height="38" rx="6"/>
+            <text class="sv-t" x="424" y="93">Polymegathism</text>
+            <text class="sv-s" x="424" y="106">CV of area</text>
+            <rect class="sv-box" x="410" y="122" width="120" height="38" rx="6"/>
+            <text class="sv-t" x="424" y="139">Pleomorphism</text>
+            <text class="sv-s" x="424" y="152">% hexagonal</text>
+          </g>
+
+          <path class="sv-arrow" d="M534,49 C556,49 562,84 578,92"/>
+          <path class="sv-arrow" d="M534,95 C556,95 564,95 578,95"/>
+          <path class="sv-arrow" d="M534,141 C556,141 564,106 578,98"/>
+          <g class="sv-pop">
+            <rect class="sv-box-a" x="582" y="76" width="52" height="40" rx="7"/>
+            <text class="sv-ta" x="592" y="100">Report</text>
+          </g>
+        </svg>
+        <figcaption>
+          The bottleneck turned out to be perception, not classification —
+          get the cell borders right and the three metrics fall out arithmetically.
+          Most of the effort went into an annotation plan, not a bigger model.
+        </figcaption>
+      </figure>
+
+      <p>
+        Private because it runs on restricted clinical imaging and there's a
+        provisional patent filed in India on the approach. Happy to walk through
+        the method over email.
+      </p>
+
+      <ul class="stack">
+        <li>Python</li><li>Segmentation</li><li>Morphometry</li><li>Verified accuracy audit</li>
+      </ul>
+    </div>
+
+    <!-- ---- Cancer registry ---- -->
+    <div class="proj reveal">
+      <div class="proj-head">
+        <h3>NextGen OncoData Registry</h3>
+        <span class="status priv">Private</span>
+      </div>
+      <p class="proj-sub">Universiti Malaya · AIM-C01-2025 · PI Prof. Dr. Sarinder Kaur Dhillon</p>
+
+      <p>
+        A national cancer registry rebuilt around WHO <strong>ICD-11</strong> rather
+        than ICD-10, covering 9,327+ records across more than ten cancer types.
+        Registries are unglamorous and they are the substrate everything else needs —
+        no registry, no cohort, no model.
+      </p>
+
+      <figure class="fig reveal">
+        <svg viewBox="0 0 640 168" role="img" aria-label="Hospital records, pathology and imaging reports are normalised to ICD-11, anonymised, stored in the registry and exposed for research and ML">
+          <text class="sv-s" x="8" y="14">SOURCES</text>
+          <g class="sv-pop">
+            <rect class="sv-box" x="8" y="24" width="112" height="28" rx="6"/>
+            <text class="sv-t" x="20" y="42">Hospital records</text>
+            <rect class="sv-box" x="8" y="58" width="112" height="28" rx="6"/>
+            <text class="sv-t" x="20" y="76">Pathology</text>
+            <rect class="sv-box" x="8" y="92" width="112" height="28" rx="6"/>
+            <text class="sv-t" x="20" y="110">Imaging reports</text>
+          </g>
+
+          <path class="sv-arrow" d="M124,38 C150,38 158,66 184,72"/>
+          <path class="sv-arrow" d="M124,72 C150,72 160,74 184,76"/>
+          <path class="sv-arrow" d="M124,106 C150,106 160,86 184,80"/>
+
+          <g class="sv-pop">
+            <rect class="sv-box-a" x="188" y="50" width="118" height="52" rx="8"/>
+            <text class="sv-ta" x="202" y="72">ICD-11 coding</text>
+            <text class="sv-s"  x="202" y="87">+ anonymisation</text>
+          </g>
+
+          <path class="sv-arrow" d="M310,76 L346,76"/>
+
+          <g class="sv-pop">
+            <rect class="sv-box-a" x="350" y="44" width="120" height="64" rx="8"/>
+            <text class="sv-ta" x="366" y="68">Registry</text>
+            <text class="sv-s"  x="366" y="83">9,327+ records</text>
+            <text class="sv-s"  x="366" y="97">10+ cancer types</text>
+          </g>
+
+          <path class="sv-arrow" d="M474,60 C498,60 506,50 524,48"/>
+          <path class="sv-arrow" d="M474,92 C498,92 506,102 524,104"/>
+
+          <g class="sv-pop">
+            <rect class="sv-box" x="528" y="30" width="106" height="38" rx="6"/>
+            <text class="sv-t" x="542" y="47">Surveillance</text>
+            <text class="sv-s" x="542" y="60">cross-institution</text>
+            <rect class="sv-box" x="528" y="86" width="106" height="38" rx="6"/>
+            <text class="sv-t" x="542" y="103">ML training</text>
+            <text class="sv-s" x="542" y="116">cohort export</text>
+          </g>
+        </svg>
+        <figcaption>
+          ICD-11 has no clean crosswalk from ICD-10 for several oncology categories.
+          Deciding what to do with the ambiguous ones is a clinical judgement call,
+          not an engineering one — which is why the coding step has a human in it.
+        </figcaption>
+      </figure>
+
+      <ul class="stack">
+        <li>TypeScript</li><li>ICD-11 · UMLS</li><li>Anonymisation</li>
+        <li>Multi-institutional governance</li><li>Paper under review</li>
+      </ul>
+    </div>
+
+    <!-- ---- Spaceflight transcriptomics ---- -->
+    <div class="proj reveal">
+      <div class="proj-head">
+        <h3>Spaceflight brain transcriptomics</h3>
+        <span class="status priv">Private</span>
+      </div>
+      <p class="proj-sub">NASA OSDR re-analysis · OSD-561 cerebellum, OSD-562 hippocampus</p>
+
+      <p>
+        A full-data re-analysis of spaceflight brain RNA-seq. The published work on
+        these datasets focused narrowly; I ran the whole contrast landscape instead —
+        every comparison, not just the headline one — with a focus panel on
+        extracellular vesicles and neuroinflammation.
+      </p>
+
+      <figure class="fig reveal">
+        <svg viewBox="0 0 640 158" role="img" aria-label="Two tissue datasets pass through QC and PCA into an all-contrast differential expression landscape and a neuroinflammation focus panel">
+          <g class="sv-pop">
+            <rect class="sv-box" x="8" y="34" width="118" height="34" rx="6"/>
+            <text class="sv-t" x="20" y="50">OSD-561</text>
+            <text class="sv-s" x="20" y="63">cerebellum</text>
+            <rect class="sv-box" x="8" y="80" width="118" height="34" rx="6"/>
+            <text class="sv-t" x="20" y="96">OSD-562</text>
+            <text class="sv-s" x="20" y="109">hippocampus</text>
+          </g>
+
+          <path class="sv-arrow" d="M130,51 C154,51 162,68 184,72"/>
+          <path class="sv-arrow" d="M130,97 C154,97 162,80 184,76"/>
+
+          <g class="sv-pop">
+            <rect class="sv-box-a" x="188" y="52" width="104" height="46" rx="8"/>
+            <text class="sv-ta" x="202" y="72">QC + PCA</text>
+            <text class="sv-s"  x="202" y="87">batch check</text>
+          </g>
+
+          <path class="sv-arrow" d="M296,75 L332,75"/>
+
+          <g class="sv-pop">
+            <rect class="sv-box-a" x="336" y="26" width="140" height="46" rx="8"/>
+            <text class="sv-ta" x="350" y="45">All-contrast DEG</text>
+            <text class="sv-s"  x="350" y="60">full landscape</text>
+            <rect class="sv-box" x="336" y="82" width="140" height="46" rx="8"/>
+            <text class="sv-t" x="350" y="101">Focus panel</text>
+            <text class="sv-s" x="350" y="116">EV · neuroinflammation</text>
+          </g>
+
+          <path class="sv-arrow" d="M480,49 C502,49 510,70 526,76"/>
+          <path class="sv-arrow" d="M480,105 C502,105 510,84 526,80"/>
+
+          <g class="sv-pop">
+            <rect class="sv-box" x="530" y="56" width="104" height="44" rx="7"/>
+            <text class="sv-t" x="544" y="76">Reproducible</text>
+            <text class="sv-s" x="544" y="90">Python pipeline</text>
+          </g>
+        </svg>
+        <figcaption>
+          Running every contrast rather than the pre-registered one is a good way to
+          find real effects and an excellent way to fool yourself. The whole point of
+          the reproducible pipeline is that the multiple-comparison handling is
+          inspectable.
+        </figcaption>
+      </figure>
+
+      <ul class="stack">
+        <li>Python</li><li>RNA-seq</li><li>PCA · DEG</li><li>Pathway analysis</li>
+      </ul>
+    </div>
+
+    <!-- ---- secondary work ---- -->
+    <div class="proj reveal">
+      <div class="proj-head"><h3>Also in progress</h3></div>
+      <ul class="mini">
+        <li><span class="n">Retinal health models</span>
+            <span class="m">— ophthalmic imaging for retinal disease. Private.</span></li>
+        <li><span class="n">Cardiac signal analysis</span>
+            <span class="m">— provisional patent filed in India; the basis of a proposed
+            collaboration with Khalifa University. Private.</span></li>
+        <li><span class="n">Wearable recovery dynamics</span>
+            <span class="m">— capacity-limited physiological resilience, with
+            Prof. Mohamed Elgendi. Paper in revision.</span></li>
+        <li><span class="n">Alzheimer's screening app</span>
+            <span class="m">— the patient-facing client for the neuro work. Private.</span></li>
+        <li><span class="n">Clinical translation LLMs</span>
+            <span class="m">— evaluating models across Hindi, Indonesian and Malay
+            with Prof. Irene Li, University of Tokyo.</span></li>
+      </ul>
+    </div>
+
+    <!-- ---- open source ---- -->
+    <div class="proj reveal">
+      <div class="proj-head"><h3>Open source</h3></div>
+      <ul class="mini">
+        <li><a class="n" href="https://huggingface.co/datasets/li-lab/HealMed" rel="noopener">HealMed ↗</a>
+            <span class="m">— multilingual clinical dataset for healthcare LLMs.
+            Indian, Malaysian and Igbo clinical notes, annotated with clinicians.</span></li>
+        <li><a class="n" href="https://github.com/isararsiddique/AfDesign-PeptideBinder" rel="noopener">AfDesign-PeptideBinder ↗</a>
+            <span class="m">— 8-mer peptide binder against 5-hydroxyisourate hydrolase
+            (PDB 2H6U_A) via AlphaFold AfDesign.</span></li>
+        <li><a class="n" href="https://github.com/isararsiddique/SysBio-DiseaseNetwork" rel="noopener">SysBio-DiseaseNetwork ↗</a>
+            <span class="m">— comparative PPI networks across Alzheimer's, T2D and NAFLD;
+            hub-bottleneck genes APOE, INS, LEP.</span></li>
+        <li><a class="n" href="https://github.com/isararsiddique/iit-bhubneshwar-redmud" rel="noopener">Red mud soil sensing ↗</a>
+            <span class="m">— ESP32 rig tracking NPK, pH and moisture in alkaline red mud.
+            My first hardware build.</span></li>
+      </ul>
+    </div>
+
+  </div>
+  </section>
+
+  <!-- ============ about ============ -->
   <section class="section" id="about">
     <div class="wrap">
-      <h2 class="eyebrow reveal">About</h2>
+      <h2 class="eyebrow reveal">How I got here</h2>
       <div class="prose reveal reveal-d1">
         <p>
-          I'm 22. I finished a biotechnology degree in Lucknow in 2025, at a college
-          with no research pipeline and no obvious route into any lab I wanted to work in.
-          So I stopped applying and started sending people finished work instead —
-          read their last three papers, find a gap or a dataset they'd published but
-          not fully mined, and offer two weeks of analysis for free. That's how I
-          ended up at Harvard, Stanford, ISRO, IISc, and three IITs.
+          I'm 22. I finished a biotechnology degree in Lucknow in 2025 at a college
+          with no research pipeline and no route into any lab I wanted. So I stopped
+          applying and started sending people finished work instead — read their last
+          three papers, find a gap or an unmined dataset, offer two weeks of analysis.
+          That got me into eleven labs including Harvard, Stanford, ISRO and IISc.
+          <a href="/blog/cold-emailing-into-research-labs/">I wrote up exactly how.</a>
         </p>
         <p>
-          It's also how <strong>Zero Dementia</strong> got its hospitals. I built the
-          screening infrastructure first and brought it to SGPGI Lucknow and two medical
-          colleges before asking anyone for patients. That project is now in clinical
-          trial on two tracks — cognitive screening and audiometry.
+          The same move got Zero Dementia its hospitals: build the screening
+          infrastructure first, then ask clinicians to tell you what's wrong with it.
+          That's a conversation they want to have. Asking for patient access is not.
         </p>
         <p>
-          The work I care about sits at an awkward intersection: models that are accurate
-          enough to be useful and transparent enough that a clinician will actually trust
-          the output. Most medical AI fails on the second half. I spend a lot of time on
-          explainability for that reason, and increasingly on the sensing side —
-          PCB design, circuit simulation, the parts that decide what your data even
-          looks like before a model ever sees it.
-        </p>
-        <p>
-          I write here about what I'm building, what breaks, and what I get wrong.
-          <a href="/blog/">Start with the writing</a> if you want the useful version.
+          Lately I've been going down the stack into hardware — KiCad, Fusion, LTspice —
+          because every model I build is bounded by the sensor in front of it, and I got
+          tired of treating that as someone else's problem.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ---------- writing ---------- -->
-  <section class="section" id="writing">
-    <div class="wrap">
-      <h2 class="eyebrow reveal">Writing</h2>
-      <ul class="posts reveal reveal-d1">
-        <li>
-          <a href="/blog/cold-emailing-into-research-labs/">
-            <p class="t">How I cold-emailed my way into eleven research labs</p>
-            <p class="d"><time datetime="2026-08-16">16 August 2026</time> · 8 min</p>
-            <p class="x">No application portals, no referrals, no pedigree. What actually
-              moved the reply rate from zero to roughly one in six.</p>
-          </a>
-        </li>
-      </ul>
-      <p class="note reveal reveal-d2">
-        More coming — on multimodal screening in low-resource clinics,
-        ICD-11 migration, and why explainability is a deployment requirement
-        rather than a nice-to-have.
-      </p>
-    </div>
-  </section>
-
-  <!-- ---------- work ---------- -->
-  <section class="section" id="work">
-    <div class="wrap">
-      <h2 class="eyebrow reveal">Building</h2>
-      <div class="grid reveal reveal-d1">
-
-        <div class="card">
-          <div class="h">
-            <h3>Zero Dementia</h3>
-            <span class="tag">In trial</span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </div>
-          <p>Multimodal screening for early cognitive impairment that runs on a
-             stock smartphone — voice, expression, motor and cognitive signals,
-             risk score in under 15 minutes. In clinical trial at SGPGI Lucknow
-             with two medical college partners. Built at Biotech Wallah.</p>
-        </div>
-
-        <div class="card">
-          <div class="h">
-            <h3>SuppliAi</h3>
-            <span class="tag">Convolity AI</span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </div>
-          <p>Supplement and drug interaction analysis against a person's own
-             health data — labs, prescriptions, wearable time series — producing
-             evidence-ranked recommendations rather than generic advice.</p>
-        </div>
-
-        <div class="card">
-          <div class="h">
-            <h3>HealMed</h3>
-            <span class="tag lang">Public dataset</span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </div>
-          <p>Medical data manager and evaluator on a multilingual clinical dataset
-             for healthcare LLMs, annotating Indian, Malaysian and Igbo clinical
-             notes alongside practising clinicians. With Prof. Irene Li's lab.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ---------- open source ---------- -->
-  <section class="section" id="code">
-    <div class="wrap">
-      <h2 class="eyebrow reveal">Open source</h2>
-      <div class="grid reveal reveal-d1">
-
-        <a class="card" href="https://github.com/isararsiddique/AfDesign-PeptideBinder" rel="noopener">
-          <div class="h">
-            <h3>AfDesign-PeptideBinder</h3>
-            <span class="tag lang">Jupyter</span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </div>
-          <p>An 8-mer peptide binder designed against 5-hydroxyisourate hydrolase
-             (PDB 2H6U_A) using AlphaFold-based AfDesign. Structure optimisation,
-             binding interface evaluation, mutation sampling, pLDDT analysis.</p>
-        </a>
-
-        <a class="card" href="https://github.com/isararsiddique/SysBio-DiseaseNetwork" rel="noopener">
-          <div class="h">
-            <h3>SysBio-DiseaseNetwork</h3>
-            <span class="tag lang">Jupyter</span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </div>
-          <p>Comparative protein interaction networks across Alzheimer's, type 2
-             diabetes and NAFLD. Hub-bottleneck genes (APOE, INS, LEP) identified
-             by centrality and clustering — shared pathways between
-             neurodegeneration and metabolic disease.</p>
-        </a>
-
-        <a class="card" href="https://github.com/isararsiddique/iit-bhubneshwar-redmud" rel="noopener">
-          <div class="h">
-            <h3>Red mud soil monitoring</h3>
-            <span class="tag lang">Python · ESP32</span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </div>
-          <p>IoT sensing rig built at IIT Bhubaneswar tracking NPK, pH and moisture
-             in highly alkaline red mud soil. My first hardware project, and the
-             reason I came back to electronics years later.</p>
-        </a>
-
-        <a class="card" href="https://github.com/isararsiddique/Neuro-AI" rel="noopener">
-          <div class="h">
-            <h3>Neuro-AI</h3>
-            <span class="tag lang">TypeScript</span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </div>
-          <p>Front end for the neuro screening work — the interface clinicians
-             actually see when running an assessment.</p>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ---------- private work: deliberately thin ---------- -->
-  <section class="section" id="private">
-    <div class="wrap">
-      <h2 class="eyebrow reveal">Also working on</h2>
-      <ul class="private reveal reveal-d1">
-        <li><span class="n">Corneal endothelium analysis</span>
-            <span class="m">— ophthalmology imaging</span></li>
-        <li><span class="n">Retinal health models</span>
-            <span class="m">— ophthalmology</span></li>
-        <li><span class="n">Spaceflight brain transcriptomics</span>
-            <span class="m">— NASA OSDR re-analysis</span></li>
-        <li><span class="n">Cancer registry platform</span>
-            <span class="m">— clinical informatics, Universiti Malaya</span></li>
-        <li><span class="n">Cardiac signal work</span>
-            <span class="m">— provisional patent filed in India</span></li>
-      </ul>
-      <p class="note reveal reveal-d2">
-        These are private — some sit under clinical data agreements, some are
-        pre-publication, and one is mid-patent. Happy to talk about any of them
-        properly over email.
-      </p>
-    </div>
-  </section>
-
-  <!-- ---------- contact ---------- -->
+  <!-- ============ contact ============ -->
   <section class="section" id="contact">
     <div class="wrap">
       <h2 class="eyebrow reveal">Contact</h2>
       <div class="prose reveal reveal-d1">
         <p>
-          If you work in health AI, clinical informatics, or translational research —
-          or you're a clinician who thinks a model I've built is wrong — I'd like to
-          hear from you. <a href="mailto:isararsiddique@gmail.com">isararsiddique@gmail.com</a>
+          Health AI, clinical informatics, translational research — or you're a
+          clinician who thinks one of these models is wrong. Either way:
+          <a href="mailto:isararsiddique@gmail.com">isararsiddique@gmail.com</a>
         </p>
       </div>
     </div>
