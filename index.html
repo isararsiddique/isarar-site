@@ -4,22 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Isarar Siddique</title>
-<meta name="description" content="Isarar Siddique builds medical AI that reaches patients. Four companies, one screening system in clinical trial across the ENT and Neurology departments of a tertiary hospital in India.">
+<meta name="description" content="Isarar Siddique builds medical AI that reaches patients. Four companies, a screening system in clinical trial, and an audiometry headphone that removes the cost of a sound booth.">
 <link rel="canonical" href="https://isarar.com/">
 <meta name="author" content="Isarar Siddique">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="preconnect" href="https://avatars.githubusercontent.com" crossorigin>
+<meta name="theme-color" content="#f8f6f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0b0d" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="/style.css">
+<link rel="preload" as="image" href="/isarar-500.jpg">
 
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Isarar Siddique">
 <meta property="og:title" content="Isarar Siddique">
 <meta property="og:description" content="I build medical AI that reaches patients. Four companies. One system in clinical trial right now.">
 <meta property="og:url" content="https://isarar.com/">
-<meta property="og:image" content="https://avatars.githubusercontent.com/u/58565681?v=4">
+<meta property="og:image" content="https://isarar.com/isarar-900.jpg">
+<meta property="og:image:width" content="900">
+<meta property="og:image:height" content="900">
 <meta property="profile:first_name" content="Isarar">
 <meta property="profile:last_name" content="Siddique">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://isarar.com/isarar-900.jpg">
+
+<script>
+/* set theme before paint so there is no flash */
+(function(){try{var t=localStorage.getItem("theme");
+if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
 
 <script type="application/ld+json">
 {
@@ -31,10 +42,10 @@
   "familyName": "Siddique",
   "alternateName": "Isarar",
   "url": "https://isarar.com/",
-  "image": "https://avatars.githubusercontent.com/u/58565681?v=4",
+  "image": "https://isarar.com/isarar-900.jpg",
   "jobTitle": "Founder",
-  "description": "Builds medical AI for early disease screening, ophthalmic imaging, dermatology and physiological signals.",
-  "knowsAbout": ["Multimodal artificial intelligence","Medical imaging","Clinical decision support","Ophthalmic imaging","Dermatology AI","Bioinformatics","Wearable physiological signals","Medical device design"],
+  "description": "Builds medical AI for early disease screening, ophthalmic imaging, dermatology, audiometry and physiological signals.",
+  "knowsAbout": ["Multimodal artificial intelligence","Medical imaging","Clinical decision support","Ophthalmic imaging","Dermatology AI","Audiometry","Bioinformatics","Wearable physiological signals","Medical device design"],
   "alumniOf": { "@type": "CollegeOrUniversity", "name": "Dr. A.P.J. Abdul Kalam Technical University" },
   "worksFor": [
     { "@type": "Organization", "name": "Biotech Wallah Private Limited", "url": "https://biotechwallah.com" },
@@ -75,10 +86,14 @@
     <a class="who" href="/">Isarar Siddique</a>
     <nav aria-label="Primary">
       <a href="#work">Work</a>
-      <a href="#capacity">Capacity</a>
+      <a href="#code">Code</a>
+      <a href="#capacity" data-min>Capacity</a>
       <a href="/blog/">Writing</a>
-      <a href="#talk">Talk</a>
     </nav>
+    <button id="theme" type="button" aria-label="Switch theme">
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a7 7 0 0 0 11.1 11.1z"/></svg>
+    </button>
   </div>
 </header>
 
@@ -87,38 +102,42 @@
   <!-- ================= HERO ================= -->
   <section class="hero">
     <div class="shell">
-      <p class="tagline"><span class="blip"></span> In clinical trial right now</p>
-
-      <h1 class="big" data-split>I build medical AI that actually reaches patients.</h1>
-
-      <p class="hero-said">
-        Four companies. One screening system running right now inside the
-        <b>ENT and Neurology departments of a tertiary hospital in India</b>.
-        Two provisional patents filed. I am twenty two and nowhere close to full.
-      </p>
-
-      <div class="hero-row">
-        <div class="face">
-          <img src="https://avatars.githubusercontent.com/u/58565681?v=4"
-               alt="Isarar Siddique" width="66" height="66" loading="eager" decoding="async">
-          <span class="ini" aria-hidden="true">IS</span>
+      <div class="hero-grid">
+        <div>
+          <p class="tagline"><span class="blip"></span> In clinical trial right now</p>
+          <h1 class="big" data-split>I build medical AI that actually reaches patients.</h1>
+          <p class="hero-said">
+            Four companies. One screening system running inside the
+            <b>ENT and Neurology departments of a tertiary hospital in India</b>.
+            Two provisional patents filed. I am twenty two and nowhere close to full.
+          </p>
+          <div class="hero-row">
+            <a class="cta" href="#work">See the work <span class="go">&rarr;</span></a>
+            <ul class="plain-links">
+              <li><a href="/blog/">Writing</a></li>
+              <li><a href="https://www.linkedin.com/in/isarar/" rel="me noopener">LinkedIn</a></li>
+              <li><a href="https://github.com/isararsiddique" rel="me noopener">GitHub</a></li>
+            </ul>
+          </div>
         </div>
-        <a class="cta" href="#work">See the work <span class="go">&rarr;</span></a>
-        <ul class="plain-links">
-          <li><a href="/blog/">Writing</a></li>
-          <li><a href="https://www.linkedin.com/in/isarar/" rel="me noopener">LinkedIn</a></li>
-          <li><a href="https://github.com/isararsiddique" rel="me noopener">GitHub</a></li>
-        </ul>
+
+        <figure class="portrait">
+          <img src="/isarar-500.jpg"
+               srcset="/isarar-500.jpg 500w, /isarar-900.jpg 900w"
+               sizes="(max-width:860px) 230px, 30vw"
+               alt="Isarar Siddique" width="900" height="900"
+               loading="eager" decoding="async" fetchpriority="high">
+        </figure>
       </div>
     </div>
 
     <div class="strip">
       <div class="track">
-        <span>Dementia screening</span><span>Dermatology AI</span><span>Corneal imaging</span>
-        <span>Cancer registries</span><span>Neuro devices</span><span>Drug interactions</span>
+        <span>Dementia screening</span><span>Audiometry hardware</span><span>Dermatology AI</span>
+        <span>Corneal imaging</span><span>Cancer registries</span><span>Drug interactions</span>
         <span>Wearable signals</span><span>PCB design</span>
-        <span>Dementia screening</span><span>Dermatology AI</span><span>Corneal imaging</span>
-        <span>Cancer registries</span><span>Neuro devices</span><span>Drug interactions</span>
+        <span>Dementia screening</span><span>Audiometry hardware</span><span>Dermatology AI</span>
+        <span>Corneal imaging</span><span>Cancer registries</span><span>Drug interactions</span>
         <span>Wearable signals</span><span>PCB design</span>
       </div>
     </div>
@@ -137,259 +156,238 @@
   <section class="band" id="work">
     <div class="shell">
       <div class="band-head up">
-        <div>
-          <p class="kicker">What I run</p>
-          <h2 class="mid">Four companies solving one problem from four directions.</h2>
-        </div>
+        <p class="kicker">What I run</p>
+        <h2 class="mid">Four companies solving one problem from four directions.</h2>
       </div>
 
-      <!-- 01 Biotech Wallah -->
+      <!-- 01 -->
       <article class="job up">
         <div class="idx">01</div>
         <div>
-          <h3><a href="https://biotechwallah.com" rel="noopener"></a>Zero Dementia</a> <span class="flag trial">In trial</span></h3>
+          <h3><a href="https://biotechwallah.com" rel="noopener">Zero Dementia</a> <span class="flag trial">In trial</span></h3>
           <p class="role">Founder and CEO, Biotech Wallah Private Limited</p>
-
           <p>
-            Screening for early cognitive decline using a phone that already sits in
+            Screening for early cognitive decline on a phone that already sits in
             someone's pocket. No MRI. No lumbar puncture. No neurologist in the room.
-            Four signals captured in one sitting, fused into a single risk score in
-            under fifteen minutes.
+            Four signals in one sitting, fused into a single risk score in under
+            fifteen minutes.
           </p>
 
-          <figure class="fig up">
-            <svg viewBox="0 0 640 200" role="img" aria-label="Four phone-captured signals feed feature extraction, then late fusion, producing a risk score with per-signal explanation for clinician review">
-              <defs>
-                <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                  <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
-                </marker>
-              </defs>
+          <figure class="fig">
+            <svg viewBox="0 0 640 200" role="img" aria-label="Four phone captured signals feed feature extraction then late fusion, producing a risk score with per signal explanation for clinician review">
+              <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
               <text class="sv-s" x="8" y="14">ONE SITTING, ABOUT 15 MINUTES</text>
-              <rect class="sv-box" x="8" y="26" width="126" height="30" rx="6"/>
-              <text class="sv-t" x="20" y="45">Voice, read passage</text>
-              <rect class="sv-box" x="8" y="62" width="126" height="30" rx="6"/>
-              <text class="sv-t" x="20" y="81">Facial expression</text>
-              <rect class="sv-box" x="8" y="98" width="126" height="30" rx="6"/>
-              <text class="sv-t" x="20" y="117">Fine motor tapping</text>
-              <rect class="sv-box" x="8" y="134" width="126" height="30" rx="6"/>
-              <text class="sv-t" x="20" y="153">Cognitive battery</text>
-
+              <rect class="sv-box" x="8" y="26" width="126" height="30" rx="6"/><text class="sv-t" x="20" y="45">Voice, read passage</text>
+              <rect class="sv-box" x="8" y="62" width="126" height="30" rx="6"/><text class="sv-t" x="20" y="81">Facial expression</text>
+              <rect class="sv-box" x="8" y="98" width="126" height="30" rx="6"/><text class="sv-t" x="20" y="117">Fine motor tapping</text>
+              <rect class="sv-box" x="8" y="134" width="126" height="30" rx="6"/><text class="sv-t" x="20" y="153">Cognitive battery</text>
               <path class="sv-arrow" d="M138,41 C172,41 178,80 206,88"/>
               <path class="sv-arrow" d="M138,77 C172,77 180,84 206,92"/>
               <path class="sv-arrow" d="M138,113 C172,113 180,102 206,98"/>
               <path class="sv-arrow" d="M138,149 C172,149 178,106 206,102"/>
-
               <rect class="sv-box-a" x="210" y="62" width="118" height="66" rx="8"/>
-              <text class="sv-ta" x="226" y="88">Feature</text>
-              <text class="sv-ta" x="226" y="103">extraction</text>
+              <text class="sv-ta" x="226" y="88">Feature</text><text class="sv-ta" x="226" y="103">extraction</text>
               <text class="sv-s" x="226" y="118">per signal</text>
-
               <path class="sv-arrow" d="M332,95 L368,95"/>
-
               <rect class="sv-box-a" x="372" y="62" width="112" height="66" rx="8"/>
               <text class="sv-ta" x="388" y="88">Late fusion</text>
-              <text class="sv-s" x="388" y="103">keeps each</text>
-              <text class="sv-s" x="388" y="116">signal separable</text>
-
+              <text class="sv-s" x="388" y="103">keeps each</text><text class="sv-s" x="388" y="116">signal separable</text>
               <path class="sv-arrow" d="M488,95 L524,95"/>
-
               <rect class="sv-box" x="528" y="52" width="104" height="42" rx="6"/>
-              <text class="sv-t" x="542" y="70">Risk score</text>
-              <text class="sv-s" x="542" y="84">with reasons</text>
+              <text class="sv-t" x="542" y="70">Risk score</text><text class="sv-s" x="542" y="84">with reasons</text>
               <rect class="sv-box" x="528" y="102" width="104" height="42" rx="6"/>
-              <text class="sv-t" x="542" y="120">Clinician</text>
-              <text class="sv-s" x="542" y="134">acts or refers</text>
+              <text class="sv-t" x="542" y="120">Clinician</text><text class="sv-s" x="542" y="134">acts or refers</text>
               <path class="sv-line" d="M580,94 L580,102"/>
             </svg>
             <figcaption>
               Late fusion instead of early, so the output can name which signal drove
-              the score. A clinician who cannot see why will not act on it, and a
-              screening tool nobody acts on is decoration.
+              the score. A clinician who cannot see why will not act, and a screening
+              tool nobody acts on is decoration.
             </figcaption>
           </figure>
 
           <p>
-            The trial runs across two departments because the biology does not respect
-            org charts. Hearing and speech markers sit with <b>ENT</b>. Cognitive and
-            motor markers sit with <b>Neurology</b>. Both arms are close to done.
+            The trial spans two departments because the biology ignores org charts.
+            Hearing and speech markers sit with <b>ENT</b>. Cognitive and motor
+            markers sit with <b>Neurology</b>. Both arms are close to done.
           </p>
-
           <p>
             Nobody warns you that the model is the easy part. The work was consent
-            infrastructure, recruitment flow, and pulling clean signal out of rooms
+            infrastructure, recruitment flow, and pulling clean signal out of a room
             with bad light and a fan running.
           </p>
-
-          <ul class="chips">
-            <li>Multimodal fusion</li><li>Speech features</li><li>On-device</li>
-            <li>Genesis 2.0 grant</li><li>DPIIT DIPP217345</li>
-          </ul>
+          <ul class="chips"><li>Multimodal fusion</li><li>Speech features</li><li>On-device</li><li>Genesis 2.0 grant</li><li>DPIIT DIPP217345</li></ul>
         </div>
       </article>
 
-      <!-- 02 Convolity -->
+      <!-- 02 Neurento -->
       <article class="job up">
         <div class="idx">02</div>
         <div>
-          <h3><a href="https://convolity.com" rel="noopener">SuppliAi</a> <span class="flag on">Live</span></h3>
-          <p class="role">Founder, Convolity AI Private Limited</p>
-
+          <h3>Neurento Medtech <span class="flag soon">Building</span></h3>
+          <p class="role">Co-founder and Technical Advisor, Neurento Medtech Private Limited</p>
           <p>
-            Supplement advice is broken because it ignores the only two things that
-            matter. What else you are taking, and who you are. SuppliAi builds one
-            representation of a person out of lab panels, prescription scans and
-            wearable streams, then reasons over interaction pathways against it.
+            An <b>audiometry screening headphone</b>. Right now a hearing test needs a
+            sound treated booth, a calibrated clinical audiometer and a trained
+            audiologist in the room. That stack is why most people in India never get
+            tested until the loss is already bad enough to notice.
+          </p>
+          <p>
+            We are pushing the calibration into the headphone itself, so the
+            infrastructure cost mostly disappears and screening can happen in a
+            general practice room, a school, or a camp.
           </p>
 
-          <figure class="fig up">
-            <svg viewBox="0 0 640 210" role="img" aria-label="Labs, prescription OCR and wearables merge into a patient representation, checked against CYP450 interaction and docking pipelines and an evidence layer, producing ranked guidance">
-              <text class="sv-s" x="8" y="14">INPUTS</text>
-              <rect class="sv-box" x="8" y="26" width="118" height="28" rx="6"/>
-              <text class="sv-t" x="20" y="44">Lab panels</text>
-              <rect class="sv-box" x="8" y="60" width="118" height="28" rx="6"/>
-              <text class="sv-t" x="20" y="78">Prescription OCR</text>
-              <rect class="sv-box" x="8" y="94" width="118" height="28" rx="6"/>
-              <text class="sv-t" x="20" y="112">Wearables</text>
-              <text class="sv-s" x="20" y="128">Oura, WHOOP, Watch</text>
+          <figure class="fig">
+            <svg viewBox="0 0 640 214" role="img" aria-label="Traditional audiometry needs a sound booth, clinical audiometer and audiologist. The Neurento approach puts calibration inside the headphone with a phone app, removing the booth and the dedicated room.">
+              <text class="sv-s" x="8" y="14">HOW IT WORKS TODAY</text>
+              <rect class="sv-box-x" x="8" y="24" width="286" height="74" rx="9"/>
+              <rect class="sv-box" x="20" y="38" width="82" height="46" rx="6"/>
+              <text class="sv-t" x="31" y="58">Sound</text><text class="sv-t" x="31" y="72">booth</text>
+              <rect class="sv-box" x="110" y="38" width="86" height="46" rx="6"/>
+              <text class="sv-t" x="121" y="58">Clinical</text><text class="sv-t" x="121" y="72">audiometer</text>
+              <rect class="sv-box" x="204" y="38" width="80" height="46" rx="6"/>
+              <text class="sv-t" x="215" y="58">Trained</text><text class="sv-t" x="215" y="72">audiologist</text>
+              <text class="sv-s" x="20" y="112">fixed room, high capital cost, patient must travel</text>
 
-              <path class="sv-arrow" d="M130,40 C160,40 168,66 196,72"/>
-              <path class="sv-arrow" d="M130,74 C160,74 170,74 196,76"/>
-              <path class="sv-arrow" d="M130,108 C160,108 170,88 196,82"/>
+              <text class="sv-s" x="8" y="146">WHAT WE ARE BUILDING</text>
+              <rect class="sv-box-a" x="8" y="156" width="150" height="46" rx="8"/>
+              <text class="sv-ta" x="22" y="176">Calibrated</text><text class="sv-ta" x="22" y="190">headphone</text>
+              <path class="sv-arrow" d="M162,179 L198,179"/>
+              <rect class="sv-box-a" x="202" y="156" width="122" height="46" rx="8"/>
+              <text class="sv-ta" x="216" y="176">Phone app</text>
+              <text class="sv-s" x="216" y="190">guided protocol</text>
+              <path class="sv-arrow" d="M328,179 L364,179"/>
+              <rect class="sv-box" x="368" y="156" width="122" height="46" rx="7"/>
+              <text class="sv-t" x="382" y="176">Audiogram</text>
+              <text class="sv-s" x="382" y="190">plus referral flag</text>
+              <path class="sv-arrow" d="M494,179 L530,179"/>
+              <rect class="sv-box" x="534" y="156" width="100" height="46" rx="7"/>
+              <text class="sv-t" x="546" y="176">Any room</text>
+              <text class="sv-s" x="546" y="190">clinic, school, camp</text>
 
-              <rect class="sv-box-a" x="200" y="52" width="120" height="52" rx="8"/>
-              <text class="sv-ta" x="214" y="74">One patient</text>
-              <text class="sv-ta" x="214" y="89">representation</text>
-
-              <path class="sv-arrow" d="M324,78 L360,78"/>
-
-              <rect class="sv-box" x="364" y="30" width="140" height="46" rx="7"/>
-              <text class="sv-t" x="378" y="49">Interaction graph</text>
-              <text class="sv-s" x="378" y="64">5 CYP450 enzymes</text>
-              <rect class="sv-box" x="364" y="84" width="140" height="46" rx="7"/>
-              <text class="sv-t" x="378" y="103">Docking pipeline</text>
-              <text class="sv-s" x="378" y="118">DiffDock, DeepDTA</text>
-              <rect class="sv-box" x="364" y="138" width="140" height="46" rx="7"/>
-              <text class="sv-t" x="378" y="157">Evidence layer</text>
-              <text class="sv-s" x="378" y="172">PubMed, Lexicomp</text>
-
-              <path class="sv-arrow" d="M508,53 C528,53 534,88 552,96"/>
-              <path class="sv-arrow" d="M508,107 C528,107 536,102 552,100"/>
-              <path class="sv-arrow" d="M508,161 C528,161 536,112 552,104"/>
-
-              <rect class="sv-box-a" x="556" y="74" width="78" height="52" rx="8"/>
-              <text class="sv-ta" x="568" y="96">Ranked</text>
-              <text class="sv-ta" x="568" y="110">guidance</text>
+              <path class="sv-line" d="M300,61 L318,61"/>
+              <text class="sv-ta" x="324" y="58">booth and</text>
+              <text class="sv-ta" x="324" y="70">dedicated room</text>
+              <text class="sv-ta" x="324" y="82">removed</text>
             </svg>
             <figcaption>
-              Everything gets cross checked against Natural Medicines, Lexicomp and
-              FDA MedWatch before it surfaces. Concordance sits above 85 percent on
-              the validated set. Anything under that threshold stays hidden instead
-              of shipping with a disclaimer nobody reads.
+              The hard part is calibration. A clinical audiometer is trusted because
+              its output level is known at every frequency. Moving that guarantee into
+              a headphone is the whole engineering problem, and it is the only reason
+              the booth can go away.
             </figcaption>
           </figure>
 
+          <p>
+            This is also why I learned KiCad, Fusion and LTspice. If you want a better
+            signal then at some point you have to build the thing that acquires it
+            instead of cleaning up after somebody else's sensor. It pairs directly with
+            the ENT arm of the dementia trial, since hearing loss and cognitive decline
+            travel together more often than either field likes to admit.
+          </p>
+          <ul class="chips"><li>Audiometry</li><li>Transducer calibration</li><li>KiCad</li><li>LTspice</li><li>Embedded</li><li>Fusion</li></ul>
+        </div>
+      </article>
+
+      <!-- 03 Convolity -->
+      <article class="job up">
+        <div class="idx">03</div>
+        <div>
+          <h3><a href="https://convolity.com" rel="noopener">SuppliAi</a> <span class="flag on">Live</span></h3>
+          <p class="role">Founder, Convolity AI Private Limited</p>
+          <p>
+            Supplement advice is broken because it ignores the only two things that
+            matter. What else you are taking, and who you are. SuppliAi builds one
+            representation of a person from lab panels, prescription scans and
+            wearable streams, then reasons over interaction pathways against it.
+          </p>
+
+          <figure class="fig">
+            <svg viewBox="0 0 640 210" role="img" aria-label="Labs, prescription OCR and wearables merge into a patient representation, checked against CYP450 interaction and docking pipelines and an evidence layer, producing ranked guidance">
+              <text class="sv-s" x="8" y="14">INPUTS</text>
+              <rect class="sv-box" x="8" y="26" width="118" height="28" rx="6"/><text class="sv-t" x="20" y="44">Lab panels</text>
+              <rect class="sv-box" x="8" y="60" width="118" height="28" rx="6"/><text class="sv-t" x="20" y="78">Prescription OCR</text>
+              <rect class="sv-box" x="8" y="94" width="118" height="28" rx="6"/><text class="sv-t" x="20" y="112">Wearables</text>
+              <text class="sv-s" x="20" y="128">Oura, WHOOP, Watch</text>
+              <path class="sv-arrow" d="M130,40 C160,40 168,66 196,72"/>
+              <path class="sv-arrow" d="M130,74 C160,74 170,74 196,76"/>
+              <path class="sv-arrow" d="M130,108 C160,108 170,88 196,82"/>
+              <rect class="sv-box-a" x="200" y="52" width="120" height="52" rx="8"/>
+              <text class="sv-ta" x="214" y="74">One patient</text><text class="sv-ta" x="214" y="89">representation</text>
+              <path class="sv-arrow" d="M324,78 L360,78"/>
+              <rect class="sv-box" x="364" y="30" width="140" height="46" rx="7"/>
+              <text class="sv-t" x="378" y="49">Interaction graph</text><text class="sv-s" x="378" y="64">5 CYP450 enzymes</text>
+              <rect class="sv-box" x="364" y="84" width="140" height="46" rx="7"/>
+              <text class="sv-t" x="378" y="103">Docking pipeline</text><text class="sv-s" x="378" y="118">DiffDock, DeepDTA</text>
+              <rect class="sv-box" x="364" y="138" width="140" height="46" rx="7"/>
+              <text class="sv-t" x="378" y="157">Evidence layer</text><text class="sv-s" x="378" y="172">PubMed, Lexicomp</text>
+              <path class="sv-arrow" d="M508,53 C528,53 534,88 552,96"/>
+              <path class="sv-arrow" d="M508,107 C528,107 536,102 552,100"/>
+              <path class="sv-arrow" d="M508,161 C528,161 536,112 552,104"/>
+              <rect class="sv-box-a" x="556" y="74" width="78" height="52" rx="8"/>
+              <text class="sv-ta" x="568" y="96">Ranked</text><text class="sv-ta" x="568" y="110">guidance</text>
+            </svg>
+            <figcaption>
+              Everything gets cross checked against Natural Medicines, Lexicomp and
+              FDA MedWatch before it surfaces. Concordance sits above 85 percent on the
+              validated set. Anything under that threshold stays hidden instead of
+              shipping with a disclaimer nobody reads.
+            </figcaption>
+          </figure>
           <p>
             There is also a longitudinal biological age model scoring six body systems
             over time. It is the piece I trust least and find most interesting.
             Composite ageing scores are trivial to build and brutal to validate.
           </p>
-
-          <ul class="chips">
-            <li>Chain of thought reasoning</li><li>Molecular docking</li>
-            <li>Supabase, RLS, pgcrypto</li><li>Time series fusion</li>
-          </ul>
+          <ul class="chips"><li>Chain of thought reasoning</li><li>Molecular docking</li><li>Supabase, RLS, pgcrypto</li><li>Time series fusion</li></ul>
         </div>
       </article>
 
-      <!-- 03 Healoncal -->
+      <!-- 04 Healoncal -->
       <article class="job up">
-        <div class="idx">03</div>
+        <div class="idx">04</div>
         <div>
           <h3><a href="https://healoncal.com" rel="noopener">Healoncal</a> <span class="flag on">Live</span></h3>
           <p class="role">Co-founder and Chief AI Officer, Healoncal Private Limited</p>
-
           <p>
-            Skin assessment from a phone camera. The constraint that makes this hard
-            is not accuracy on average. It is accuracy <b>evenly</b>. Most skin models
+            Skin assessment from a phone camera. The constraint that makes this hard is
+            not accuracy on average. It is accuracy <b>evenly</b>. Most skin models
             learn on light skin and quietly fall apart on darker tones, which makes
             them worst exactly where they are needed most.
           </p>
 
-          <figure class="fig up">
+          <figure class="fig">
             <svg viewBox="0 0 640 186" role="img" aria-label="A phone image and user context are normalised for lighting, analysed by a vision language model, passed through a fairness gate across skin tones, and returned with per metric reasoning">
               <text class="sv-s" x="8" y="14">CONSUMER PHONE, UNCONTROLLED LIGHT</text>
-              <rect class="sv-box" x="8" y="26" width="114" height="30" rx="6"/>
-              <text class="sv-t" x="20" y="45">Phone image</text>
-              <rect class="sv-box" x="8" y="62" width="114" height="30" rx="6"/>
-              <text class="sv-t" x="20" y="81">User context</text>
-
+              <rect class="sv-box" x="8" y="26" width="114" height="30" rx="6"/><text class="sv-t" x="20" y="45">Phone image</text>
+              <rect class="sv-box" x="8" y="62" width="114" height="30" rx="6"/><text class="sv-t" x="20" y="81">User context</text>
               <path class="sv-arrow" d="M126,41 C152,41 158,62 180,68"/>
               <path class="sv-arrow" d="M126,77 C152,77 160,74 180,72"/>
-
               <rect class="sv-box-a" x="184" y="48" width="112" height="46" rx="8"/>
-              <text class="sv-ta" x="198" y="68">Normalisation</text>
-              <text class="sv-s" x="198" y="83">light and colour</text>
-
+              <text class="sv-ta" x="198" y="68">Normalisation</text><text class="sv-s" x="198" y="83">light and colour</text>
               <path class="sv-arrow" d="M300,71 L336,71"/>
-
               <rect class="sv-box-a" x="340" y="26" width="132" height="46" rx="8"/>
-              <text class="sv-ta" x="354" y="45">Vision language</text>
-              <text class="sv-s" x="354" y="60">multimodal read</text>
+              <text class="sv-ta" x="354" y="45">Vision language</text><text class="sv-s" x="354" y="60">multimodal read</text>
               <rect class="sv-box" x="340" y="82" width="132" height="46" rx="8"/>
-              <text class="sv-t" x="354" y="101">Fairness gate</text>
-              <text class="sv-s" x="354" y="116">across tone groups</text>
-
+              <text class="sv-t" x="354" y="101">Fairness gate</text><text class="sv-s" x="354" y="116">across tone groups</text>
               <path class="sv-arrow" d="M476,49 C500,49 508,72 526,78"/>
               <path class="sv-arrow" d="M476,105 C500,105 508,88 526,84"/>
-
               <rect class="sv-box-a" x="530" y="58" width="104" height="48" rx="8"/>
-              <text class="sv-ta" x="544" y="80">Per metric</text>
-              <text class="sv-ta" x="544" y="95">reasoning</text>
+              <text class="sv-ta" x="544" y="80">Per metric</text><text class="sv-ta" x="544" y="95">reasoning</text>
               <text class="sv-s" x="530" y="124">no bare score</text>
             </svg>
             <figcaption>
               The fairness gate is a gate, not a report at the end. If a metric cannot
-              hold accuracy across tone groups it does not ship. Every number that
-              does ship carries its reasoning with it.
+              hold accuracy across tone groups it does not ship. Every number that does
+              ship carries its reasoning with it.
             </figcaption>
           </figure>
-
           <p>
             My half is model architecture and getting laboratory grade models onto
-            ordinary handsets without the accuracy quietly leaking away on the trip down.
+            ordinary handsets without the accuracy quietly leaking away on the way down.
           </p>
-
-          <ul class="chips">
-            <li>Vision language models</li><li>Explainability</li>
-            <li>Bias evaluation</li><li>Mobile inference</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- 04 Neurento -->
-      <article class="job up">
-        <div class="idx">04</div>
-        <div>
-          <h3>Neurento Medtech</h3>
-          <p class="role">Co-founder and Technical Advisor, Neurento Medtech Private Limited</p>
-
-          <p>
-            Neurological devices. This is the same problem I have been circling in
-            software, approached from the other end. If you want a better neuro signal
-            then eventually you have to build the thing that acquires it instead of
-            cleaning up after somebody else's sensor.
-          </p>
-
-          <p>
-            I learned KiCad, Fusion and LTspice for exactly this. Early stage, so there
-            is not much I can put in public yet. I work on technical architecture and
-            the acquisition side.
-          </p>
-
-          <ul class="chips">
-            <li>Medical devices</li><li>Signal acquisition</li>
-            <li>KiCad</li><li>LTspice</li><li>Embedded</li>
-          </ul>
+          <ul class="chips"><li>Vision language models</li><li>Explainability</li><li>Bias evaluation</li><li>Mobile inference</li></ul>
         </div>
       </article>
     </div>
@@ -399,36 +397,31 @@
   <section class="band" id="capacity">
     <div class="shell">
       <div class="band-head up">
-        <div>
-          <p class="kicker">The question everyone asks</p>
-          <h2 class="mid">How do you run four companies at twenty two?</h2>
-        </div>
+        <p class="kicker">The question everyone asks</p>
+        <h2 class="mid">How do you run four companies at twenty two?</h2>
       </div>
-
       <div class="say up d1">
         <p>
           The honest answer is that it does not feel like four. It feels like one
           problem wearing four different shirts.
         </p>
         <p>
-          Zero Dementia taught me how to fuse messy signals from a cheap sensor into
-          a decision a doctor will trust. SuppliAi is that same fusion problem with
-          labs and wearables instead of voice and video. Healoncal is the same
-          explainability problem pointed at skin instead of brains. Neurento builds
-          the sensor that feeds all of it. Solve one properly and you have moved the
-          other three forward without opening a second tab.
+          Zero Dementia taught me how to fuse messy signals from a cheap sensor into a
+          decision a doctor will trust. SuppliAi is that same fusion problem with labs
+          and wearables instead of voice and video. Healoncal is the same
+          explainability problem pointed at skin instead of brains. Neurento builds the
+          sensor. Solve one properly and the other three move forward without opening a
+          second tab.
         </p>
-
         <p class="punch">
           People keep telling me breadth is a red flag. I think focus is what you
           recommend to someone who has not found the overlap yet.
         </p>
-
         <p>
-          I know what my ceiling feels like, because I have hit it before. Eleven
-          research labs while finishing a degree, cold emailing every one of them
-          from a college with no research pipeline. That was full. This is not full.
-          I have room, and I would rather spend it than protect it.
+          I know what my ceiling feels like because I have hit it before. Eleven
+          research labs while finishing a degree, cold emailing every one of them from
+          a college with no research pipeline. That was full. This is not full. I have
+          room, and I would rather spend it than protect it.
         </p>
         <p>
           <a href="/blog/cold-emailing-into-research-labs/">Here is exactly how I got
@@ -442,13 +435,10 @@
   <section class="band" id="research">
     <div class="shell">
       <div class="band-head up">
-        <div>
-          <p class="kicker">Research</p>
-          <h2 class="mid">The parts that stay behind closed doors.</h2>
-        </div>
+        <p class="kicker">Research</p>
+        <h2 class="mid">Work that stays behind closed doors.</h2>
       </div>
 
-      <!-- corneal -->
       <article class="job up">
         <div class="idx">05</div>
         <div>
@@ -457,10 +447,9 @@
           <p>
             Cell morphometry straight off specular microscopy. Density, polymegathism
             and pleomorphism. Those three numbers decide whether a cornea is fit for
-            transplant, and right now somebody counts them half by hand.
+            transplant, and today somebody counts them half by hand.
           </p>
-
-          <figure class="fig up">
+          <figure class="fig">
             <svg viewBox="0 0 640 180" role="img" aria-label="A hexagonal endothelial cell mosaic is segmented per cell then reduced to density, polymegathism and pleomorphism, producing a report">
               <text class="sv-s" x="8" y="14">MICROGRAPH TO SEGMENTED MOSAIC</text>
               <rect class="sv-box" x="8" y="24" width="200" height="140" rx="8"/>
@@ -475,23 +464,16 @@
               </g>
               <path class="sv-cell-b" d="M76,80 l18,-10 l18,10 l0,20 l-18,10 l-18,-10 z"/>
               <text class="sv-s" x="150" y="150">enlarged cell</text>
-
               <path class="sv-arrow" d="M212,94 L250,94"/>
               <rect class="sv-box-a" x="254" y="70" width="112" height="48" rx="8"/>
-              <text class="sv-ta" x="268" y="90">Segmentation</text>
-              <text class="sv-s" x="268" y="105">per cell borders</text>
-
+              <text class="sv-ta" x="268" y="90">Segmentation</text><text class="sv-s" x="268" y="105">per cell borders</text>
               <path class="sv-arrow" d="M370,94 L406,94"/>
               <rect class="sv-box" x="410" y="30" width="120" height="38" rx="6"/>
-              <text class="sv-t" x="424" y="47">Cell density</text>
-              <text class="sv-s" x="424" y="60">cells per mm2</text>
+              <text class="sv-t" x="424" y="47">Cell density</text><text class="sv-s" x="424" y="60">cells per mm2</text>
               <rect class="sv-box" x="410" y="76" width="120" height="38" rx="6"/>
-              <text class="sv-t" x="424" y="93">Polymegathism</text>
-              <text class="sv-s" x="424" y="106">variation in area</text>
+              <text class="sv-t" x="424" y="93">Polymegathism</text><text class="sv-s" x="424" y="106">variation in area</text>
               <rect class="sv-box" x="410" y="122" width="120" height="38" rx="6"/>
-              <text class="sv-t" x="424" y="139">Pleomorphism</text>
-              <text class="sv-s" x="424" y="152">percent hexagonal</text>
-
+              <text class="sv-t" x="424" y="139">Pleomorphism</text><text class="sv-s" x="424" y="152">percent hexagonal</text>
               <path class="sv-arrow" d="M534,49 C556,49 562,84 578,92"/>
               <path class="sv-arrow" d="M534,95 C556,95 564,95 578,95"/>
               <path class="sv-arrow" d="M534,141 C556,141 564,106 578,98"/>
@@ -504,11 +486,9 @@
               went into an annotation plan rather than a bigger model.
             </figcaption>
           </figure>
-          <ul class="chips"><li>Python</li><li>Segmentation</li><li>Morphometry</li></ul>
         </div>
       </article>
 
-      <!-- registry -->
       <article class="job up">
         <div class="idx">06</div>
         <div>
@@ -520,39 +500,27 @@
             are unglamorous and they are the ground everything else stands on. No
             registry, no cohort, no model.
           </p>
-
-          <figure class="fig up">
+          <figure class="fig">
             <svg viewBox="0 0 640 168" role="img" aria-label="Hospital records, pathology and imaging reports are coded to ICD-11 and anonymised into a registry that feeds surveillance and machine learning exports">
               <text class="sv-s" x="8" y="14">SOURCES</text>
-              <rect class="sv-box" x="8" y="24" width="112" height="28" rx="6"/>
-              <text class="sv-t" x="20" y="42">Hospital records</text>
-              <rect class="sv-box" x="8" y="58" width="112" height="28" rx="6"/>
-              <text class="sv-t" x="20" y="76">Pathology</text>
-              <rect class="sv-box" x="8" y="92" width="112" height="28" rx="6"/>
-              <text class="sv-t" x="20" y="110">Imaging reports</text>
-
+              <rect class="sv-box" x="8" y="24" width="112" height="28" rx="6"/><text class="sv-t" x="20" y="42">Hospital records</text>
+              <rect class="sv-box" x="8" y="58" width="112" height="28" rx="6"/><text class="sv-t" x="20" y="76">Pathology</text>
+              <rect class="sv-box" x="8" y="92" width="112" height="28" rx="6"/><text class="sv-t" x="20" y="110">Imaging reports</text>
               <path class="sv-arrow" d="M124,38 C150,38 158,66 184,72"/>
               <path class="sv-arrow" d="M124,72 C150,72 160,74 184,76"/>
               <path class="sv-arrow" d="M124,106 C150,106 160,86 184,80"/>
-
               <rect class="sv-box-a" x="188" y="50" width="118" height="52" rx="8"/>
-              <text class="sv-ta" x="200" y="72">ICD-11 coding</text>
-              <text class="sv-s" x="200" y="87">and anonymising</text>
-
+              <text class="sv-ta" x="200" y="72">ICD-11 coding</text><text class="sv-s" x="200" y="87">and anonymising</text>
               <path class="sv-arrow" d="M310,76 L346,76"/>
               <rect class="sv-box-a" x="350" y="44" width="120" height="64" rx="8"/>
               <text class="sv-ta" x="364" y="68">Registry</text>
-              <text class="sv-s" x="364" y="83">9,300+ records</text>
-              <text class="sv-s" x="364" y="97">10+ cancer types</text>
-
+              <text class="sv-s" x="364" y="83">9,300+ records</text><text class="sv-s" x="364" y="97">10+ cancer types</text>
               <path class="sv-arrow" d="M474,60 C498,60 506,50 524,48"/>
               <path class="sv-arrow" d="M474,92 C498,92 506,102 524,104"/>
               <rect class="sv-box" x="528" y="30" width="106" height="38" rx="6"/>
-              <text class="sv-t" x="540" y="47">Surveillance</text>
-              <text class="sv-s" x="540" y="60">cross institution</text>
+              <text class="sv-t" x="540" y="47">Surveillance</text><text class="sv-s" x="540" y="60">cross institution</text>
               <rect class="sv-box" x="528" y="86" width="106" height="38" rx="6"/>
-              <text class="sv-t" x="540" y="103">ML training</text>
-              <text class="sv-s" x="540" y="116">cohort export</text>
+              <text class="sv-t" x="540" y="103">ML training</text><text class="sv-s" x="540" y="116">cohort export</text>
             </svg>
             <figcaption>
               ICD-11 has no clean crosswalk from ICD-10 for several oncology
@@ -561,32 +529,181 @@
               coding step on purpose.
             </figcaption>
           </figure>
-          <ul class="chips"><li>TypeScript</li><li>ICD-11, UMLS</li><li>Paper under review</li></ul>
         </div>
       </article>
 
-      <div class="up" style="margin-top:2.5rem">
-        <p class="kicker" style="margin-bottom:1rem">Also moving</p>
+      <div class="up" style="margin-top:2.4rem">
+        <p class="kicker" style="margin-bottom:.9rem">Also moving</p>
         <ul class="rows">
-          <li><span class="n">Cardiac signal analysis</span>
-              <span class="m">Provisional patent filed in India. Basis of a proposed collaboration with Khalifa University.</span></li>
-          <li><span class="n">Wearable recovery dynamics</span>
-              <span class="m">Capacity limited physiological resilience, with Prof. Mohamed Elgendi. Paper in revision.</span></li>
-          <li><span class="n">Retinal health models</span>
-              <span class="m">Ophthalmic imaging. Private.</span></li>
-          <li><span class="n">Spaceflight brain transcriptomics</span>
-              <span class="m">Full re-analysis of NASA OSDR cerebellum and hippocampus RNA-seq.</span></li>
-          <li><span class="n">Clinical translation LLMs</span>
-              <span class="m">Hindi, Indonesian and Malay, with Prof. Irene Li at the University of Tokyo.</span></li>
-          <li><a class="n" href="https://huggingface.co/datasets/li-lab/HealMed" rel="noopener">HealMed dataset</a>
-              <span class="m">Medical data manager and evaluator. Indian, Malaysian and Igbo clinical notes, annotated with practising clinicians.</span></li>
+          <li><span class="n">Cardiac signal analysis</span><span class="m">Provisional patent filed in India. Basis of a proposed collaboration with Khalifa University.</span></li>
+          <li><span class="n">Wearable recovery dynamics</span><span class="m">Capacity limited physiological resilience, with Prof. Mohamed Elgendi. Paper in revision.</span></li>
+          <li><span class="n">Retinal health models</span><span class="m">Ophthalmic imaging. Private.</span></li>
+          <li><span class="n">Spaceflight brain transcriptomics</span><span class="m">Full re-analysis of NASA OSDR cerebellum and hippocampus RNA-seq.</span></li>
+          <li><span class="n">Clinical translation LLMs</span><span class="m">Hindi, Indonesian and Malay, with Prof. Irene Li at the University of Tokyo.</span></li>
+          <li><a class="n" href="https://huggingface.co/datasets/li-lab/HealMed" rel="noopener">HealMed dataset</a><span class="m">Medical data manager and evaluator. Indian, Malaysian and Igbo clinical notes, annotated with practising clinicians.</span></li>
         </ul>
-        <p class="m" style="color:var(--ink-3);font-size:.9rem;margin-top:1.4rem;max-width:56ch">
-          My GitHub is working scratch. Prototypes and dead branches, not finished
-          software. The real systems are private. Ask me and I will walk you through
-          the code directly.
-        </p>
       </div>
+    </div>
+  </section>
+
+  <!-- ================= CODE ================= -->
+  <section class="band" id="code">
+    <div class="shell">
+      <div class="band-head up">
+        <p class="kicker">Code</p>
+        <h2 class="mid">Twenty something repositories. Most of them are private for a reason.</h2>
+      </div>
+
+      <div class="repo-group up">
+        <h3>Screening and neuro</h3>
+        <div class="repos">
+          <div class="repo">
+            <p class="rn">clear-mind-ai</p>
+            <p class="rd">Zero Dementia web client. Assessment flow, session handling and the clinician facing result view.</p>
+            <p class="rm"><span class="lang">TypeScript</span><span class="vis">Private</span></p>
+          </div>
+          <div class="repo">
+            <p class="rn">zerodem</p>
+            <p class="rd">Mobile capture app for the screening battery. Records the voice, video and tapping tasks on device.</p>
+            <p class="rm"><span class="lang">Dart</span><span class="vis">Private</span></p>
+          </div>
+          <div class="repo">
+            <p class="rn">alzheimer_ai</p>
+            <p class="rd">Model work for the neurodegeneration side. Training and evaluation for the cognitive risk models.</p>
+            <p class="rm"><span class="lang">Python</span><span class="vis">Private</span></p>
+          </div>
+          <a class="repo" href="https://github.com/isararsiddique/Neuro-AI" rel="noopener">
+            <p class="rn">Neuro-AI</p>
+            <p class="rd">Earlier public front end for the neuro assessment interface.</p>
+            <p class="rm"><span class="lang">TypeScript</span><span class="vis pub">Public</span></p>
+          </a>
+          <a class="repo" href="https://github.com/isararsiddique/neuro-ai-backend" rel="noopener">
+            <p class="rn">neuro-ai-backend</p>
+            <p class="rd">Inference and scoring service behind the neuro front end.</p>
+            <p class="rm"><span class="lang">Python</span><span class="vis pub">Public</span></p>
+          </a>
+        </div>
+      </div>
+
+      <div class="repo-group up">
+        <h3>Ophthalmology</h3>
+        <div class="repos">
+          <div class="repo">
+            <p class="rn">corneal-endothelium-analysis</p>
+            <p class="rd">Automated endothelial cell analysis from specular microscopy. Density, polymegathism, pleomorphism, plus an accuracy audit and annotation plan. Patent filed.</p>
+            <p class="rm"><span class="lang">Python</span><span class="vis">Private</span></p>
+          </div>
+          <div class="repo">
+            <p class="rn">RetinalHealthAI</p>
+            <p class="rd">Retinal imaging models for disease detection from fundus images.</p>
+            <p class="rm"><span class="lang">Python</span><span class="vis">Private</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="repo-group up">
+        <h3>Cancer informatics</h3>
+        <div class="repos">
+          <div class="repo">
+            <p class="rn">cancer-registry-platform</p>
+            <p class="rd">The Universiti Malaya Medical Centre cancer registry platform. ICD-11 coding, anonymisation and multi institution governance.</p>
+            <p class="rm"><span class="lang">TypeScript</span><span class="vis">Private</span></p>
+          </div>
+          <div class="repo">
+            <p class="rn">registery-ai</p>
+            <p class="rd">AI layer over the registry. Coding assistance and record normalisation.</p>
+            <p class="rm"><span class="lang">TypeScript</span><span class="vis">Private</span></p>
+          </div>
+          <div class="repo">
+            <p class="rn">REGISTRY-ML</p>
+            <p class="rd">Model training and cohort export against registry data.</p>
+            <p class="rm"><span class="vis">Private</span></p>
+          </div>
+          <a class="repo" href="https://github.com/isararsiddique/cancer-back" rel="noopener">
+            <p class="rn">cancer-back</p>
+            <p class="rd">Registry API and data services.</p>
+            <p class="rm"><span class="lang">Python</span><span class="vis pub">Public</span></p>
+          </a>
+          <a class="repo" href="https://github.com/isararsiddique/cancer-front" rel="noopener">
+            <p class="rn">cancer-front</p>
+            <p class="rd">Registry web interface for data entry and review.</p>
+            <p class="rm"><span class="lang">TypeScript</span><span class="vis pub">Public</span></p>
+          </a>
+          <a class="repo" href="https://github.com/isararsiddique/onco-data-hub" rel="noopener">
+            <p class="rn">onco-data-hub</p>
+            <p class="rd">Oncology data aggregation layer.</p>
+            <p class="rm"><span class="lang">TypeScript</span><span class="vis pub">Public</span></p>
+          </a>
+        </div>
+      </div>
+
+      <div class="repo-group up">
+        <h3>Computational biology</h3>
+        <div class="repos">
+          <div class="repo">
+            <p class="rn">OSD-561-562-brain-transcriptomics</p>
+            <p class="rd">Full re-analysis of NASA OSDR spaceflight brain RNA-seq. Cerebellum and hippocampus, PCA, all contrast DEG landscape, extracellular vesicle and neuroinflammation panel.</p>
+            <p class="rm"><span class="lang">Python</span><span class="vis">Private</span></p>
+          </div>
+          <a class="repo" href="https://github.com/isararsiddique/AfDesign-PeptideBinder" rel="noopener">
+            <p class="rn">AfDesign-PeptideBinder</p>
+            <p class="rd">8-mer peptide binder against 5-hydroxyisourate hydrolase (PDB 2H6U_A) using AlphaFold based AfDesign, with pLDDT analysis and mutation sampling.</p>
+            <p class="rm"><span class="lang">Jupyter</span><span class="vis pub">Public</span></p>
+          </a>
+          <a class="repo" href="https://github.com/isararsiddique/SysBio-DiseaseNetwork" rel="noopener">
+            <p class="rn">SysBio-DiseaseNetwork</p>
+            <p class="rd">Comparative protein interaction networks across Alzheimer's, type 2 diabetes and NAFLD. Hub bottleneck genes APOE, INS and LEP by centrality and clustering.</p>
+            <p class="rm"><span class="lang">Jupyter</span><span class="vis pub">Public</span></p>
+          </a>
+          <a class="repo" href="https://github.com/isararsiddique/nanoform-ai" rel="noopener">
+            <p class="rn">nanoform-ai</p>
+            <p class="rd">Nanoformulation modelling work, following on from the fermentation paper.</p>
+            <p class="rm"><span class="lang">TypeScript</span><span class="vis pub">Public</span></p>
+          </a>
+        </div>
+      </div>
+
+      <div class="repo-group up">
+        <h3>Platforms and hardware</h3>
+        <div class="repos">
+          <div class="repo">
+            <p class="rn">care-flow</p>
+            <p class="rd">Clinical workflow and coordination tooling.</p>
+            <p class="rm"><span class="lang">TypeScript</span><span class="vis">Private</span></p>
+          </div>
+          <div class="repo">
+            <p class="rn">cdce</p>
+            <p class="rd">Clinical data capture and extraction service.</p>
+            <p class="rm"><span class="lang">Python</span><span class="vis">Private</span></p>
+          </div>
+          <div class="repo">
+            <p class="rn">aura</p>
+            <p class="rd">Product surface for the personalised health work.</p>
+            <p class="rm"><span class="lang">TypeScript</span><span class="vis">Private</span></p>
+          </div>
+          <a class="repo" href="https://github.com/isararsiddique/med-platform-pro" rel="noopener">
+            <p class="rn">med-platform-pro</p>
+            <p class="rd">Medical platform scaffold used across several of the clinical products.</p>
+            <p class="rm"><span class="lang">TypeScript</span><span class="vis pub">Public</span></p>
+          </a>
+          <a class="repo" href="https://github.com/isararsiddique/iit-bhubneshwar-redmud" rel="noopener">
+            <p class="rn">iit-bhubneshwar-redmud</p>
+            <p class="rd">ESP32 sensing rig tracking NPK, pH and moisture in highly alkaline red mud soil, built at IIT Bhubaneswar. My first hardware project.</p>
+            <p class="rm"><span class="lang">Python</span><span class="vis pub">Public</span></p>
+          </a>
+          <a class="repo" href="https://github.com/isararsiddique/interview" rel="noopener">
+            <p class="rn">interview</p>
+            <p class="rd">Meeting copilot backend. Transcription, summarisation and session state.</p>
+            <p class="rm"><span class="lang">TypeScript</span><span class="vis pub">Public</span></p>
+          </a>
+        </div>
+      </div>
+
+      <p class="up" style="color:var(--ink-3);font-size:.9rem;max-width:60ch;margin-top:.5rem">
+        Private repositories are private because of clinical data agreements, patents
+        in progress or unpublished results. Ask and I will walk you through any of
+        them directly.
+      </p>
     </div>
   </section>
 
@@ -600,7 +717,7 @@
           thinks one of these models is wrong, in which case I especially want to hear
           it, because that conversation is worth more than another paper.
         </p>
-        <p style="margin-top:1.8rem">
+        <p style="margin-top:1.7rem">
           <a class="mailto" href="mailto:isararsiddique@gmail.com">isararsiddique@gmail.com</a>
         </p>
       </div>

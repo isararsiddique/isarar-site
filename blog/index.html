@@ -4,13 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Writing, Isarar Siddique</title>
-<meta name="description" content="Essays by Isarar Siddique on building AI for clinical medicine, research access, and what breaks along the way.">
+<meta name="description" content="Isarar Siddique on building clinical AI that survives contact with real hospitals, and on getting into rooms you were never invited to.">
 <link rel="canonical" href="https://isarar.com/blog/">
+<meta name="theme-color" content="#f8f6f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0b0d" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="/style.css">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Writing, Isarar Siddique">
-<meta property="og:description" content="Essays on building AI for clinical medicine, research access, and what breaks along the way.">
+<meta property="og:description" content="On building clinical AI that survives contact with real hospitals.">
 <meta property="og:url" content="https://isarar.com/blog/">
+<meta property="og:image" content="https://isarar.com/isarar-900.jpg">
+
+<script>
+(function(){try{var t=localStorage.getItem("theme");
+if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
 
 <script type="application/ld+json">
 {
@@ -19,43 +27,61 @@
   "@id": "https://isarar.com/blog/#blog",
   "url": "https://isarar.com/blog/",
   "name": "Writing, Isarar Siddique",
-  "description": "Essays on building AI for clinical medicine, research access, and what breaks along the way.",
+  "description": "On building clinical AI that survives contact with real hospitals.",
   "author": { "@id": "https://isarar.com/#person" },
+  "publisher": { "@id": "https://isarar.com/#person" },
   "inLanguage": "en"
 }
 </script>
 </head>
 <body>
+<div id="bar"></div>
+<div id="dot" aria-hidden="true"></div>
 <a class="skip" href="#main">Skip to content</a>
 
-<nav class="nav" aria-label="Primary">
-  <div class="wrap">
-    <a class="mark" href="/">Isarar Siddique</a>
-    <a href="/#about">About</a>
-    <a href="/blog/">Writing</a>
-    <a href="/#work">Work</a>
+<header class="top">
+  <div class="shell">
+    <a class="who" href="/">Isarar Siddique</a>
+    <nav aria-label="Primary">
+      <a href="/#work">Work</a>
+      <a href="/#code">Code</a>
+      <a href="/blog/">Writing</a>
+    </nav>
+    <button id="theme" type="button" aria-label="Switch theme">
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a7 7 0 0 0 11.1 11.1z"/></svg>
+    </button>
   </div>
-</nav>
+</header>
 
 <main id="main">
-  <header class="hero">
-    <div class="wrap stagger">
-      <h1>Writing</h1>
-      <p class="lede">Notes on building clinical AI that has to survive contact with
-        actual hospitals, plus the occasional post about getting into rooms I
-        was never invited to.</p>
+  <section class="b-hero">
+    <div class="shell">
+      <h1 data-split>Writing</h1>
+      <p>
+        Notes on building clinical AI that has to survive contact with actual
+        hospitals, plus the occasional post about getting into rooms I was never
+        invited to.
+      </p>
     </div>
-  </header>
+  </section>
 
-  <section class="section">
-    <div class="wrap">
-      <ul class="posts reveal">
+  <section class="band" style="padding-top:1.5rem">
+    <div class="shell">
+      <ul class="feed up">
         <li>
           <a href="/blog/cold-emailing-into-research-labs/">
-            <p class="t">How I cold-emailed my way into eleven research labs</p>
-            <p class="d"><time datetime="2026-08-16">16 August 2026</time> · 8 min</p>
-            <p class="x">No application portals, no referrals, no pedigree. What actually
-              moved the reply rate from zero to roughly one in six.</p>
+            <span class="when"><time datetime="2026-08-16">16 Aug 2026</time></span>
+            <span>
+              <span class="ft">How I cold-emailed my way into eleven research labs</span>
+              <p class="fx">
+                No application portals, no referrals, no pedigree. The first fifty
+                emails got me nothing. Here is the single change that took the reply
+                rate to roughly one in six, and why the same move later got me
+                hospitals.
+              </p>
+              <span class="read">8 min read</span>
+            </span>
           </a>
         </li>
       </ul>
@@ -64,8 +90,9 @@
 </main>
 
 <footer>
-  <div class="wrap">
-    <p><a href="/">← Back home</a></p>
+  <div class="shell">
+    <p><a class="back" href="/">Back home</a></p>
+    <p>Isarar Siddique, Lucknow</p>
   </div>
 </footer>
 
