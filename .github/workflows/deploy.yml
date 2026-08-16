@@ -1,0 +1,110 @@
+name: Deploy isarar.com
+
+# Push to main and the site goes live. No manual step.
+#
+# Two repository secrets are required:
+#   CF_API_TOKEN   Cloudflare token with Workers KV Storage:Edit and Cache Purge:Purge
+#   CF_ACCOUNT_ID  Cloudflare account id
+#
+# How it works: the Worker reads the current commit SHA from a KV key instead of
+# having the SHA baked in. This job rebuilds the generated files, commits any
+# changes, then writes the new SHA to KV and purges the edge cache. Content is
+# served from an immutable SHA URL, so it can be cached hard and still update
+# instantly.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-isarar
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+env:
+  KV_NAMESPACE_ID: 49e602c2752042328f7b041d3e641a1d
+  CF_ZONE_ID: eb390dfb9df18aa4c13203646778d7a7
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Regenerate sitemap, feed, llms.txt and JSON endpoints
+        run: python3 build.py
+
+      - name: Commit regenerated files if they changed
+        id: regen
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore: regenerate metadata [skip ci]"
+            git push
+            echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          else
+            echo "sha=${GITHUB_SHA}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Validate before publishing
+        run: |
+          python3 - <<'PY'
+          import glob, json, re, sys
+          import xml.dom.minidom as minidom
+          bad = 0
+          for f in ['sitemap.xml', 'feed.xml']:
+              minidom.parse(f)
+          for f in glob.glob('api/*.json') + ['.well-known/agent.json', 'posts.json']:
+              json.load(open(f))
+          for f in glob.glob('**/*.html', recursive=True):
+              s = open(f, encoding='utf-8').read()
+              for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>', s, re.S):
+                  try:
+                      json.loads(b)
+                  except json.JSONDecodeError as e:
+                      print(f'{f}: invalid JSON-LD: {e}'); bad = 1
+              if '\u2014' in s or '\u2013' in s:
+                  print(f'{f}: contains an em or en dash'); bad = 1
+          sys.exit(bad)
+          PY
+
+      - name: Point the Worker at this commit
+        run: |
+          curl -sS --fail-with-body -X PUT \
+            "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CF_ACCOUNT_ID }}/storage/kv/namespaces/${KV_NAMESPACE_ID}/values/current_sha" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" \
+            -F "value=${{ steps.regen.outputs.sha }}" \
+            -F 'metadata={}' | head -c 300
+          echo
+
+      - name: Purge the edge cache
+        run: |
+          curl -sS --fail-with-body -X POST \
+            "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}' | head -c 300
+          echo
+
+      - name: Confirm it is live
+        run: |
+          sleep 12
+          for path in / /blog/ /llms.txt /api/posts.json /.well-known/agent.json; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "https://isarar.com${path}")
+            build=$(curl -sI "https://isarar.com${path}" | tr -d '\r' | awk '/^x-build:/{print $2}')
+            printf '%-30s %s  build=%s\n' "$path" "$code" "$build"
+            [ "$code" = "200" ] || exit 1
+          done

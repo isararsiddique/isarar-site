@@ -1,0 +1,8 @@
+Contact: mailto:isararsiddique@gmail.com
+Expires: 2027-08-17T00:00:00.000Z
+Preferred-Languages: en, hi
+Canonical: https://isarar.com/.well-known/security.txt
+Policy: https://isarar.com/llms.txt
+
+# This is a static personal site with no user accounts, no forms and no
+# stored data. If you find something anyway, please email me.

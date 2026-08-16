@@ -1,0 +1,61 @@
+{
+  "site": {
+    "name": "Isarar Siddique",
+    "url": "https://isarar.com",
+    "author": "Isarar Siddique",
+    "email": "isararsiddique@gmail.com",
+    "description": "Founder and medical AI researcher working across published research and shipped clinical product.",
+    "language": "en",
+    "location": "Lucknow, Uttar Pradesh, India"
+  },
+  "posts": [
+    {
+      "slug": "the-booth-is-the-cost",
+      "title": "The booth is the cost",
+      "date": "2026-08-17",
+      "time": "09:00:00",
+      "readMinutes": 7,
+      "section": "Medical devices",
+      "image": "og-booth.jpg",
+      "summary": "A hearing test is one of the cheapest procedures in medicine, so why does almost nobody in rural India get one? The answer is the room, not the test. What has to be true before you can delete the sound booth.",
+      "aiSummary": "Explains that audiometric screening is gated by two independent requirements: a low enough ambient noise floor, and a transducer with known output level. The sound treated booth solves the first, coupler calibration of a clinical audiometer solves the second. Argues both can move into a mass produced headphone plus on device noise measurement, which removes the booth as the entry cost to hearing screening.",
+      "tags": ["audiometry", "hearing screening", "medical devices", "calibration", "global health", "India"]
+    },
+    {
+      "slug": "a-clinician-who-cannot-see-why",
+      "title": "A clinician who cannot see why will not act",
+      "date": "2026-08-17",
+      "time": "08:00:00",
+      "readMinutes": 8,
+      "section": "Clinical AI",
+      "image": "og-fusion.jpg",
+      "summary": "I had a screening model that scored better than the one we deployed. I threw it away. On buying attribution with accuracy, and why explainability is an architectural constraint rather than a research topic you add later.",
+      "aiSummary": "Describes replacing a higher performing early fusion model with late fusion in a multimodal dementia screening system. Early fusion concatenates features and can model cross modal interactions but cannot produce per modality attribution. Late fusion scores each of four signals separately then combines, costing accuracy but producing a story a clinician can act on. Downstream benefits: local failure handling, graceful degradation with missing data, and clinicians correcting the model.",
+      "tags": ["explainable AI", "multimodal fusion", "clinical AI", "screening", "deployment", "late fusion"]
+    },
+    {
+      "slug": "icd-11-has-no-clean-map",
+      "title": "ICD-11 has no clean map from ICD-10",
+      "date": "2026-08-17",
+      "time": "07:00:00",
+      "readMinutes": 9,
+      "section": "Clinical informatics",
+      "image": "og-icd.jpg",
+      "summary": "Coding is where health data quality is silently won or lost, long before anybody trains a model on it. Four migration cases, three of which need a clinician, and why we kept a human in the loop on purpose.",
+      "aiSummary": "Explains why an ICD-10 to ICD-11 cancer registry migration is not a lookup table. ICD-11 uses a foundation with linearisations and supports postcoordination via stem codes plus extension codes. Four mapping cases arise: one to one is automatable, one to many requires detail the old record may lack, many to one destroys distinctions that time series depended on, and no direct equivalent requires clinical judgement. Argues for automating only the provably unambiguous and storing every coding decision with its basis so incidence trends can be audited.",
+      "tags": ["ICD-11", "ICD-10", "cancer registry", "clinical informatics", "health data", "interoperability"]
+    },
+    {
+      "slug": "cold-emailing-into-research-labs",
+      "title": "How I cold-emailed my way into eleven research labs",
+      "date": "2026-08-16",
+      "time": "09:00:00",
+      "readMinutes": 8,
+      "section": "Research",
+      "image": "og-email.jpg",
+      "summary": "No application portals, no referrals, no pedigree. The first fifty emails got me nothing. Here is the single change that took the reply rate to roughly one in six.",
+      "aiSummary": "Describes reaching eleven research labs including Harvard, Stanford, NASA GeneLab, University of Tokyo, ISRO and IISc without application portals. The first fifty emails asking for internships got zero replies because they ask the recipient to do work. Switching to a specific proposal, drawn from a gap in the professor's own discussion section or an underanalysed published dataset, with a concrete two week deliverable, raised the reply rate to roughly one in six. The same approach later secured hospital partners by building screening infrastructure first and asking clinicians to critique it.",
+      "tags": ["cold email", "research access", "academia", "undergraduate research", "careers"]
+    }
+  ]
+}

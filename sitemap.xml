@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
     <loc>https://isarar.com/</loc>
@@ -11,7 +10,6 @@
     <image:image>
       <image:loc>https://isarar.com/isarar-900.jpg</image:loc>
       <image:title>Isarar Siddique</image:title>
-      <image:caption>Isarar Siddique, founder and medical AI researcher based in Lucknow, India</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://isarar.com/og-home.jpg</image:loc>
@@ -34,7 +32,7 @@
     <image:image>
       <image:loc>https://isarar.com/og-booth.jpg</image:loc>
       <image:title>The booth is the cost</image:title>
-      <image:caption>Why hearing screening is limited by the sound treated room rather than the test itself</image:caption>
+      <image:caption>A hearing test is one of the cheapest procedures in medicine, so why does almost nobody in rural India get one? The answer is the room, not the test. What has to be true before you</image:caption>
     </image:image>
   </url>
 
@@ -46,7 +44,7 @@
     <image:image>
       <image:loc>https://isarar.com/og-fusion.jpg</image:loc>
       <image:title>A clinician who cannot see why will not act</image:title>
-      <image:caption>Late fusion versus early fusion in a clinical screening model, and the accuracy paid for attribution</image:caption>
+      <image:caption>I had a screening model that scored better than the one we deployed. I threw it away. On buying attribution with accuracy, and why explainability is an architectural constraint rat</image:caption>
     </image:image>
   </url>
 
@@ -58,7 +56,7 @@
     <image:image>
       <image:loc>https://isarar.com/og-icd.jpg</image:loc>
       <image:title>ICD-11 has no clean map from ICD-10</image:title>
-      <image:caption>The four mapping cases in a cancer registry migration from ICD-10 to ICD-11</image:caption>
+      <image:caption>Coding is where health data quality is silently won or lost, long before anybody trains a model on it. Four migration cases, three of which need a clinician, and why we kept a huma</image:caption>
     </image:image>
   </url>
 
@@ -66,11 +64,11 @@
     <loc>https://isarar.com/blog/cold-emailing-into-research-labs/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://isarar.com/og-email.jpg</image:loc>
       <image:title>How I cold-emailed my way into eleven research labs</image:title>
-      <image:caption>Moving a cold email reply rate from zero to roughly one in six</image:caption>
+      <image:caption>No application portals, no referrals, no pedigree. The first fifty emails got me nothing. Here is the single change that took the reply rate to roughly one in six.</image:caption>
     </image:image>
   </url>
 

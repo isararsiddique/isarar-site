@@ -1,0 +1,59 @@
+{
+  "name": "Isarar Siddique",
+  "description": "Public profile and writing of Isarar Siddique, founder and medical AI researcher. Read only.",
+  "url": "https://isarar.com",
+  "provider": {
+    "organization": "Isarar Siddique",
+    "url": "https://isarar.com"
+  },
+  "version": "1.0.0",
+  "documentationUrl": "https://isarar.com/llms.txt",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "skills": [
+    {
+      "id": "profile",
+      "name": "Read profile",
+      "description": "Identity, companies, roles, research and publications as JSON.",
+      "tags": [
+        "profile",
+        "identity"
+      ],
+      "examples": [
+        "https://isarar.com/api/profile.json"
+      ]
+    },
+    {
+      "id": "posts",
+      "name": "List writing",
+      "description": "Index of essays with summaries written for machine reading.",
+      "tags": [
+        "blog",
+        "essays"
+      ],
+      "examples": [
+        "https://isarar.com/api/posts.json"
+      ]
+    },
+    {
+      "id": "fulltext",
+      "name": "Read full text",
+      "description": "Complete plain text of every essay in one file.",
+      "tags": [
+        "fulltext"
+      ],
+      "examples": [
+        "https://isarar.com/llms-full.txt"
+      ]
+    }
+  ]
+}

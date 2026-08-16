@@ -1,0 +1,715 @@
+# Isarar Siddique, full text
+
+Source: https://isarar.com  ·  Author: Isarar Siddique  ·  Contact: isararsiddique@gmail.com
+Every post below is reproduced in full for machine reading.
+
+==========================================================================
+
+## The booth is the cost
+
+URL: https://isarar.com/blog/the-booth-is-the-cost/
+Published: 2026-08-17   Section: Medical devices
+Tags: audiometry, hearing screening, medical devices, calibration, global health, India
+
+Home / Writing
+The booth is the cost
+17 August 2026  ·  7 min read
+
+
+Hearing screening is gated by the sound treated room, not by the test.
+
+
+
+
+A hearing test is one of the cheapest diagnostic procedures in medicine. You play
+a tone, the patient raises a hand, you write down the quietest level they heard.
+The information content is tiny. A trained person can run a screening in ten
+minutes.
+
+
+
+So why does almost nobody in rural India get one?
+
+
+
+Because the test is cheap and the room is not. To produce a threshold you can put
+in a chart, you need a sound treated booth, a calibrated clinical audiometer and
+somebody trained to run both. That bundle is a capital purchase and a permanent
+floor plan commitment, which means it lives in district hospitals and private
+clinics in cities. The patient has to travel to the room. Most never do, and by
+the time they arrive the loss is bad enough that they noticed it themselves,
+which is exactly the point at which screening stops being useful.
+
+
+
+The bottleneck in hearing screening is not the test. It is the room the test has
+to happen in.
+
+
+Why the room exists
+
+
+The booth is not there for comfort. It is there because of arithmetic.
+
+
+
+When you measure a hearing threshold you are looking for the quietest sound a
+person can detect. For normal hearing that can be around zero decibels hearing
+level, which is a genuinely tiny amount of acoustic energy. If the room has
+ambient noise at the same frequencies, that noise masks the tone and the
+threshold you record is the room's, not the patient's.
+
+
+
+Standards bodies put numbers on this. There are published maximum permissible
+ambient noise levels for audiometric test rooms, specified per frequency band and
+varying by how low you need to test and whether you are using supra-aural
+headphones, insert earphones or a free field. The booth is simply the cheapest
+reliable way to hit those numbers in a building that was not designed for it.
+
+
+
+So the booth is doing one job: making the noise floor low enough that a quiet tone
+is still measurable. Once you see it that way, it stops being sacred and starts
+being one solution to a specific constraint.
+
+
+The second thing the booth is hiding
+
+
+There is a subtler reason clinical audiometry is locked to expensive equipment, and
+it took me a while to appreciate it properly.
+
+
+
+Decibels hearing level is not a physical unit. It is defined relative to a
+reference threshold for normal hearing, and that reference is
+transducer specific . A given supra-aural headphone and a given insert
+earphone need different sound pressure levels at the eardrum to produce what the
+standard calls zero. Those reference values are published per transducer type, and
+a clinical audiometer is trusted because it has been calibrated against them, with
+a coupler, on a schedule.
+
+
+
+This is the real reason you cannot just play tones through consumer earbuds and
+call it an audiogram. The output level at any given digital volume is unknown, it
+varies between units, it varies with fit, and it drifts. You would be producing
+numbers with the shape of an audiogram and none of the meaning.
+
+
+
+
+
+Two independent requirements. The booth and the clinical audiometer are one
+historical answer to them. They are not the only possible answer.
+
+
+
+What we are actually building
+
+
+At Neurento the bet is that both requirements can move into the device.
+
+
+
+The calibration half is tractable because it is a manufacturing problem rather
+than a clinical one. If you control the transducer, and you characterise that
+exact model properly once, then every unit coming off the line inherits a known
+relationship between digital level and output level. You are not calibrating in
+the field. You are shipping a device whose output is already known, and verifying
+rather than establishing.
+
+
+
+The ambient noise half is more interesting, because you cannot make a school
+corridor quiet. What you can do is stop pretending you do not know how loud it is.
+A microphone on the device can measure the noise floor per frequency band during
+the test. From there you have honest options. You can raise the lowest testable
+level and report that you did. You can wait for a quiet interval. You can mark a
+frequency as untested rather than reporting a threshold you cannot defend.
+
+
+
+That last one matters more than it sounds. A screening tool that says I could
+not test 500 hertz in this room is far more useful than one that quietly
+returns a bad number. The failure mode of cheap diagnostics is not usually
+imprecision. It is confident imprecision.
+
+
+What this is not
+
+
+It is not a replacement for diagnostic audiometry. A booth and an audiologist
+produce a clinical audiogram, and there are decisions, hearing aid fitting among
+them, that should keep depending on that.
+
+
+
+What we are going after is the tier below, which currently does not exist for most
+people. Screening. A yes or no on whether this person needs to see someone, done
+in a room that already exists, by someone who is already there. If that works, the
+booth stops being the entry price to the entire field and becomes what you escalate
+to.
+
+
+Why I care about this specific problem
+
+
+I came at hearing from the wrong direction. My screening work started in cognition,
+and the clinical trial for it runs across two departments, ENT and Neurology, which
+surprised people when I described it.
+
+
+
+It stopped surprising me once I read the literature. Hearing loss and cognitive
+decline travel together far more often than either field tends to emphasise, and
+the causal story is still argued over. What is not argued over is that untreated
+hearing loss is common, cheap to detect in principle, and routinely missed.
+
+
+
+A dementia screening programme that ignores hearing is measuring a confounder and
+calling it a finding. That is what pushed me from software into transducers. I got
+tired of writing models that inherit whatever the sensor decided to give them.
+
+
+
+
+If you work in audiology, acoustics or device calibration and you think this is
+naive, I would genuinely like to hear where.
+isararsiddique@gmail.com
+
+==========================================================================
+
+## A clinician who cannot see why will not act
+
+URL: https://isarar.com/blog/a-clinician-who-cannot-see-why/
+Published: 2026-08-17   Section: Clinical AI
+Tags: explainable AI, multimodal fusion, clinical AI, screening, deployment, late fusion
+
+Home / Writing
+A clinician who cannot see why will not act
+17 August 2026  ·  8 min read
+
+
+Four signals scored separately, so the output can name what drove it.
+
+
+
+
+Early in the dementia screening work I had a model that performed better than the
+one we ended up deploying. I threw it away. This is the post I wish someone had
+written for me before I built it.
+
+
+The setup
+
+
+The screening battery collects four things in one sitting on a phone. A spoken
+passage. Video of the face during prompted expression. A fine motor tapping task.
+A short cognitive test. Each of those carries some signal about early cognitive
+decline, and none of them carries enough on its own.
+
+
+
+The obvious move is to concatenate. Pull features from every stream, stack them
+into one long vector, train a single model on the whole thing. This is early
+fusion, and it usually wins on paper, because the model gets to learn interactions
+between modalities directly. If a particular vocal hesitation only matters when it
+co-occurs with a particular tapping irregularity, early fusion can find that.
+Scoring each stream separately cannot.
+
+
+
+So I built that. It was better. And it was unusable.
+
+
+What happened in the room
+
+
+We sat with clinicians and walked through outputs. The model produced a risk score.
+A doctor looked at a case, saw an elevated score, and asked the only question that
+matters in that setting.
+
+
+
+Why does it think that?
+
+
+
+With a concatenated feature vector the honest answer is a shrug dressed up in
+attribution methods. I could produce saliency over the input vector. I could run
+the usual attribution tooling and get numbers per feature. But the features were
+engineered, cross modal, and not individually meaningful to a person who thinks in
+terms of this patient's speech is off or this patient's motor control
+is off .
+
+
+
+And here is the part that took me longer to accept than it should have. That
+doctor was not being obstructive. They were being correct. A screening result is
+not a verdict. It is a request to a busy clinician to spend a scarce resource,
+which is their attention and the patient's follow up appointment. Nobody spends
+that on a number with no story attached.
+
+
+Late fusion, and what it costs
+
+
+So we restructured. Each modality gets scored independently. Speech produces a
+speech score. Motor produces a motor score. The combination happens at the end,
+over interpretable per modality outputs rather than raw features.
+
+
+
+
+
+The trade is real. Early fusion can model cross modal interactions that late
+fusion cannot see. You are buying attribution with accuracy.
+
+
+
+
+I want to be straight about the cost, because a lot of writing on explainability
+pretends there is no trade. There is. Late fusion gave up some performance. Cross
+modal interaction effects are real and my architecture can no longer represent
+most of them.
+
+
+
+What it bought was a sentence. This score is driven mainly by speech timing and
+motor variability, with the cognitive battery in normal range. A clinician can
+do something with that. They can agree, disagree, or say the patient has a stammer
+and the speech signal is misleading, which is information I would never have
+gotten from a better model that could not be interrogated.
+
+
+The framing I use now
+
+
+Accuracy is a property of a model. Adoption is a property of a model plus the
+person holding it. Optimising the first while ignoring the second produces
+research that never leaves the paper, which is most medical AI.
+
+
+
+So I stopped treating explainability as a research topic layered on afterwards and
+started treating it as an architectural constraint, alongside latency and memory.
+If a design cannot produce a per signal story, it is not a candidate, however well
+it scores. That rules things out early, which is the point.
+
+
+Three things this changed downstream
+
+
+Failure became local. When a modality degrades, and they do, background
+noise ruins audio and bad lighting ruins video, I can drop that stream and still
+return a defensible partial result. In the concatenated version a corrupted input
+silently poisons the whole vector.
+
+
+
+Missing data stopped being a crisis. Screening in a real clinic means
+somebody skips a task, or a recording fails. Per modality scoring degrades
+gracefully. One long feature vector needs imputation, and imputing a modality you
+did not measure is a good way to invent a patient.
+
+
+
+Clinicians started correcting the model. This was the unexpected one. Once
+they could see which stream drove a score, they started telling us when a stream
+was wrong and why. That feedback was worth more than the accuracy I gave up. You
+do not get it from a black box, because there is nothing for them to push against.
+
+
+Where I think I am wrong
+
+
+I am not certain this generalises. Screening is a setting where a human always
+reviews the output, so attribution has somewhere to go. In a fully automated
+pipeline with no clinician in the loop, the argument weakens considerably and I
+would probably take the accuracy.
+
+
+
+I also suspect there is a middle design I have not built yet. Something that
+models cross modal interaction internally while still exposing per modality
+contribution honestly, rather than by post hoc attribution over features nobody
+can name. If you have seen that done properly in a clinical deployment, please
+send it to me.
+
+
+
+
+Working on something similar, or think this reasoning is wrong?
+isararsiddique@gmail.com
+
+==========================================================================
+
+## ICD-11 has no clean map from ICD-10
+
+URL: https://isarar.com/blog/icd-11-has-no-clean-map/
+Published: 2026-08-17   Section: Clinical informatics
+Tags: ICD-11, ICD-10, cancer registry, clinical informatics, health data, interoperability
+
+Home / Writing
+ICD-11 has no clean map from ICD-10
+17 August 2026  ·  9 min read
+
+
+One old code branching into several new ones is the case that breaks automation.
+
+
+
+
+Nobody wants to read about disease classification codes. I did not want to work on
+them either. Then I spent months on a cancer registry and came out convinced that
+coding is where most health data quality is silently won or lost, long before
+anybody trains a model on it.
+
+
+
+This is the post I needed when I started.
+
+
+The thing people assume
+
+
+Most engineers approach an ICD-10 to ICD-11 migration the way they would approach
+any schema change. Find the mapping table, write the transform, run it, verify
+counts, done. Coding systems look like enums, so they get treated like enums.
+
+
+
+The assumption underneath that is a one to one correspondence between old codes and
+new codes. For a large part of any real registry, that correspondence does not
+exist, and no amount of engineering rigour creates it.
+
+
+Why the structure changed
+
+
+ICD-10 is essentially a hierarchy of codes you pick from. One diagnosis, one code,
+walk the tree until you find the leaf that fits.
+
+
+
+ICD-11 is built differently. Underneath it there is a foundation of entities, and
+what you actually code against is a linearisation drawn from that foundation. More
+importantly for anyone building a registry, it supports postcoordination. You
+combine a stem code with extension codes to express things that ICD-10 forced into
+either a single overloaded code or a free text note. Laterality, severity,
+histology, anatomical detail, all of these can attach as structured extensions
+rather than being baked into one string.
+
+
+
+That is a genuine improvement in expressiveness. It is also exactly why the
+migration is not a lookup.
+
+
+
+
+
+Four cases. Only the first is automatable. The other three require a decision,
+and the decision is clinical.
+
+
+
+The four cases, and why three of them hurt
+
+
+One to one. Fine. Automate it, move on. In our registry this covered a
+decent share of records and gave a false sense of how the whole job would go.
+
+
+
+One to many. The old code splits into several new ones, distinguished by
+detail that ICD-11 can express and ICD-10 could not. If the original record
+contains that detail somewhere, in a pathology report, in free text, you can
+sometimes recover it. If it does not, you cannot. Choosing the most common
+subtype is tempting and it fabricates precision.
+
+
+
+Many to one. Two old codes collapse into one new one. This looks harmless
+because nothing is lost at the record level. It is not harmless if anybody ever
+ran a time series on the difference between those two codes, which for a cancer
+registry is the entire point of having one.
+
+
+
+No direct equivalent. The category was restructured, and there is a
+judgement to make about where a historical record now belongs. There is no
+algorithmic answer. There is a defensible answer and an indefensible one, and
+telling them apart requires knowing oncology.
+
+
+Why oncology is worse than most
+
+
+Cancer is a bad case for this because a tumour is not one fact. It is a site, a
+morphology, a behaviour, a grade, sometimes a laterality, sometimes a stage. Cancer
+registries have historically leaned on a separate oncology specific coding system
+for morphology and topography, alongside ICD for the diagnosis.
+
+
+
+ICD-11 changes how some of that fits together. That means a migration is not just
+old code to new code. It is a question about which system owns which fact, and
+whether your registry's existing split between them still makes sense. We spent
+more time on that than on any code writing.
+
+
+What we built instead of a transform
+
+
+The decision that shaped the whole project was accepting that the coding step keeps
+a human in it permanently, not as a temporary measure during migration.
+
+
+
+So the pipeline sorts rather than converts. Records that map cleanly go through
+automatically. Records that hit any of the other three cases get routed to a queue
+with the candidate targets, the evidence available from the source record, and the
+reason it was flagged. A person decides. The decision gets stored with the record,
+not just applied to it.
+
+
+
+That last part is the piece I would argue hardest for. Storing the decision, the
+date and the basis means that in five years when somebody questions a trend, the
+registry can answer whether it is biology or bookkeeping. A migration that
+overwrites codes in place destroys the ability to ever ask that question again.
+
+
+
+A registry that cannot tell you why a code changed cannot tell you whether an
+incidence trend is real.
+
+
+The part that applies beyond ICD
+
+
+I think the general lesson is about where automation belongs.
+
+
+
+The instinct with a mapping problem is to push automation as far as possible and
+treat the leftovers as failures. Inverting that worked better. Automate only the
+provably unambiguous, then invest the effort in making the ambiguous cases fast and
+well presented for the person deciding. Our win was not a smarter mapper. It was a
+queue that showed a coder everything they needed in one screen so a decision took
+seconds instead of minutes.
+
+
+
+That is a less exciting result than an automated migration. It is also the one that
+survives audit, which for a registry feeding national surveillance is the only
+property that matters.
+
+
+If you are about to do this
+
+
+Three things worth knowing before you start.
+
+
+
+Count your cases before you plan. Run the mapping tables against your actual
+distribution and find out what fraction of your records fall into each of the four
+cases. That number decides whether this is a two month project or a year, and it is
+specific to your registry.
+
+
+
+Decide the ambiguous policy with clinicians before writing code. Not during.
+Every ambiguous class needs a written rule and a named person who agreed to it.
+
+
+
+Keep both codes. Storage is cheap and regret is not. Retain the original
+code alongside the new one indefinitely.
+
+
+
+
+If you are working on registry infrastructure or ICD-11 adoption, I would like to
+compare notes. isararsiddique@gmail.com
+
+==========================================================================
+
+## How I cold-emailed my way into eleven research labs
+
+URL: https://isarar.com/blog/cold-emailing-into-research-labs/
+Published: 2026-08-16   Section: Research
+Tags: cold email, research access, academia, undergraduate research, careers
+
+Home / Writing
+
+How I cold-emailed my way into eleven research labs
+16 August 2026  ·  8 min read
+
+
+Fifty generic emails returned nothing. Ten researched ones changed the rate.
+
+
+
+
+I did my undergraduate degree in biotechnology at a state affiliated college in
+Lucknow. It had no research pipeline, no lab I could join, and no faculty
+connections into the places I wanted to work. Nobody from my course had gone to
+Harvard or Stanford. There was no path, and pretending otherwise would have
+wasted a year.
+
+
+
+Over the next three years I worked in eleven labs. Harvard, Stanford, NASA
+GeneLab, the University of Tokyo, ISRO's Physical Research Laboratory, IISc
+Bangalore, three IITs and others. I did not go through a single application
+portal for any of them.
+
+
+
+I want to be precise about what happened, because "just cold email people" is
+useless advice and it is not what worked.
+
+
+The first fifty emails failed completely
+
+
+My early emails looked like everyone's. I introduced myself, listed my CGPA,
+said I was passionate about the professor's field, attached a CV, and asked
+whether there were any internship opportunities in their lab.
+
+
+Reply rate: zero. Not low. Zero.
+
+
+It took me an embarrassingly long time to work out why. That email asks the
+recipient to do work. It asks them to evaluate me, imagine a project, find
+funding and assign supervision, all for a stranger with no track record from an
+institution they have never heard of. The rational response is to archive it. I
+would have archived it.
+
+
+
+An ask costs the recipient something. An offer costs them nothing. That
+distinction is the entire trick.
+
+
+What I changed
+
+I stopped asking for internships. For each professor I did this instead:
+
+
+Read their three most recent papers properly. Not the abstracts, the methods.
+Find one specific thing. A gap they flagged in their own discussion section, a
+dataset they published but never fully analysed, a method they applied to one
+cohort and not another.
+Write four or five sentences proposing exactly what I would do about it in the
+first two weeks. Unpaid. Remote. No supervision required.
+
+
+
+That is it. No CV in the first email. No mention of my college. No paragraph
+about my passion for the field.
+
+
+Reply rate went to roughly one in six.
+
+Why it works
+
+
+A specific proposal proves three things at once that a CV cannot. It proves you
+actually read the work, because you cannot fake a real gap in someone's methods
+section. It proves you can scope a piece of work, which is most of what research
+competence is. And it removes their risk entirely, because if I disappeared after
+a week they had lost nothing.
+
+
+
+The unpaid part mattered more than I would like it to. I am not going to pretend
+that is a fair system. It meant I could only do this because I had somewhere to
+live and no dependents. But the mechanism underneath it, make the first move
+costless for the other person , does not require working for free. It requires
+arriving with something finished.
+
+
+The part nobody tells you
+
+
+Eleven labs sounds impressive on a list. In reality several were one month long.
+Some produced nothing publishable. One I discontinued. A few professors stopped
+replying after the initial project and I never found out why.
+
+
+
+The hit rate on meaningful collaborations was far lower than the reply
+rate. Maybe one in four turned into work I would defend today. If you try this,
+expect that, and do not measure yourself on the length of the list.
+
+
+Using it for something harder
+
+
+The reason I still think about this is not academic access. It is that the same
+move worked on a much harder problem.
+
+
+
+When I started Zero Dementia, smartphone based screening for early cognitive
+impairment, I needed hospitals. Hospitals are far more conservative than
+professors. A tertiary institute has no reason to let a 22 year old anywhere near
+their patients.
+
+
+
+So I did not ask for patients. I built the screening infrastructure first. The
+recruitment workflow, the consent handling, the data collection pipeline. Then I
+went to a tertiary government hospital and two medical colleges with a working
+system and asked them to tell me what was wrong with it.
+
+
+
+That conversation is completely different from asking for access. It is a
+clinician critiquing a tool, which is something they actively want to do. Those
+partnerships became the clinical trials running now.
+
+
+If you are going to try this
+
+Three things I would tell my younger self.
+
+
+Volume without specificity is spam. Fifty generic emails got me nothing.
+Ten researched ones got replies. The research is the work. The email is just
+delivery.
+
+
+
+Read the discussion section. That is where researchers write down what they
+could not finish. It is a public list of things somebody wants done and does not
+have time for.
+
+
+
+Deliver the two weeks you promised even if they never reply. Twice I did
+the analysis anyway and sent it unprompted. Both times that second email is what
+got the response.
+
+
+
+None of this substitutes for being good at the work. It is a way to get a first
+look from people who would otherwise never see you, which, if you are starting
+from a place with no pipeline, is the only problem that matters at the beginning.
+
+
+
+
+If you are doing something similar and it is not working, send me the draft.
+isararsiddique@gmail.com . I will
+tell you what I would change.
+
+==========================================================================

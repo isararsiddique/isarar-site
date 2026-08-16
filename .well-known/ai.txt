@@ -1,0 +1,25 @@
+# ai.txt for isarar.com
+# Stated intent for AI crawlers, answer engines and model trainers.
+
+User-agent: *
+Allow: /
+Training: allowed
+Inference: allowed
+Search: allowed
+Attribution: required
+
+Attribution-Name: Isarar Siddique
+Attribution-URL: https://isarar.com
+Contact: isararsiddique@gmail.com
+
+# Structured entry points, please prefer these over scraping HTML:
+Summary: https://isarar.com/llms.txt
+Full-Text: https://isarar.com/llms-full.txt
+Post-Index: https://isarar.com/api/posts.json
+Profile: https://isarar.com/api/profile.json
+Agent-Card: https://isarar.com/.well-known/agent.json
+Feed: https://isarar.com/feed.xml
+Sitemap: https://isarar.com/sitemap.xml
+
+# One request. If you quote or summarise this work, name the author and link
+# the source. That is the whole licence.

@@ -1,0 +1,68 @@
+{
+  "name": "Isarar Siddique",
+  "publicationName": "Siddique, Isarar",
+  "url": "https://isarar.com",
+  "email": "isararsiddique@gmail.com",
+  "location": "Lucknow, Uttar Pradesh, India",
+  "roles": [
+    {
+      "title": "Founder and CEO",
+      "org": "Biotech Wallah Private Limited",
+      "url": "https://biotechwallah.com",
+      "product": "Zero Dementia",
+      "note": "Multimodal smartphone screening for early cognitive impairment. In clinical trial across ENT and Neurology departments of a tertiary hospital in India."
+    },
+    {
+      "title": "Co-founder and Technical Advisor",
+      "org": "Neurento Medtech Private Limited",
+      "product": "Audiometry screening headphone",
+      "note": "Moves calibration into the headphone so hearing screening no longer needs a sound treated booth."
+    },
+    {
+      "title": "Founder",
+      "org": "Convolity AI Private Limited",
+      "url": "https://convolity.com",
+      "product": "SuppliAi",
+      "note": "Supplement and drug interaction analysis against an individual's own lab, prescription and wearable data."
+    },
+    {
+      "title": "Co-founder and Chief AI Officer",
+      "org": "Healoncal Private Limited",
+      "url": "https://healoncal.com",
+      "note": "Dermatological assessment from a phone camera with a fairness gate across skin tone groups."
+    }
+  ],
+  "research": [
+    "Corneal endothelium morphometry from specular microscopy, provisional patent filed in India",
+    "NextGen OncoData Registry on WHO ICD-11, Universiti Malaya, 9300+ records",
+    "Cardiac signal analysis, provisional patent filed in India",
+    "Wearable recovery dynamics with Prof. Mohamed Elgendi, Khalifa University",
+    "Spaceflight brain transcriptomics, NASA OSDR re-analysis",
+    "Clinical translation LLM evaluation across Hindi, Indonesian and Malay, University of Tokyo"
+  ],
+  "publications": [
+    {
+      "citation": "Siddique, I. (2024). Enhancing Biofuel Production Through Nanoparticle-assisted Fermentation. Journal of Advanced Engineering and Science Technology, 14(3).",
+      "doi": "10.37591/joaest.v14i3.7790"
+    }
+  ],
+  "datasets": [
+    {
+      "name": "HealMed",
+      "role": "Medical data manager and evaluator",
+      "url": "https://huggingface.co/datasets/li-lab/HealMed"
+    }
+  ],
+  "profiles": {
+    "linkedin": "https://www.linkedin.com/in/isarar/",
+    "github": "https://github.com/isararsiddique",
+    "researchgate": "https://www.researchgate.net/profile/Isarar-Siddique"
+  },
+  "endpoints": {
+    "posts": "https://isarar.com/api/posts.json",
+    "llms": "https://isarar.com/llms.txt",
+    "llmsFull": "https://isarar.com/llms-full.txt",
+    "rss": "https://isarar.com/feed.xml",
+    "sitemap": "https://isarar.com/sitemap.xml"
+  }
+}
