@@ -38,7 +38,9 @@
   "alumniOf": { "@type": "CollegeOrUniversity", "name": "Dr. A.P.J. Abdul Kalam Technical University" },
   "worksFor": [
     { "@type": "Organization", "name": "Biotech Wallah Private Limited", "url": "https://biotechwallah.com" },
-    { "@type": "Organization", "name": "Convolity AI Private Limited", "url": "https://convolity.com" }
+    { "@type": "Organization", "name": "Convolity AI Private Limited", "url": "https://convolity.com" },
+    { "@type": "Organization", "name": "Healoncal Private Limited", "url": "https://healoncal.com" },
+    { "@type": "Organization", "name": "Neurento Medtech Private Limited" }
   ],
   "sameAs": [
     "https://www.linkedin.com/in/isarar/",
@@ -46,7 +48,8 @@
     "https://www.researchgate.net/profile/Isarar-Siddique",
     "https://huggingface.co/datasets/li-lab/HealMed",
     "https://biotechwallah.com",
-    "https://convolity.com"
+    "https://convolity.com",
+    "https://healoncal.com"
   ]
 }
 </script>
@@ -94,9 +97,9 @@
 
       <p class="lede">
         I build diagnostic AI that has to survive contact with real hospitals.
-        Two of my systems are in <strong>clinical trial at SGPGI Lucknow</strong>
-        right now. Below is what I'm actually working on and how each piece works —
-        including the parts I can't open-source.
+        My screening system is in <strong>clinical trial at SGPGI Lucknow across the
+        ENT and Neurology departments</strong> right now. Below is what I'm actually
+        working on and how each piece works — including the parts I can't open-source.
       </p>
 
       <ul class="pills">
@@ -119,7 +122,7 @@
         <h3>Zero Dementia</h3>
         <span class="status trial">In clinical trial</span>
       </div>
-      <p class="proj-sub">Biotech Wallah · with SGPGI Lucknow, Integral Medical College, ERA Medical College</p>
+      <p class="proj-sub">Biotech Wallah · clinical trial at SGPGI Lucknow — ENT and Neurology departments</p>
 
       <p>
         Screening for early mild cognitive impairment using nothing but a stock
@@ -192,10 +195,12 @@
       </figure>
 
       <p>
-        Two trial tracks are running at SGPGI — cognitive screening and audiometry —
-        both nearing completion. The hard part was never the model. It was consent
-        infrastructure, recruitment workflow, and getting signal quality out of
-        rooms with bad lighting and background noise.
+        The trial runs across two departments at SGPGI — <strong>ENT</strong> and
+        <strong>Neurology</strong> — because the signals cut across both: hearing
+        and speech markers sit with ENT, cognitive and motor markers with neurology.
+        Both arms are nearing completion. The hard part was never the model. It was
+        consent infrastructure, recruitment workflow, and getting usable signal out
+        of rooms with bad lighting and background noise.
       </p>
 
       <ul class="stack">
@@ -284,6 +289,108 @@
       <ul class="stack">
         <li>Chain-of-thought reasoning</li><li>Molecular docking</li>
         <li>Supabase · RLS · pgcrypto</li><li>Time-series fusion</li><li>HIPAA-aligned</li>
+      </ul>
+    </div>
+
+    <!-- ---- Healoncal ---- -->
+    <div class="proj reveal">
+      <div class="proj-head">
+        <h3>Healoncal</h3>
+        <span class="status live">Live</span>
+      </div>
+      <p class="proj-sub">Co-founder &amp; Chief AI Officer · <a href="https://healoncal.com" rel="noopener">healoncal.com</a></p>
+
+      <p>
+        Dermatological assessment from a phone camera. The interesting constraint here
+        isn't accuracy in aggregate — it's accuracy <em>evenly</em>. Most skin models are
+        trained on light skin and quietly degrade on darker tones, which makes them
+        worse than useless in the markets that need them most.
+      </p>
+
+      <figure class="fig reveal">
+        <svg viewBox="0 0 640 186" role="img" aria-label="A phone image is normalised for lighting, analysed by a vision-language model, checked for fairness across skin tones, and returned with per-metric reasoning">
+          <text class="sv-s" x="8" y="14">CAPTURE — consumer phone, uncontrolled lighting</text>
+
+          <g class="sv-pop">
+            <rect class="sv-box" x="8" y="26" width="114" height="30" rx="6"/>
+            <text class="sv-t" x="20" y="45">Phone image</text>
+            <rect class="sv-box" x="8" y="62" width="114" height="30" rx="6"/>
+            <text class="sv-t" x="20" y="81">User context</text>
+            <text class="sv-s" x="20" y="106">real-time inputs</text>
+          </g>
+
+          <path class="sv-arrow" d="M126,41 C152,41 158,62 180,68"/>
+          <path class="sv-arrow" d="M126,77 C152,77 160,74 180,72"/>
+
+          <g class="sv-pop">
+            <rect class="sv-box-a" x="184" y="48" width="112" height="46" rx="8"/>
+            <text class="sv-ta" x="198" y="68">Normalisation</text>
+            <text class="sv-s"  x="198" y="83">lighting · colour</text>
+          </g>
+
+          <path class="sv-arrow" d="M300,71 L336,71"/>
+
+          <g class="sv-pop">
+            <rect class="sv-box-a" x="340" y="26" width="132" height="46" rx="8"/>
+            <text class="sv-ta" x="354" y="45">Vision-language</text>
+            <text class="sv-s"  x="354" y="60">multimodal analysis</text>
+
+            <rect class="sv-box" x="340" y="82" width="132" height="46" rx="8"/>
+            <text class="sv-t" x="354" y="101">Fairness gate</text>
+            <text class="sv-s" x="354" y="116">across skin tones</text>
+          </g>
+
+          <path class="sv-arrow" d="M476,49 C500,49 508,72 526,78"/>
+          <path class="sv-arrow" d="M476,105 C500,105 508,88 526,84"/>
+
+          <g class="sv-pop">
+            <rect class="sv-box-a" x="530" y="58" width="104" height="48" rx="8"/>
+            <text class="sv-ta" x="544" y="80">Per-metric</text>
+            <text class="sv-ta" x="544" y="95">reasoning</text>
+          </g>
+          <text class="sv-s" x="530" y="122">no black-box score</text>
+        </svg>
+        <figcaption>
+          Every metric returns its reasoning rather than a bare number. The fairness
+          gate is a hard gate, not a report — if a metric can't hold accuracy across
+          tone groups, it doesn't ship.
+        </figcaption>
+      </figure>
+
+      <p>
+        My side of it is model architecture and getting lab-grade models onto ordinary
+        phones without the accuracy collapsing on the way down.
+      </p>
+
+      <ul class="stack">
+        <li>Vision-language models</li><li>Explainable AI</li>
+        <li>Bias evaluation</li><li>On-device inference</li>
+      </ul>
+    </div>
+
+    <!-- ---- Neurento Medtech ---- -->
+    <div class="proj reveal">
+      <div class="proj-head">
+        <h3>Neurento Medtech</h3>
+        <span class="status priv">Early stage</span>
+      </div>
+      <p class="proj-sub">Co-founder &amp; Technical Advisor · Neurento Medtech Private Limited</p>
+
+      <p>
+        Neurological medical devices — the hardware end of the same problem I've been
+        circling from the software side. This is where the KiCad and LTspice work
+        actually lands: if you want a better neuro signal, at some point you have to
+        design the thing that acquires it rather than post-processing someone else's.
+      </p>
+
+      <p>
+        Early stage, so there isn't much I can say publicly yet. I advise on the
+        technical architecture and the signal acquisition side.
+      </p>
+
+      <ul class="stack">
+        <li>Medical devices</li><li>Signal acquisition</li>
+        <li>KiCad</li><li>LTspice</li><li>Embedded</li>
       </ul>
     </div>
 
@@ -528,23 +635,25 @@
       </ul>
     </div>
 
-    <!-- ---- open source ---- -->
+    <!-- ---- public work ---- -->
     <div class="proj reveal">
-      <div class="proj-head"><h3>Open source</h3></div>
+      <div class="proj-head"><h3>Public work</h3></div>
       <ul class="mini">
         <li><a class="n" href="https://huggingface.co/datasets/li-lab/HealMed" rel="noopener">HealMed ↗</a>
             <span class="m">— multilingual clinical dataset for healthcare LLMs.
-            Indian, Malaysian and Igbo clinical notes, annotated with clinicians.</span></li>
-        <li><a class="n" href="https://github.com/isararsiddique/AfDesign-PeptideBinder" rel="noopener">AfDesign-PeptideBinder ↗</a>
-            <span class="m">— 8-mer peptide binder against 5-hydroxyisourate hydrolase
-            (PDB 2H6U_A) via AlphaFold AfDesign.</span></li>
-        <li><a class="n" href="https://github.com/isararsiddique/SysBio-DiseaseNetwork" rel="noopener">SysBio-DiseaseNetwork ↗</a>
-            <span class="m">— comparative PPI networks across Alzheimer's, T2D and NAFLD;
-            hub-bottleneck genes APOE, INS, LEP.</span></li>
-        <li><a class="n" href="https://github.com/isararsiddique/iit-bhubneshwar-redmud" rel="noopener">Red mud soil sensing ↗</a>
-            <span class="m">— ESP32 rig tracking NPK, pH and moisture in alkaline red mud.
-            My first hardware build.</span></li>
+            I was medical data manager and evaluator, annotating Indian, Malaysian
+            and Igbo clinical notes with practising clinicians. With Prof. Irene Li's lab.</span></li>
+        <li><span class="n">Nanoparticle-assisted fermentation</span>
+            <span class="m">— published in <em>Journal of Advanced Engineering and
+            Science Technology</em>.
+            <a href="https://doi.org/10.37591/joaest.v14i3.7790" rel="noopener">doi:10.37591/joaest.v14i3.7790</a></span></li>
       </ul>
+      <p class="note">
+        My GitHub is mostly working scratch — prototypes, spikes and throwaway
+        branches rather than finished software. The production systems above are
+        private. If you want to see real code, ask me and I'll walk you through it
+        directly.
+      </p>
     </div>
 
   </div>
