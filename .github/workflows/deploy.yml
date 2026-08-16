@@ -81,7 +81,13 @@ jobs:
           sys.exit(bad)
           PY
 
-      - name: Point the Worker at this commit
+      # ------------------------------------------------------------------
+      # Without CF_API_TOKEN the Worker tracks the main branch and picks the
+      # change up within about a minute on its own. With the token, we pin the
+      # exact commit and purge, which makes it instant and hard cacheable.
+      # ------------------------------------------------------------------
+      - name: Pin the Worker to this commit
+        if: ${{ secrets.CF_API_TOKEN != '' }}
         run: |
           curl -sS --fail-with-body -X PUT \
             "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CF_ACCOUNT_ID }}/storage/kv/namespaces/${KV_NAMESPACE_ID}/values/current_sha" \
@@ -91,6 +97,7 @@ jobs:
           echo
 
       - name: Purge the edge cache
+        if: ${{ secrets.CF_API_TOKEN != '' }}
         run: |
           curl -sS --fail-with-body -X POST \
             "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" \
@@ -99,12 +106,23 @@ jobs:
             --data '{"purge_everything":true}' | head -c 300
           echo
 
+      - name: Note when running without a Cloudflare token
+        if: ${{ secrets.CF_API_TOKEN == '' }}
+        run: |
+          echo "CF_API_TOKEN is not set."
+          echo "The Worker is tracking the main branch, so this change goes live"
+          echo "within about a minute without any further action."
+          echo "Add CF_API_TOKEN (Workers KV Storage:Edit + Cache Purge:Purge) to"
+          echo "make deploys instant and enable immutable edge caching."
+
       - name: Confirm it is live
         run: |
-          sleep 12
-          for path in / /blog/ /llms.txt /api/posts.json /.well-known/agent.json; do
+          sleep 75
+          fail=0
+          for path in / /blog/ /llms.txt /api/posts.json /.well-known/agent.json /sitemap.xml; do
             code=$(curl -s -o /dev/null -w '%{http_code}' "https://isarar.com${path}")
-            build=$(curl -sI "https://isarar.com${path}" | tr -d '\r' | awk '/^x-build:/{print $2}')
-            printf '%-30s %s  build=%s\n' "$path" "$code" "$build"
-            [ "$code" = "200" ] || exit 1
+            mode=$(curl -sI "https://isarar.com${path}" | tr -d '\r' | awk '/^x-mode:/{print $2}')
+            printf '%-32s %s  mode=%s\n' "$path" "$code" "$mode"
+            [ "$code" = "200" ] || fail=1
           done
+          exit $fail
