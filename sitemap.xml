@@ -1,37 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
   <url>
     <loc>https://isarar.com/</loc>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://isarar.com/isarar-900.jpg</image:loc>
+      <image:title>Isarar Siddique</image:title>
+      <image:caption>Isarar Siddique, founder and medical AI researcher based in Lucknow, India</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://isarar.com/og-home.jpg</image:loc>
+      <image:title>I build medical AI that reaches patients</image:title>
+    </image:image>
   </url>
+
   <url>
     <loc>https://isarar.com/blog/</loc>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://isarar.com/blog/the-booth-is-the-cost/</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://isarar.com/og-booth.jpg</image:loc>
+      <image:title>The booth is the cost</image:title>
+      <image:caption>Why hearing screening is limited by the sound treated room rather than the test itself</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://isarar.com/blog/a-clinician-who-cannot-see-why/</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://isarar.com/og-fusion.jpg</image:loc>
+      <image:title>A clinician who cannot see why will not act</image:title>
+      <image:caption>Late fusion versus early fusion in a clinical screening model, and the accuracy paid for attribution</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://isarar.com/blog/icd-11-has-no-clean-map/</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://isarar.com/og-icd.jpg</image:loc>
+      <image:title>ICD-11 has no clean map from ICD-10</image:title>
+      <image:caption>The four mapping cases in a cancer registry migration from ICD-10 to ICD-11</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://isarar.com/blog/cold-emailing-into-research-labs/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://isarar.com/og-email.jpg</image:loc>
+      <image:title>How I cold-emailed my way into eleven research labs</image:title>
+      <image:caption>Moving a cold email reply rate from zero to roughly one in six</image:caption>
+    </image:image>
   </url>
+
 </urlset>

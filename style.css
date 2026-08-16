@@ -336,3 +336,13 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
   .up{opacity:1;transform:none}
   body{background:#fff;color:#000}
 }
+
+/* ---------- post cover image ---------- */
+.cover{margin:0 0 2.4rem}
+.cover img{
+  display:block;width:100%;height:auto;border-radius:12px;
+  border:1px solid var(--line);background:var(--raise);
+}
+.cover figcaption{
+  margin-top:.65rem;font-size:.82rem;color:var(--ink-3);line-height:1.5;
+}

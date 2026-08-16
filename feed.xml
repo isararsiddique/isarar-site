@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+  <title>Isarar Siddique</title>
+  <link>https://isarar.com/blog/</link>
+  <atom:link href="https://isarar.com/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>On building clinical AI that survives contact with real hospitals, from a founder and researcher working both sides of the gap between published result and shipped product.</description>
+  <language>en</language>
+  <managingEditor>isararsiddique@gmail.com (Isarar Siddique)</managingEditor>
+  <webMaster>isararsiddique@gmail.com (Isarar Siddique)</webMaster>
+  <lastBuildDate>Mon, 17 Aug 2026 00:00:00 GMT</lastBuildDate>
+  <image>
+    <url>https://isarar.com/isarar-500.jpg</url>
+    <title>Isarar Siddique</title>
+    <link>https://isarar.com/blog/</link>
+  </image>
+
+  <item>
+    <title>The booth is the cost</title>
+    <link>https://isarar.com/blog/the-booth-is-the-cost/</link>
+    <guid isPermaLink="true">https://isarar.com/blog/the-booth-is-the-cost/</guid>
+    <pubDate>Mon, 17 Aug 2026 09:00:00 GMT</pubDate>
+    <dc:creator>Isarar Siddique</dc:creator>
+    <category>Hearing screening</category>
+    <category>Medical devices</category>
+    <description>A hearing test is one of the cheapest procedures in medicine, so why does almost nobody in rural India get one? The answer is the room, not the test. What has to be true before you can delete the sound booth.</description>
+  </item>
+
+  <item>
+    <title>A clinician who cannot see why will not act</title>
+    <link>https://isarar.com/blog/a-clinician-who-cannot-see-why/</link>
+    <guid isPermaLink="true">https://isarar.com/blog/a-clinician-who-cannot-see-why/</guid>
+    <pubDate>Mon, 17 Aug 2026 08:00:00 GMT</pubDate>
+    <dc:creator>Isarar Siddique</dc:creator>
+    <category>Clinical AI</category>
+    <category>Explainability</category>
+    <description>I had a screening model that scored better than the one we deployed. I threw it away. On buying attribution with accuracy, and why explainability is an architectural constraint rather than a research topic you add later.</description>
+  </item>
+
+  <item>
+    <title>ICD-11 has no clean map from ICD-10</title>
+    <link>https://isarar.com/blog/icd-11-has-no-clean-map/</link>
+    <guid isPermaLink="true">https://isarar.com/blog/icd-11-has-no-clean-map/</guid>
+    <pubDate>Mon, 17 Aug 2026 07:00:00 GMT</pubDate>
+    <dc:creator>Isarar Siddique</dc:creator>
+    <category>Clinical informatics</category>
+    <category>Health data</category>
+    <description>Coding is where health data quality is silently won or lost, long before anybody trains a model on it. Four migration cases, three of which need a clinician, and why we kept a human in the loop on purpose.</description>
+  </item>
+
+  <item>
+    <title>How I cold-emailed my way into eleven research labs</title>
+    <link>https://isarar.com/blog/cold-emailing-into-research-labs/</link>
+    <guid isPermaLink="true">https://isarar.com/blog/cold-emailing-into-research-labs/</guid>
+    <pubDate>Sun, 16 Aug 2026 09:00:00 GMT</pubDate>
+    <dc:creator>Isarar Siddique</dc:creator>
+    <category>Research access</category>
+    <description>No application portals, no referrals, no pedigree. The first fifty emails got me nothing. Here is the single change that took the reply rate to roughly one in six.</description>
+  </item>
+
+</channel>
+</rss>
