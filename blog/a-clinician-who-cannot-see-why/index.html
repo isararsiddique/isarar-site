@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A clinician who cannot see why will not act</title>
+<meta name="description" content="Why I gave up accuracy for attribution in a clinical screening model, and why late fusion is a deployment decision rather than a modelling preference.">
+<link rel="canonical" href="https://isarar.com/blog/a-clinician-who-cannot-see-why/">
+<meta name="theme-color" content="#f8f6f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0b0d" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="/style.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A clinician who cannot see why will not act">
+<meta property="og:description" content="Why I gave up accuracy for attribution in a clinical screening model.">
+<meta property="og:url" content="https://isarar.com/blog/a-clinician-who-cannot-see-why/">
+<meta property="og:image" content="https://isarar.com/isarar-900.jpg">
+<meta property="article:published_time" content="2026-08-17">
+<meta name="twitter:card" content="summary_large_image">
+<script>
+(function(){try{var t=localStorage.getItem("theme");
+if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BlogPosting",
+  "@id":"https://isarar.com/blog/a-clinician-who-cannot-see-why/#post",
+  "headline":"A clinician who cannot see why will not act",
+  "description":"Why I gave up accuracy for attribution in a clinical screening model, and why late fusion is a deployment decision rather than a modelling preference.",
+  "datePublished":"2026-08-17","dateModified":"2026-08-17",
+  "url":"https://isarar.com/blog/a-clinician-who-cannot-see-why/",
+  "image":"https://isarar.com/isarar-900.jpg",
+  "author":{"@id":"https://isarar.com/#person"},
+  "publisher":{"@id":"https://isarar.com/#person"},
+  "isPartOf":{"@id":"https://isarar.com/blog/#blog"},
+  "mainEntityOfPage":"https://isarar.com/blog/a-clinician-who-cannot-see-why/",
+  "inLanguage":"en",
+  "keywords":["explainable AI","multimodal fusion","clinical AI","screening","deployment"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://isarar.com/"},
+    {"@type":"ListItem","position":2,"name":"Writing","item":"https://isarar.com/blog/"},
+    {"@type":"ListItem","position":3,"name":"A clinician who cannot see why will not act"}
+  ]
+}
+</script>
+</head>
+<body>
+<div id="bar"></div>
+<div id="dot" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="shell">
+    <a class="who" href="/">Isarar Siddique</a>
+    <nav aria-label="Primary">
+      <a href="/#work">Work</a><a href="/#code">Code</a><a href="/blog/">Writing</a>
+    </nav>
+    <button id="theme" type="button" aria-label="Switch theme">
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a7 7 0 0 0 11.1 11.1z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<section class="post">
+<div class="shell">
+<article class="post-wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/blog/">Writing</a></p>
+  <h1>A clinician who cannot see why will not act</h1>
+  <p class="by"><time datetime="2026-08-17">17 August 2026</time> &nbsp;·&nbsp; 8 min read</p>
+
+  <p>
+    Early in the dementia screening work I had a model that performed better than the
+    one we ended up deploying. I threw it away. This is the post I wish someone had
+    written for me before I built it.
+  </p>
+
+  <h2>The setup</h2>
+
+  <p>
+    The screening battery collects four things in one sitting on a phone. A spoken
+    passage. Video of the face during prompted expression. A fine motor tapping task.
+    A short cognitive test. Each of those carries some signal about early cognitive
+    decline, and none of them carries enough on its own.
+  </p>
+
+  <p>
+    The obvious move is to concatenate. Pull features from every stream, stack them
+    into one long vector, train a single model on the whole thing. This is early
+    fusion, and it usually wins on paper, because the model gets to learn interactions
+    between modalities directly. If a particular vocal hesitation only matters when it
+    co-occurs with a particular tapping irregularity, early fusion can find that.
+    Scoring each stream separately cannot.
+  </p>
+
+  <p>
+    So I built that. It was better. And it was unusable.
+  </p>
+
+  <h2>What happened in the room</h2>
+
+  <p>
+    We sat with clinicians and walked through outputs. The model produced a risk score.
+    A doctor looked at a case, saw an elevated score, and asked the only question that
+    matters in that setting.
+  </p>
+
+  <blockquote>
+    Why does it think that?
+  </blockquote>
+
+  <p>
+    With a concatenated feature vector the honest answer is a shrug dressed up in
+    attribution methods. I could produce saliency over the input vector. I could run
+    the usual attribution tooling and get numbers per feature. But the features were
+    engineered, cross modal, and not individually meaningful to a person who thinks in
+    terms of <em>this patient's speech is off</em> or <em>this patient's motor control
+    is off</em>.
+  </p>
+
+  <p>
+    And here is the part that took me longer to accept than it should have. That
+    doctor was not being obstructive. They were being correct. A screening result is
+    not a verdict. It is a request to a busy clinician to spend a scarce resource,
+    which is their attention and the patient's follow up appointment. Nobody spends
+    that on a number with no story attached.
+  </p>
+
+  <h2>Late fusion, and what it costs</h2>
+
+  <p>
+    So we restructured. Each modality gets scored independently. Speech produces a
+    speech score. Motor produces a motor score. The combination happens at the end,
+    over interpretable per modality outputs rather than raw features.
+  </p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 640 216" role="img" aria-label="Early fusion concatenates all features into one model and produces a single score with no per modality attribution. Late fusion scores each modality separately then combines, preserving attribution.">
+      <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+
+      <text class="sv-s" x="8" y="14">EARLY FUSION</text>
+      <rect class="sv-box" x="8" y="24" width="62" height="20" rx="4"/><text class="sv-s" x="16" y="38">speech</text>
+      <rect class="sv-box" x="8" y="48" width="62" height="20" rx="4"/><text class="sv-s" x="16" y="62">face</text>
+      <rect class="sv-box" x="8" y="72" width="62" height="20" rx="4"/><text class="sv-s" x="16" y="86">motor</text>
+      <rect class="sv-box" x="8" y="96" width="62" height="20" rx="4"/><text class="sv-s" x="16" y="110">cognitive</text>
+      <path class="sv-arrow" d="M74,34 C96,34 100,62 118,68"/>
+      <path class="sv-arrow" d="M74,58 C96,58 102,66 118,70"/>
+      <path class="sv-arrow" d="M74,82 C96,82 102,76 118,72"/>
+      <path class="sv-arrow" d="M74,106 C96,106 100,80 118,74"/>
+      <rect class="sv-box" x="122" y="50" width="86" height="44" rx="6"/>
+      <text class="sv-t" x="132" y="70">one vector</text><text class="sv-s" x="132" y="84">one model</text>
+      <path class="sv-arrow" d="M212,72 L244,72"/>
+      <rect class="sv-box" x="248" y="52" width="60" height="40" rx="6"/>
+      <text class="sv-t" x="258" y="76">score</text>
+      <text class="sv-s" x="248" y="112">higher accuracy,</text>
+      <text class="sv-s" x="248" y="126">no story</text>
+
+      <path class="sv-line" d="M318,10 L318,206"/>
+
+      <text class="sv-s" x="332" y="14">LATE FUSION</text>
+      <rect class="sv-box" x="332" y="24" width="62" height="20" rx="4"/><text class="sv-s" x="340" y="38">speech</text>
+      <rect class="sv-box" x="332" y="48" width="62" height="20" rx="4"/><text class="sv-s" x="340" y="62">face</text>
+      <rect class="sv-box" x="332" y="72" width="62" height="20" rx="4"/><text class="sv-s" x="340" y="86">motor</text>
+      <rect class="sv-box" x="332" y="96" width="62" height="20" rx="4"/><text class="sv-s" x="340" y="110">cognitive</text>
+      <path class="sv-arrow" d="M398,34 L424,34"/>
+      <path class="sv-arrow" d="M398,58 L424,58"/>
+      <path class="sv-arrow" d="M398,82 L424,82"/>
+      <path class="sv-arrow" d="M398,106 L424,106"/>
+      <rect class="sv-box-a" x="428" y="24" width="58" height="20" rx="4"/><text class="sv-ta" x="437" y="38">score</text>
+      <rect class="sv-box-a" x="428" y="48" width="58" height="20" rx="4"/><text class="sv-ta" x="437" y="62">score</text>
+      <rect class="sv-box-a" x="428" y="72" width="58" height="20" rx="4"/><text class="sv-ta" x="437" y="86">score</text>
+      <rect class="sv-box-a" x="428" y="96" width="58" height="20" rx="4"/><text class="sv-ta" x="437" y="110">score</text>
+      <path class="sv-arrow" d="M490,34 C512,34 518,62 536,68"/>
+      <path class="sv-arrow" d="M490,58 C512,58 520,66 536,70"/>
+      <path class="sv-arrow" d="M490,82 C512,82 520,76 536,72"/>
+      <path class="sv-arrow" d="M490,106 C512,106 518,80 536,74"/>
+      <rect class="sv-box-a" x="540" y="50" width="94" height="44" rx="6"/>
+      <text class="sv-ta" x="550" y="70">combine</text><text class="sv-s" x="550" y="84">over 4 scores</text>
+      <text class="sv-s" x="540" y="112">slightly worse,</text>
+      <text class="sv-s" x="540" y="126">fully attributable</text>
+    </svg>
+    <figcaption>
+      The trade is real. Early fusion can model cross modal interactions that late
+      fusion cannot see. You are buying attribution with accuracy.
+    </figcaption>
+  </figure>
+
+  <p>
+    I want to be straight about the cost, because a lot of writing on explainability
+    pretends there is no trade. There is. Late fusion gave up some performance. Cross
+    modal interaction effects are real and my architecture can no longer represent
+    most of them.
+  </p>
+
+  <p>
+    What it bought was a sentence. <em>This score is driven mainly by speech timing and
+    motor variability, with the cognitive battery in normal range.</em> A clinician can
+    do something with that. They can agree, disagree, or say the patient has a stammer
+    and the speech signal is misleading, which is information I would never have
+    gotten from a better model that could not be interrogated.
+  </p>
+
+  <h2>The framing I use now</h2>
+
+  <p>
+    Accuracy is a property of a model. Adoption is a property of a model plus the
+    person holding it. Optimising the first while ignoring the second produces
+    research that never leaves the paper, which is most medical AI.
+  </p>
+
+  <p>
+    So I stopped treating explainability as a research topic layered on afterwards and
+    started treating it as an architectural constraint, alongside latency and memory.
+    If a design cannot produce a per signal story, it is not a candidate, however well
+    it scores. That rules things out early, which is the point.
+  </p>
+
+  <h2>Three things this changed downstream</h2>
+
+  <p>
+    <b>Failure became local.</b> When a modality degrades, and they do, background
+    noise ruins audio and bad lighting ruins video, I can drop that stream and still
+    return a defensible partial result. In the concatenated version a corrupted input
+    silently poisons the whole vector.
+  </p>
+
+  <p>
+    <b>Missing data stopped being a crisis.</b> Screening in a real clinic means
+    somebody skips a task, or a recording fails. Per modality scoring degrades
+    gracefully. One long feature vector needs imputation, and imputing a modality you
+    did not measure is a good way to invent a patient.
+  </p>
+
+  <p>
+    <b>Clinicians started correcting the model.</b> This was the unexpected one. Once
+    they could see which stream drove a score, they started telling us when a stream
+    was wrong and why. That feedback was worth more than the accuracy I gave up. You
+    do not get it from a black box, because there is nothing for them to push against.
+  </p>
+
+  <h2>Where I think I am wrong</h2>
+
+  <p>
+    I am not certain this generalises. Screening is a setting where a human always
+    reviews the output, so attribution has somewhere to go. In a fully automated
+    pipeline with no clinician in the loop, the argument weakens considerably and I
+    would probably take the accuracy.
+  </p>
+
+  <p>
+    I also suspect there is a middle design I have not built yet. Something that
+    models cross modal interaction internally while still exposing per modality
+    contribution honestly, rather than by post hoc attribution over features nobody
+    can name. If you have seen that done properly in a clinical deployment, please
+    send it to me.
+  </p>
+
+  <hr>
+  <p class="end">
+    Working on something similar, or think this reasoning is wrong?
+    <a href="mailto:isararsiddique@gmail.com">isararsiddique@gmail.com</a>
+  </p>
+</article>
+</div>
+</section>
+</main>
+
+<footer>
+  <div class="shell">
+    <p><a class="back" href="/blog/">All writing</a></p>
+    <p>Isarar Siddique, Lucknow</p>
+  </div>
+</footer>
+<script src="/app.js" defer></script>
+</body>
+</html>

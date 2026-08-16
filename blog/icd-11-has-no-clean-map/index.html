@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ICD-11 has no clean map from ICD-10</title>
+<meta name="description" content="What actually breaks when you migrate a cancer registry to ICD-11, and why the coding step needs a human in it on purpose.">
+<link rel="canonical" href="https://isarar.com/blog/icd-11-has-no-clean-map/">
+<meta name="theme-color" content="#f8f6f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0b0d" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="/style.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ICD-11 has no clean map from ICD-10">
+<meta property="og:description" content="What actually breaks when you migrate a cancer registry to ICD-11.">
+<meta property="og:url" content="https://isarar.com/blog/icd-11-has-no-clean-map/">
+<meta property="og:image" content="https://isarar.com/isarar-900.jpg">
+<meta property="article:published_time" content="2026-08-17">
+<meta name="twitter:card" content="summary_large_image">
+<script>
+(function(){try{var t=localStorage.getItem("theme");
+if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BlogPosting",
+  "@id":"https://isarar.com/blog/icd-11-has-no-clean-map/#post",
+  "headline":"ICD-11 has no clean map from ICD-10",
+  "description":"What actually breaks when you migrate a cancer registry to ICD-11, and why the coding step needs a human in it on purpose.",
+  "datePublished":"2026-08-17","dateModified":"2026-08-17",
+  "url":"https://isarar.com/blog/icd-11-has-no-clean-map/",
+  "image":"https://isarar.com/isarar-900.jpg",
+  "author":{"@id":"https://isarar.com/#person"},
+  "publisher":{"@id":"https://isarar.com/#person"},
+  "isPartOf":{"@id":"https://isarar.com/blog/#blog"},
+  "mainEntityOfPage":"https://isarar.com/blog/icd-11-has-no-clean-map/",
+  "inLanguage":"en",
+  "keywords":["ICD-11","cancer registry","clinical informatics","health data","interoperability"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://isarar.com/"},
+    {"@type":"ListItem","position":2,"name":"Writing","item":"https://isarar.com/blog/"},
+    {"@type":"ListItem","position":3,"name":"ICD-11 has no clean map from ICD-10"}
+  ]
+}
+</script>
+</head>
+<body>
+<div id="bar"></div>
+<div id="dot" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="shell">
+    <a class="who" href="/">Isarar Siddique</a>
+    <nav aria-label="Primary">
+      <a href="/#work">Work</a><a href="/#code">Code</a><a href="/blog/">Writing</a>
+    </nav>
+    <button id="theme" type="button" aria-label="Switch theme">
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a7 7 0 0 0 11.1 11.1z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<section class="post">
+<div class="shell">
+<article class="post-wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/blog/">Writing</a></p>
+  <h1>ICD-11 has no clean map from ICD-10</h1>
+  <p class="by"><time datetime="2026-08-17">17 August 2026</time> &nbsp;·&nbsp; 9 min read</p>
+
+  <p>
+    Nobody wants to read about disease classification codes. I did not want to work on
+    them either. Then I spent months on a cancer registry and came out convinced that
+    coding is where most health data quality is silently won or lost, long before
+    anybody trains a model on it.
+  </p>
+
+  <p>
+    This is the post I needed when I started.
+  </p>
+
+  <h2>The thing people assume</h2>
+
+  <p>
+    Most engineers approach an ICD-10 to ICD-11 migration the way they would approach
+    any schema change. Find the mapping table, write the transform, run it, verify
+    counts, done. Coding systems look like enums, so they get treated like enums.
+  </p>
+
+  <p>
+    The assumption underneath that is a one to one correspondence between old codes and
+    new codes. For a large part of any real registry, that correspondence does not
+    exist, and no amount of engineering rigour creates it.
+  </p>
+
+  <h2>Why the structure changed</h2>
+
+  <p>
+    ICD-10 is essentially a hierarchy of codes you pick from. One diagnosis, one code,
+    walk the tree until you find the leaf that fits.
+  </p>
+
+  <p>
+    ICD-11 is built differently. Underneath it there is a foundation of entities, and
+    what you actually code against is a linearisation drawn from that foundation. More
+    importantly for anyone building a registry, it supports postcoordination. You
+    combine a stem code with extension codes to express things that ICD-10 forced into
+    either a single overloaded code or a free text note. Laterality, severity,
+    histology, anatomical detail, all of these can attach as structured extensions
+    rather than being baked into one string.
+  </p>
+
+  <p>
+    That is a genuine improvement in expressiveness. It is also exactly why the
+    migration is not a lookup.
+  </p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 640 200" role="img" aria-label="Diagram showing one to one, one to many, many to one and no direct equivalent mappings between ICD-10 and ICD-11 codes">
+      <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+      <text class="sv-s" x="8" y="14">ICD-10</text>
+      <text class="sv-s" x="520" y="14">ICD-11</text>
+
+      <rect class="sv-box" x="8" y="24" width="92" height="26" rx="5"/><text class="sv-t" x="18" y="41">code A</text>
+      <path class="sv-arrow" d="M104,37 L516,37"/>
+      <rect class="sv-box-a" x="520" y="24" width="112" height="26" rx="5"/><text class="sv-ta" x="530" y="41">one stem code</text>
+      <text class="sv-s" x="240" y="32">clean, and this is the easy case</text>
+
+      <rect class="sv-box" x="8" y="66" width="92" height="26" rx="5"/><text class="sv-t" x="18" y="83">code B</text>
+      <path class="sv-arrow" d="M104,79 C300,79 340,62 516,62"/>
+      <path class="sv-arrow" d="M104,79 C300,79 340,96 516,96"/>
+      <rect class="sv-box-a" x="520" y="52" width="112" height="22" rx="5"/><text class="sv-ta" x="530" y="67">option 1</text>
+      <rect class="sv-box-a" x="520" y="86" width="112" height="22" rx="5"/><text class="sv-ta" x="530" y="101">option 2</text>
+      <text class="sv-s" x="240" y="76">split: which one depends on detail</text>
+      <text class="sv-s" x="240" y="90">the old record may not contain</text>
+
+      <rect class="sv-box" x="8" y="118" width="92" height="22" rx="5"/><text class="sv-t" x="18" y="133">code C</text>
+      <rect class="sv-box" x="8" y="146" width="92" height="22" rx="5"/><text class="sv-t" x="18" y="161">code D</text>
+      <path class="sv-arrow" d="M104,129 C300,129 340,146 516,146"/>
+      <path class="sv-arrow" d="M104,157 C300,157 340,150 516,150"/>
+      <rect class="sv-box-a" x="520" y="132" width="112" height="26" rx="5"/><text class="sv-ta" x="530" y="149">merged code</text>
+      <text class="sv-s" x="240" y="126">merge: the distinction is gone,</text>
+      <text class="sv-s" x="240" y="140">and it may have mattered</text>
+
+      <rect class="sv-box" x="8" y="166" width="92" height="26" rx="5"/><text class="sv-t" x="18" y="183">code E</text>
+      <path class="sv-arrow" d="M104,179 L300,179"/>
+      <text class="sv-s" x="308" y="176">no direct equivalent</text>
+      <text class="sv-s" x="308" y="190">someone has to decide</text>
+    </svg>
+    <figcaption>
+      Four cases. Only the first is automatable. The other three require a decision,
+      and the decision is clinical.
+    </figcaption>
+  </figure>
+
+  <h2>The four cases, and why three of them hurt</h2>
+
+  <p>
+    <b>One to one.</b> Fine. Automate it, move on. In our registry this covered a
+    decent share of records and gave a false sense of how the whole job would go.
+  </p>
+
+  <p>
+    <b>One to many.</b> The old code splits into several new ones, distinguished by
+    detail that ICD-11 can express and ICD-10 could not. If the original record
+    contains that detail somewhere, in a pathology report, in free text, you can
+    sometimes recover it. If it does not, you cannot. Choosing the most common
+    subtype is tempting and it fabricates precision.
+  </p>
+
+  <p>
+    <b>Many to one.</b> Two old codes collapse into one new one. This looks harmless
+    because nothing is lost at the record level. It is not harmless if anybody ever
+    ran a time series on the difference between those two codes, which for a cancer
+    registry is the entire point of having one.
+  </p>
+
+  <p>
+    <b>No direct equivalent.</b> The category was restructured, and there is a
+    judgement to make about where a historical record now belongs. There is no
+    algorithmic answer. There is a defensible answer and an indefensible one, and
+    telling them apart requires knowing oncology.
+  </p>
+
+  <h2>Why oncology is worse than most</h2>
+
+  <p>
+    Cancer is a bad case for this because a tumour is not one fact. It is a site, a
+    morphology, a behaviour, a grade, sometimes a laterality, sometimes a stage. Cancer
+    registries have historically leaned on a separate oncology specific coding system
+    for morphology and topography, alongside ICD for the diagnosis.
+  </p>
+
+  <p>
+    ICD-11 changes how some of that fits together. That means a migration is not just
+    old code to new code. It is a question about which system owns which fact, and
+    whether your registry's existing split between them still makes sense. We spent
+    more time on that than on any code writing.
+  </p>
+
+  <h2>What we built instead of a transform</h2>
+
+  <p>
+    The decision that shaped the whole project was accepting that the coding step keeps
+    a human in it permanently, not as a temporary measure during migration.
+  </p>
+
+  <p>
+    So the pipeline sorts rather than converts. Records that map cleanly go through
+    automatically. Records that hit any of the other three cases get routed to a queue
+    with the candidate targets, the evidence available from the source record, and the
+    reason it was flagged. A person decides. The decision gets stored with the record,
+    not just applied to it.
+  </p>
+
+  <p>
+    That last part is the piece I would argue hardest for. Storing the decision, the
+    date and the basis means that in five years when somebody questions a trend, the
+    registry can answer whether it is biology or bookkeeping. A migration that
+    overwrites codes in place destroys the ability to ever ask that question again.
+  </p>
+
+  <blockquote>
+    A registry that cannot tell you why a code changed cannot tell you whether an
+    incidence trend is real.
+  </blockquote>
+
+  <h2>The part that applies beyond ICD</h2>
+
+  <p>
+    I think the general lesson is about where automation belongs.
+  </p>
+
+  <p>
+    The instinct with a mapping problem is to push automation as far as possible and
+    treat the leftovers as failures. Inverting that worked better. Automate only the
+    provably unambiguous, then invest the effort in making the ambiguous cases fast and
+    well presented for the person deciding. Our win was not a smarter mapper. It was a
+    queue that showed a coder everything they needed in one screen so a decision took
+    seconds instead of minutes.
+  </p>
+
+  <p>
+    That is a less exciting result than an automated migration. It is also the one that
+    survives audit, which for a registry feeding national surveillance is the only
+    property that matters.
+  </p>
+
+  <h2>If you are about to do this</h2>
+
+  <p>
+    Three things worth knowing before you start.
+  </p>
+
+  <p>
+    <b>Count your cases before you plan.</b> Run the mapping tables against your actual
+    distribution and find out what fraction of your records fall into each of the four
+    cases. That number decides whether this is a two month project or a year, and it is
+    specific to your registry.
+  </p>
+
+  <p>
+    <b>Decide the ambiguous policy with clinicians before writing code.</b> Not during.
+    Every ambiguous class needs a written rule and a named person who agreed to it.
+  </p>
+
+  <p>
+    <b>Keep both codes.</b> Storage is cheap and regret is not. Retain the original
+    code alongside the new one indefinitely.
+  </p>
+
+  <hr>
+  <p class="end">
+    If you are working on registry infrastructure or ICD-11 adoption, I would like to
+    compare notes. <a href="mailto:isararsiddique@gmail.com">isararsiddique@gmail.com</a>
+  </p>
+</article>
+</div>
+</section>
+</main>
+
+<footer>
+  <div class="shell">
+    <p><a class="back" href="/blog/">All writing</a></p>
+    <p>Isarar Siddique, Lucknow</p>
+  </div>
+</footer>
+<script src="/app.js" defer></script>
+</body>
+</html>
