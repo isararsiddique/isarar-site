@@ -1,4 +1,4 @@
-/* isarar.com progressive enhancement. Everything works without this file. */
+/* isarar.com — progressive enhancement. Everything works without this file. */
 (function () {
   "use strict";
 
@@ -108,18 +108,17 @@
     var ks = document.querySelectorAll("[data-to]");
     if (ks.length) {
       if (calm || !("IntersectionObserver" in window)) {
-        ks.forEach(function (k) { k.textContent = k.dataset.to + (k.dataset.suffix || ""); });
+        ks.forEach(function (k) { k.textContent = k.dataset.to; });
       } else {
         var io2 = new IntersectionObserver(function (rows) {
           rows.forEach(function (r) {
             if (!r.isIntersecting) return;
             io2.unobserve(r.target);
             var end = parseInt(r.target.dataset.to, 10), t0 = null;
-            var sfx = r.target.dataset.suffix || "";
             var run = function (ts) {
               if (!t0) t0 = ts;
               var p = Math.min((ts - t0) / 1100, 1);
-              r.target.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + sfx;
+              r.target.textContent = Math.round(end * (1 - Math.pow(1 - p, 3)));
               if (p < 1) requestAnimationFrame(run);
             };
             requestAnimationFrame(run);

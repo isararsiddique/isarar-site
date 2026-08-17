@@ -116,13 +116,10 @@ def build_llms():
     print("  llms.txt")
 
 def build_llms_full():
-    head = PROFILE_BLOCK.read_text(encoding="utf-8").rstrip() if PROFILE_BLOCK.exists() else ""
     out = [f"# {SITE['name']}, full text", "",
            f"Source: {BASE}  ·  Author: {SITE['author']}  ·  Contact: {SITE['email']}",
-           "Profile first, then every post reproduced in full for machine reading.", "",
+           "Every post below is reproduced in full for machine reading.", "",
            "=" * 74, ""]
-    if head:
-        out += [head, "", "=" * 74, ""]
     for p in POSTS:
         f = ROOT / "blog" / p["slug"] / "index.html"
         if not f.exists():
@@ -163,15 +160,6 @@ def build_api():
         "url": BASE,
         "email": SITE["email"],
         "location": SITE["location"],
-        "education": [
-            {"degree": "MRes, AI for Healthcare", "institution": "Universiti Malaya",
-             "years": "2026 to 2027", "status": "Enrolled",
-             "supervisor": "Prof. Dr. Sarinder Kaur Dhillon"},
-            {"degree": "B.Tech, Biotechnology",
-             "institution": "Dr. A.P.J. Abdul Kalam Technical University (GITM Lucknow)",
-             "years": "2021 to 2025", "status": "Completed",
-             "note": "First Class with Honours, CGPA 8.2 of 10, top of the Biotechnology batch"}
-        ],
         "roles": [
             {"title": "Founder and CEO", "org": "Biotech Wallah Private Limited",
              "url": "https://biotechwallah.com", "product": "Zero Dementia",
@@ -200,30 +188,6 @@ def build_api():
         }],
         "datasets": [{"name": "HealMed", "role": "Medical data manager and evaluator",
                       "url": "https://huggingface.co/datasets/li-lab/HealMed"}],
-        "researchOperations": {
-            "grantWriting": [
-                "Wrote and secured RM 400,000 institutional research grant from PPUM (Pusat Perubatan Universiti Malaya) for Sarinder Labs, Universiti Malaya",
-                "Genesis 2.0 Startup Grant, Government of India, INR 10 lakh",
-                "Harvard University Innovation Award, USD 5,000",
-                "Additional grant applications in progress"
-            ],
-            "patents": [
-                "Files patents personally: prior art and freedom to operate searching, claim drafting, specification writing, responses to examiner objections",
-                "Two provisional patents filed in India during 2026, cardiac signal analysis and corneal endothelium morphometry",
-                "Patent filed on the NextGen OncoData Registry, Universiti Malaya"
-            ],
-            "ethicsAndGovernance": [
-                "Drafts ethics protocols, informed consent instruments including consent designed for participants with low literacy, and data governance frameworks",
-                "Built HIPAA aligned data infrastructure and anonymisation pipelines for multi institutional clinical datasets"
-            ],
-            "commercialisation": [
-                "Structures projects so results stay commercialisable, covering intellectual property timing relative to publication, data sharing agreements and institutional approvals"
-            ],
-            "labOperations": [
-                "Coordinates research collaborations across nine institutions in six countries at the same time",
-                "Builds reproducible pipelines and documentation so projects survive personnel turnover"
-            ]
-        },
         "profiles": {
             "linkedin": "https://www.linkedin.com/in/isarar/",
             "github": "https://github.com/isararsiddique",
