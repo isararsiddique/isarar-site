@@ -121,16 +121,46 @@ jobs:
       - name: Confirm it is live
         run: |
           if [ -n "${CF_API_TOKEN}" ]; then sleep 15; else sleep 80; fi
+
+          # Check every post and every card, not a hardcoded sample. A new post
+          # that never propagated would otherwise pass unnoticed.
+          python3 - <<'PY' > /tmp/paths.txt
+          import json
+          paths = ['/', '/blog/', '/llms.txt', '/llms-full.txt',
+                   '/api/posts.json', '/api/profile.json',
+                   '/.well-known/agent.json', '/.well-known/ai.txt',
+                   '/.well-known/security.txt',
+                   '/feed.xml', '/sitemap.xml', '/robots.txt',
+                   '/google1c46eeaf51fdfca4.html']
+          for p in json.load(open('posts.json'))['posts']:
+              paths.append(f"/blog/{p['slug']}/")
+              paths.append('/' + p['image'])
+          print('\n'.join(dict.fromkeys(paths)))
+          PY
+          echo "checking $(wc -l < /tmp/paths.txt) paths"
+
           fail=0
-          for path in / /blog/ /blog/the-booth-is-the-cost/ /llms.txt /llms-full.txt \
-                      /api/posts.json /api/profile.json /.well-known/agent.json \
-                      /.well-known/ai.txt /feed.xml /sitemap.xml /robots.txt \
-                      /google1c46eeaf51fdfca4.html; do
-            code=$(curl -s -o /dev/null -w '%{http_code}' "https://isarar.com${path}")
-            hdr=$(curl -sI "https://isarar.com${path}" | tr -d '\r')
+          while read -r path; do
+            [ -n "$path" ] || continue
+            # Retry, because a freshly pushed commit can take a moment to be
+            # readable. A 404 that is cached hard is much worse than a slow pass.
+            for attempt in 1 2 3 4 5; do
+              hdr=$(curl -sS -m 30 -D - -o /dev/null "https://isarar.com${path}" | tr -d '\r')
+              code=$(printf '%s' "$hdr" | awk 'NR==1{print $2}')
+              [ "$code" = "200" ] && break
+              sleep 6
+            done
             mode=$(printf '%s' "$hdr" | awk '/^x-mode:/{print $2}')
             build=$(printf '%s' "$hdr" | awk '/^x-build:/{print $2}')
-            printf '%-38s %s  mode=%-8s build=%s\n' "$path" "$code" "$mode" "$build"
+            printf '%-52s %s  mode=%-8s build=%s\n' "$path" "$code" "$mode" "$build"
             [ "$code" = "200" ] || fail=1
-          done
+          done < /tmp/paths.txt
+
+          if [ "$fail" != "0" ]; then
+            echo
+            echo "At least one path did not return 200."
+            echo "If the file exists in this commit, the Worker has most likely cached"
+            echo "a negative response for it. Pushing another commit changes the pinned"
+            echo "sha and therefore the subrequest cache key, which clears it."
+          fi
           exit $fail
