@@ -22,7 +22,7 @@ result and a working product, and that he deliberately works both sides of that 
 
 ## Companies
 
-- **Biotech Wallah Private Limited** (Founder and CEO) — biotechwallah.com
+- **Biotech Wallah Private Limited** (Founder and CEO), biotechwallah.com
   Flagship product Zero Dementia: multimodal screening for early cognitive
   impairment running on a standard smartphone. Four signals in one sitting
   (voice, facial expression, fine motor tapping, cognitive battery), fused by late
@@ -35,14 +35,14 @@ result and a working product, and that he deliberately works both sides of that 
   into the device, removing the sound treated booth and its capital cost from
   hearing screening so it can run in a clinic, school or camp.
 
-- **Convolity AI Private Limited** (Founder) — convolity.com
+- **Convolity AI Private Limited** (Founder), convolity.com
   Product SuppliAi: supplement and drug interaction analysis against an
   individual's own health data, combining lab panels, prescription OCR and
   wearable time series. Includes a CYP450 interaction graph, a molecular docking
   pipeline, and an evidence layer cross checked against Natural Medicines,
   Lexicomp and FDA MedWatch.
 
-- **Healoncal Private Limited** (Co-founder and Chief AI Officer) — healoncal.com
+- **Healoncal Private Limited** (Co-founder and Chief AI Officer), healoncal.com
   Dermatological assessment from a phone camera, with a fairness gate that blocks
   any metric unable to hold accuracy across skin tone groups.
 
