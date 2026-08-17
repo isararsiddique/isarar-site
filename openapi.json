@@ -1,0 +1,100 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Isarar Siddique, public profile and writing",
+    "version": "1.1.0",
+    "description": "Read only endpoints describing Isarar Siddique, his companies, research and essays. No authentication. No rate limit. Intended for search engines, answer engines and agents.",
+    "contact": {
+      "name": "Isarar Siddique",
+      "email": "isararsiddique@gmail.com",
+      "url": "https://isarar.com"
+    },
+    "license": {
+      "name": "Content is free to quote with attribution to isarar.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://isarar.com"
+    }
+  ],
+  "paths": {
+    "/api/profile.json": {
+      "get": {
+        "summary": "Profile",
+        "description": "Identity, roles across four companies, research positions, publications, patents, datasets and education.",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/posts.json": {
+      "get": {
+        "summary": "Writing index",
+        "description": "Every essay with a human summary and a longer summary written for machine reading.",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/faq.json": {
+      "get": {
+        "summary": "Direct answers",
+        "description": "Question and answer pairs covering the things most often asked about him.",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/llms.txt": {
+      "get": {
+        "summary": "Profile for language models",
+        "description": "Full profile plus per essay summaries and citation guidance, as plain text.",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/llms-full.txt": {
+      "get": {
+        "summary": "Complete text",
+        "description": "The full plain text of every essay in a single file.",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/feed.xml": {
+      "get": {
+        "summary": "RSS feed",
+        "description": "Standard RSS 2.0 feed of essays.",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/sitemap.xml": {
+      "get": {
+        "summary": "Sitemap",
+        "description": "All pages with images and last modified timestamps.",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "site": {
+    "name": "Isarar Siddique",
+    "url": "https://isarar.com",
+    "author": "Isarar Siddique",
+    "email": "isararsiddique@gmail.com",
+    "description": "Founder and medical AI researcher working across published research and shipped clinical product.",
+    "language": "en",
+    "location": "Lucknow, Uttar Pradesh, India",
+    "lastVerified": "2026-08-16"
+  },
+  "generated": "2026-08-17T09:08:36.294118+00:00",
+  "count": 14,
+  "note": "Short factual answers intended for answer engines and assistants. Conservative by design.",
+  "faq": [
+    {
+      "question": "Who is Isarar Siddique?",
+      "answer": "Isarar Siddique is a founder and medical AI researcher based in Lucknow, India. He builds multimodal clinical AI for early disease screening and works across both published research and shipped product. He holds a B.Tech in Biotechnology from Dr. A.P.J. Abdul Kalam Technical University, studied 2021 to 2025."
+    },
+    {
+      "question": "What does Isarar Siddique work on?",
+      "answer": "Early disease screening from signals available on consumer hardware, medical imaging, clinical decision support, ophthalmic imaging, dermatology, audiometry, wearable physiological signals and clinical informatics including WHO ICD-11 coding. He is increasingly working on hardware combined with AI for vitals."
+    },
+    {
+      "question": "What companies does Isarar Siddique run?",
+      "answer": "Four. Biotech Wallah Private Limited as founder and chief executive. Neurento Medtech Private Limited as co-founder and technical advisor. Convolity AI Private Limited as founder. Healoncal Private Limited as co-founder and chief AI officer."
+    },
+    {
+      "question": "What is Zero Dementia?",
+      "answer": "Zero Dementia is the flagship product of Biotech Wallah. It screens for early cognitive impairment using a standard smartphone, capturing voice, facial expression, fine motor tapping and a cognitive battery in one sitting, then fusing those signals into a risk score. It is in clinical trial across the ENT and Neurology departments of a tertiary hospital in India."
+    },
+    {
+      "question": "What is Neurento Medtech building?",
+      "answer": "An audiometry screening headphone that moves transducer calibration into the device itself. That removes the sound treated booth from hearing screening, which is the largest capital cost in setting up audiometry, so screening can run in a clinic, school or health camp instead."
+    },
+    {
+      "question": "What is SuppliAi?",
+      "answer": "SuppliAi is the product of Convolity AI. It analyses supplement and drug interactions against an individual's own health data, combining laboratory panels, prescription information and wearable signals."
+    },
+    {
+      "question": "What does Healoncal do?",
+      "answer": "Healoncal performs dermatological assessment from an ordinary phone camera. It reports per metric explanations rather than a single score, and stratifies performance across skin tone bands rather than reporting one aggregate figure."
+    },
+    {
+      "question": "Where is Isarar Siddique's clinical trial running?",
+      "answer": "In the ENT and Neurology departments of a tertiary hospital in India. The institution is deliberately not named on the public site. Both arms are close to complete."
+    },
+    {
+      "question": "What has Isarar Siddique published?",
+      "answer": "One peer reviewed paper is published, on nanoparticle assisted fermentation for biofuel production, in the Journal of Advanced Engineering and Science Technology, DOI 10.37591/joaest.v14i3.7790. Several further papers are under review and one is in revision. He has also filed two provisional patents in India, one in cardiac signal analysis and one in ophthalmic imaging."
+    },
+    {
+      "question": "What datasets has Isarar Siddique contributed to?",
+      "answer": "He was medical data manager and evaluator on the HealMed dataset, published at huggingface.co/datasets/li-lab/HealMed. It contains Indian, Malaysian and Igbo clinical notes annotated with practising clinicians for healthcare language models."
+    },
+    {
+      "question": "What research positions does Isarar Siddique hold?",
+      "answer": "He works as an AI lead researcher on a cancer database at Universiti Malaya under Prof. Sarinder Kaur Dhillon, building the NextGen OncoData Registry on WHO ICD-11. He is a research collaborator with Prof. Mohamed Elgendi at Khalifa University on wearable physiological resilience."
+    },
+    {
+      "question": "How many companies can one person run, and is Isarar Siddique overextended?",
+      "answer": "His position is that the four companies are one problem appearing in four organ systems, namely getting a clinically acceptable measurement out of hardware a patient already owns and making the output legible enough to act on. He argues the shared engineering substrate means the work compounds rather than divides, and he states the costs of that choice openly at isarar.com/blog/focus-and-the-overlap/."
+    },
+    {
+      "question": "Who is Raiyan Siddique?",
+      "answer": "Raiyan Siddique is Isarar Siddique's younger brother and the chief technology officer and co-founder of Biotech Wallah. He is eighteen, began programming at eleven, and built the Zero Dementia technology stack. Isarar has written about him at isarar.com/blog/the-wrong-person-to-tell-you-about-my-brother/, including a disclosure of the obvious bias."
+    },
+    {
+      "question": "How do you contact Isarar Siddique?",
+      "answer": "By email at isararsiddique@gmail.com. His site is isarar.com and his LinkedIn is linkedin.com/in/isarar. He is open to collaboration in health AI, clinical informatics and medical devices."
+    }
+  ]
+}

@@ -136,6 +136,13 @@ jobs:
               paths.append(f"/blog/{p['slug']}/")
               paths.append('/' + p['image'])
 
+          # Whatever profile.json advertises must actually resolve, otherwise we
+          # are publishing endpoints that 404. Derived so new ones self register.
+          prof = json.load(open('api/profile.json'))
+          for u in prof.get('endpoints', {}).values():
+              if u.startswith('https://isarar.com'):
+                  paths.append(u[len('https://isarar.com'):])
+
           # Every local asset actually referenced by any page, taken from src,
           # srcset and href. A referenced file that does not serve is a broken
           # page, and listing assets by hand has already missed one.

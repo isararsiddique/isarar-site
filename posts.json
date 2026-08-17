@@ -111,6 +111,13 @@
         "engineering",
         "India",
         "credentials"
+      ],
+      "extraImages": [
+        {
+          "src": "raiyan-400.jpg",
+          "title": "Raiyan Siddique",
+          "caption": "Raiyan Siddique, chief technology officer and co-founder of Biotech Wallah"
+        }
       ]
     },
     {

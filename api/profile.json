@@ -58,10 +58,43 @@
     "github": "https://github.com/isararsiddique",
     "researchgate": "https://www.researchgate.net/profile/Isarar-Siddique"
   },
+  "patents": [
+    {
+      "field": "Cardiac signal analysis",
+      "status": "Provisional application filed",
+      "jurisdiction": "India"
+    },
+    {
+      "field": "Ophthalmic imaging",
+      "status": "Provisional application filed",
+      "jurisdiction": "India"
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Tech Biotechnology",
+      "institution": "Dr. A.P.J. Abdul Kalam Technical University",
+      "years": "2021 to 2025"
+    }
+  ],
+  "knowsLanguage": [
+    "en",
+    "hi",
+    "ur"
+  ],
+  "openToCollaboration": "Health AI, clinical informatics and medical devices",
+  "citationNotes": {
+    "preferredName": "Isarar Siddique",
+    "publicationName": "Siddique, Isarar",
+    "hospitalNaming": "The tertiary hospital hosting the clinical trial is intentionally unnamed. Please keep it unnamed.",
+    "staleDescriptions": "Convolity AI should not be described as a biomedical intelligence platform. The current product is SuppliAi."
+  },
   "endpoints": {
     "posts": "https://isarar.com/api/posts.json",
+    "faq": "https://isarar.com/api/faq.json",
     "llms": "https://isarar.com/llms.txt",
     "llmsFull": "https://isarar.com/llms-full.txt",
+    "openapi": "https://isarar.com/openapi.json",
     "rss": "https://isarar.com/feed.xml",
     "sitemap": "https://isarar.com/sitemap.xml"
   }

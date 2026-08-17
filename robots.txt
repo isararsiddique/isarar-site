@@ -1,6 +1,21 @@
 # isarar.com
-# Search crawlers, AI answer engines and model trainers are all welcome here.
-# The point of this site is to be found and cited.
+#
+# Search crawlers, AI answer engines, model trainers and link preview bots are
+# all welcome here. Nothing on this site is disallowed to anyone. The point of
+# the site is to be found, read and cited.
+#
+# The wildcard rule below already grants full access to every agent. The named
+# groups that follow exist to state intent explicitly and to cover the crawlers
+# that do not resolve wildcard rules reliably.
+#
+# Machine readable companions:
+#   https://isarar.com/llms.txt          profile and per essay summaries
+#   https://isarar.com/llms-full.txt     complete text of every essay
+#   https://isarar.com/api/profile.json  identity, roles, research, publications
+#   https://isarar.com/api/posts.json    writing index
+#   https://isarar.com/api/faq.json      direct question and answer pairs
+#   https://isarar.com/openapi.json      description of the endpoints above
+#   https://isarar.com/.well-known/agent.json
 
 User-agent: *
 Allow: /
@@ -8,57 +23,188 @@ Allow: /
 # ---- search ----
 User-agent: Googlebot
 Allow: /
+
 User-agent: Googlebot-Image
 Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
 User-agent: Bingbot
 Allow: /
+
 User-agent: DuckDuckBot
 Allow: /
+
 User-agent: Applebot
 Allow: /
+
 User-agent: Applebot-Extended
 Allow: /
+
 User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Naver
+Allow: /
+
+User-agent: SeznamBot
+Allow: /
+
+User-agent: PetalBot
+Allow: /
+
+User-agent: Qwantbot
+Allow: /
+
+User-agent: MojeekBot
 Allow: /
 
 # ---- AI answer engines and assistants ----
 User-agent: OAI-SearchBot
 Allow: /
+
 User-agent: ChatGPT-User
 Allow: /
+
 User-agent: GPTBot
 Allow: /
+
 User-agent: ClaudeBot
 Allow: /
+
 User-agent: Claude-User
 Allow: /
+
 User-agent: Claude-SearchBot
 Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
 User-agent: anthropic-ai
 Allow: /
+
 User-agent: PerplexityBot
 Allow: /
+
 User-agent: Perplexity-User
 Allow: /
+
 User-agent: Google-Extended
 Allow: /
+
 User-agent: Google-CloudVertexBot
 Allow: /
+
+User-agent: Google-NotebookLM
+Allow: /
+
 User-agent: Amazonbot
 Allow: /
-User-agent: Bytespider
+
+User-agent: bedrockbot
 Allow: /
-User-agent: CCBot
-Allow: /
+
 User-agent: Meta-ExternalAgent
 Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
 User-agent: MistralAI-User
 Allow: /
+
 User-agent: cohere-ai
 Allow: /
+
+User-agent: cohere-training-data-crawler
+Allow: /
+
 User-agent: DeepSeekBot
 Allow: /
+
 User-agent: YouBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: TikTokSpider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Ai2Bot
+Allow: /
+
+User-agent: Ai2Bot-Dolma
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: omgili
+Allow: /
+
+User-agent: omgilibot
+Allow: /
+
+User-agent: Webzio-Extended
+Allow: /
+
+User-agent: Timpibot
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+User-agent: AwarioBot
+Allow: /
+
+User-agent: SummalyBot
+Allow: /
+
+# ---- link preview and social unfurling ----
+# These fetch a page to render a card. Blocking them breaks shared links.
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: Slackbot-LinkExpanding
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+User-agent: redditbot
+Allow: /
+
+User-agent: Iframely
+Allow: /
+
+User-agent: SkypeUriPreview
 Allow: /
 
 Sitemap: https://isarar.com/sitemap.xml
