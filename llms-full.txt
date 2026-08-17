@@ -862,7 +862,7 @@ Tags: talent, early career, engineering, India, credentials
 Home / Writing
 
 The wrong person to tell you about my brother
-17 August 2026  ·  6 min read
+17 August 2026  ·  12 min read
 
 
 
@@ -881,6 +881,15 @@ So do not take my word for anything. Every claim in this post is checkable. He h
 a page listing
 what he has built , a LinkedIn ,
 and code running in hospitals. Go and look, then decide.
+
+
+
+
+
+Raiyan Siddique
+Eighteen. CTO and co-founder, Biotech Wallah. Started writing code at eleven.
+linkedin.com/in/raiyanz
+
 
 
 
@@ -948,6 +957,91 @@ watched it work and drew his own conclusion, which is a different and probably m
 durable kind of learning.
 
 
+He left college
+
+
+This is the part people react to most, so I want to give his reasoning properly
+before I argue with it.
+
+
+
+He left because he decided there was nothing there to learn. Not that it was hard,
+not that he was failing. That the syllabus was years behind what he was already
+doing every day, and that sitting through it was the most expensive thing in his
+week.
+
+
+
+I think the honest version of his case is stronger than people assume. Engineering
+curricula in India get revised slowly, and the gap between a syllabus and current
+practice in machine learning is measured in years, not months. A student who is
+already training models and running production infrastructure is not being
+stretched by an introductory paper on material that was settled before he was born.
+He was being asked to spend his most productive hours proving he knew things he had
+already used in anger.
+
+
+
+And the cost was not the tuition. It was the hours. Attendance requirements, lab
+submissions, examination cycles, all of it billed against the only resource that
+actually mattered to him, which was uninterrupted time to build. He looked at that
+trade and decided it was a bad one.
+
+
+
+His objection was never that it was difficult. It was that the price was his time
+and the return was a certificate saying he knew things he had already shipped.
+
+
+Why I still would not repeat that advice
+
+
+I finished mine. B.Tech in biotechnology, all four years, and I do not regret it.
+So the two of us are a natural experiment with a sample size of two and no control
+group, and you should weigh my view here knowing I chose the other path.
+
+
+
+Three things make me cautious about turning his decision into a general rule.
+
+
+
+You are only hearing from the ones it worked for. Dropping out is
+loud when it succeeds and silent when it does not. For every person whose exit
+looks visionary in hindsight there are many who left for the same reasons, with the
+same confidence, and simply lost several years. Their write ups do not exist. Any
+inference you draw from stories like his is drawn from a sample that has already
+been filtered.
+
+
+
+A degree is an option, not just a signal. This is the argument I
+actually put to him. The certificate is largely useless as proof of skill, agreed.
+But it is a key to a set of doors that are hard to open otherwise, including
+graduate study, some visa categories, and employers whose filters are not
+negotiable. Options have value even when you never exercise them, and he gave up a
+real one. He knew that and accepted it, which is different from not having thought
+about it.
+
+
+
+Boring is not the same as useless. The material he found tedious
+was largely foundational. Algorithms, theory, the mathematics underneath the
+libraries. Those are precisely the areas where somebody who learned by building
+ends up with holes, and the holes do not announce themselves. They show up later as
+a subtly wrong approach to a problem that a formal grounding would have made
+obvious. I expect him to hit some of those, and to have to close them the slow way.
+
+
+
+The thing that actually made his decision defensible is one that gets left out
+whenever the story is retold. He had traction first. He was already building
+systems people depended on before he left, so he was walking away from one path
+while standing on another. Leaving because the syllabus is dull, with nothing built
+yet and a plan to start afterwards, is a completely different bet wearing the same
+clothes.
+
+
 What he actually built, so you can judge for yourself
 
 
@@ -991,6 +1085,44 @@ money at fifteen.
 Plenty of people with more raw ability than him do not get any of that. I am not
 going to pretend the playing field was level, because pretending that is how these
 stories become useless to the people reading them.
+
+
+What he is like to work with
+
+
+He is my CTO, which means I get the version of him that is not on any profile page.
+It is not uniformly easy.
+
+
+
+He is faster than anybody I have worked with, and the speed comes with a preference
+I have learned to argue about. Given a system that is not behaving, his instinct is
+to rebuild it rather than repair it, because rebuilding is more interesting and he
+is quick enough that it often is genuinely cheaper. Sometimes that is the correct
+call. Sometimes it means a component that was merely inelegant gets replaced by one
+that is new, and new means untested.
+
+
+
+He under documents. Code that is obvious to the person holding the whole design in
+their head is not obvious to anybody else, and for a while the whole design existed
+in exactly one place. We have had to make that a rule rather than a request, because
+a stack that only one person can maintain is a risk to the company regardless of how
+good that person is.
+
+
+
+He has very little patience for process, which is the same trait that got him out of
+a lecture hall and into production, pointed at me instead. Some of that friction is
+useful. Process that cannot justify itself should be challenged. Some of it is just
+a cost of working with somebody who has never had to persuade a committee of
+anything.
+
+
+
+I am including this because a profile without any of it is marketing. The strengths
+and the friction are the same trait viewed from two sides, and if I only described
+one side you would be right to discount the whole piece.
 
 
 What I genuinely cannot tell you
