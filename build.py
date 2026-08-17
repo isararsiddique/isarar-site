@@ -163,6 +163,15 @@ def build_api():
         "url": BASE,
         "email": SITE["email"],
         "location": SITE["location"],
+        "education": [
+            {"degree": "MRes, AI for Healthcare", "institution": "Universiti Malaya",
+             "years": "2026 to 2027", "status": "Enrolled",
+             "supervisor": "Prof. Dr. Sarinder Kaur Dhillon"},
+            {"degree": "B.Tech, Biotechnology",
+             "institution": "Dr. A.P.J. Abdul Kalam Technical University (GITM Lucknow)",
+             "years": "2021 to 2025", "status": "Completed",
+             "note": "First Class with Honours, CGPA 8.2 of 10, top of the Biotechnology batch"}
+        ],
         "roles": [
             {"title": "Founder and CEO", "org": "Biotech Wallah Private Limited",
              "url": "https://biotechwallah.com", "product": "Zero Dementia",

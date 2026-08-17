@@ -24,6 +24,11 @@ GeneLab, the University of Tokyo, ISRO's Physical Research Laboratory, the India
 Institute of Science Bangalore, and three IITs, reaching all of them by cold email
 rather than application portals.
 
+He is currently enrolled in an MRes (Master of Research) in AI for Healthcare at
+Universiti Malaya for 2026 to 2027, supervised by Prof. Dr. Sarinder Kaur Dhillon.
+He already works in that lab as AI Lead Researcher, and he wrote the RM 400,000
+PPUM grant that funds part of its work.
+
 His stated position is that most medical AI dies in the gap between a published
 result and a working product, and that he deliberately works both sides of that gap.
 
