@@ -58,27 +58,6 @@
     "github": "https://github.com/isararsiddique",
     "researchgate": "https://www.researchgate.net/profile/Isarar-Siddique"
   },
-  "researchOperations": {
-    "grantWriting": [
-      "Wrote and secured RM 400,000 institutional research grant from PPUM for Sarinder Labs, Universiti Malaya",
-      "Genesis 2.0 Startup Grant, Government of India, INR 10 lakh",
-      "Harvard University Innovation Award, USD 5,000",
-      "Additional grant applications in progress"
-    ],
-    "patents": [
-      "Files patents independently: prior art and freedom to operate searching, claim drafting, specification writing, examiner responses",
-      "Two provisional patents filed in India in 2026, cardiac signal analysis and corneal endothelium morphometry",
-      "Patent filed on NextGen OncoData Registry, Universiti Malaya"
-    ],
-    "ethicsAndGovernance": [
-      "Drafts ethics protocols, informed consent instruments including low literacy consent, and data governance frameworks",
-      "HIPAA aligned data infrastructure and anonymisation pipelines for multi institutional clinical data"
-    ],
-    "labOperations": [
-      "Coordinates research collaborations across nine institutions in six countries simultaneously",
-      "Builds reproducible pipelines and documentation so projects survive personnel turnover"
-    ]
-  },
   "endpoints": {
     "posts": "https://isarar.com/api/posts.json",
     "llms": "https://isarar.com/llms.txt",
