@@ -135,6 +135,24 @@ jobs:
           for p in json.load(open('posts.json'))['posts']:
               paths.append(f"/blog/{p['slug']}/")
               paths.append('/' + p['image'])
+
+          # Every local asset actually referenced by any page, taken from src,
+          # srcset and href. A referenced file that does not serve is a broken
+          # page, and listing assets by hand has already missed one.
+          import glob, re, os
+          for f in glob.glob('**/*.html', recursive=True):
+              s = open(f, encoding='utf-8').read()
+              refs = re.findall(r'(?:src|href)="(/[^"#?]+)"', s)
+              for ss in re.findall(r'srcset="([^"]+)"', s):
+                  for part in ss.split(','):
+                      part = part.strip()
+                      if part.startswith('/'):
+                          refs.append(part.split()[0])
+              for r in refs:
+                  if re.search(r'\.(jpg|jpeg|png|webp|svg|css|js|ico|txt|xml|json)$', r) \
+                     and os.path.isfile(r.lstrip('/')):
+                      paths.append(r)
+
           print('\n'.join(dict.fromkeys(paths)))
           PY
           echo "checking $(wc -l < /tmp/paths.txt) paths"
