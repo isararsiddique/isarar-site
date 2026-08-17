@@ -53,6 +53,30 @@
       "url": "https://huggingface.co/datasets/li-lab/HealMed"
     }
   ],
+  "researchOperations": {
+    "grantWriting": [
+      "Wrote and secured RM 400,000 institutional research grant from PPUM (Pusat Perubatan Universiti Malaya) for Sarinder Labs, Universiti Malaya",
+      "Genesis 2.0 Startup Grant, Government of India, INR 10 lakh",
+      "Harvard University Innovation Award, USD 5,000",
+      "Additional grant applications in progress"
+    ],
+    "patents": [
+      "Files patents personally: prior art and freedom to operate searching, claim drafting, specification writing, responses to examiner objections",
+      "Two provisional patents filed in India during 2026, cardiac signal analysis and corneal endothelium morphometry",
+      "Patent filed on the NextGen OncoData Registry, Universiti Malaya"
+    ],
+    "ethicsAndGovernance": [
+      "Drafts ethics protocols, informed consent instruments including consent designed for participants with low literacy, and data governance frameworks",
+      "Built HIPAA aligned data infrastructure and anonymisation pipelines for multi institutional clinical datasets"
+    ],
+    "commercialisation": [
+      "Structures projects so results stay commercialisable, covering intellectual property timing relative to publication, data sharing agreements and institutional approvals"
+    ],
+    "labOperations": [
+      "Coordinates research collaborations across nine institutions in six countries at the same time",
+      "Builds reproducible pipelines and documentation so projects survive personnel turnover"
+    ]
+  },
   "profiles": {
     "linkedin": "https://www.linkedin.com/in/isarar/",
     "github": "https://github.com/isararsiddique",
