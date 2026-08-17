@@ -5,6 +5,188 @@ Every post below is reproduced in full for machine reading.
 
 ==========================================================================
 
+## The wrong person to tell you about my brother
+
+URL: https://isarar.com/blog/the-wrong-person-to-tell-you-about-my-brother/
+Published: 2026-08-17   Section: Opinion
+Tags: talent, early career, engineering, India, credentials
+
+Home / Writing
+
+The wrong person to tell you about my brother
+17 August 2026  ·  6 min read
+
+
+
+Seven years between those two numbers, and that is most of the explanation.
+
+
+
+Let me get the disclosure out of the way, because everything below is worthless
+without it. Raiyan Siddique is my brother. He is the CTO and co-founder of my
+company. I am, by any reasonable standard, the least trustworthy person alive to
+assess him.
+
+
+
+So do not take my word for anything. Every claim in this post is checkable. He has
+a page listing
+what he has built , a LinkedIn ,
+and code running in hospitals. Go and look, then decide.
+
+
+
+What I want to write about is not whether he is good. It is the question people
+actually ask me, which is how somebody gets here at eighteen.
+
+
+Genius is the wrong word
+
+
+People reach for it because it is quick, and because it lets them stop thinking.
+If he is a genius then he is a different kind of creature and nothing about his
+path applies to anyone else. That is a comfortable conclusion and I do not think
+it is true.
+
+
+
+Here is the boring arithmetic instead. He started writing code at eleven. He is
+eighteen. That is seven years. A computer science graduate in India typically
+starts at eighteen and finishes at twenty two, which is four years, most of it
+spent on assignments nobody deploys.
+
+
+
+He has been compounding for seven years, and for the last two of those he has been
+shipping software that clinicians use on patients. Measured in hours actually
+spent making things work, he is not ahead of his age. He is on schedule for
+somebody who has been doing this for seven years. The surprise is only in the
+calendar.
+
+
+
+Calling it genius explains nothing. Calling it seven years explains almost
+everything.
+
+
+The thing that mattered more than talent
+
+
+I have watched this closely, and if I had to name the single biggest factor it
+would not be intelligence. It is that nobody ever successfully told him he was not
+qualified yet.
+
+
+
+In India that is unusual, and it is the real bottleneck for most people. The system
+runs on credential order. You finish the degree, then you apply, then somebody
+decides whether you are allowed to touch anything real. By the time permission
+arrives you have lost your teenage years to preparation for a gate.
+
+
+
+Raiyan skipped the queue by building things that already worked and letting the
+work do the arguing. Before Zero Dementia he built hearAI, a hearing screening
+system with custom hardware, for a neurosurgeon at a government hospital. Nobody
+hired an eighteen year old to do that. He turned up with something functioning.
+
+
+
+Which, and I recognise the irony of writing this, is the same move
+I used to get into research
+labs . Neither of us found a way through the front door. We both worked out that
+a finished thing is a better argument than a CV. I did not teach him that. He
+watched it work and drew his own conclusion, which is a different and probably more
+durable kind of learning.
+
+
+What he actually built, so you can judge for yourself
+
+
+The whole Zero Dementia technology stack is his. A Flutter capture app that records
+voice, eye movement, facial micro-expressions and cognitive task responses at
+controlled sample rates. A signal pipeline using openSMILE, MediaPipe and librosa
+that pulls 187 biomarkers out of a single session. A Node.js and Postgres backend
+orchestrated with Redis, Celery and Airflow. The training and inference
+infrastructure on SageMaker.
+
+
+
+Outside that, PRESAGE, which predicts cardiac deterioration from wearable heart
+rate signals using conformal prediction, validated against MIMIC-IV. An AI native
+ERP exposing 389 tools over MCP. A weather intelligence API for an IIT Delhi
+incubated startup. Around thirty production systems in total, four papers under
+review, and co-inventor on the multimodal biomarker fusion patent.
+
+
+
+I am listing these because they are artefacts, not adjectives. You can look at a
+running system and form your own view. You cannot do that with the word genius.
+
+
+The unfair advantages, stated plainly
+
+
+Any honest version of this has to include the parts that were not merit.
+
+
+
+He had an older brother already inside health research who could open clinical
+doors, make introductions, and hand him problems that mattered. When he built
+hearAI, the neurosurgeon was reachable partly because of relationships I already
+had. He had a family that treated a kid disappearing into a laptop as acceptable
+rather than a problem. He had electricity, a machine, and no obligation to earn
+money at fifteen.
+
+
+
+Plenty of people with more raw ability than him do not get any of that. I am not
+going to pretend the playing field was level, because pretending that is how these
+stories become useless to the people reading them.
+
+
+What I genuinely cannot tell you
+
+
+I am not the right reviewer for his code. I know enough to read a pipeline and
+follow an architecture, but I have never been the senior engineer who tears it
+apart properly, and he has never had one. That is a real gap and it is the thing I
+would fix first if I could.
+
+
+
+Starting at eleven also means there are foundations he learned sideways rather than
+formally. Somewhere in there are gaps that will surface later, in the way they
+always do for people who learned by building rather than by curriculum. He will
+find them the hard way.
+
+
+
+And I have no idea whether this pace is sustainable, or what it costs him. Anyone
+who tells you they can assess that in their own sibling is not paying attention.
+
+
+What I would actually take from this
+
+
+If you are looking for the transferable part, it is not the age. It is that the
+gate is usually softer than it looks, and the way through it is almost always a
+working thing rather than a request.
+
+
+
+And if you have a fourteen year old in the house who has gone quiet and is building
+something you do not understand, the most useful thing you can do is nothing. Do
+not redirect them toward exam preparation. That is the whole intervention.
+
+
+
+
+He is at linkedin.com/in/raiyanz
+if you want to check any of this, or hire him, which I would rather you did not.
+
+==========================================================================
+
 ## The booth is the cost
 
 URL: https://isarar.com/blog/the-booth-is-the-cost/

@@ -25,6 +25,18 @@
   </url>
 
   <url>
+    <loc>https://isarar.com/blog/the-wrong-person-to-tell-you-about-my-brother/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://isarar.com/og-brother.jpg</image:loc>
+      <image:title>The wrong person to tell you about my brother</image:title>
+      <image:caption>My brother started building at eleven and ships production healthcare systems at eighteen. I am his sibling, so discount me accordingly. Here is what I think actually explains it, </image:caption>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://isarar.com/blog/the-booth-is-the-cost/</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>

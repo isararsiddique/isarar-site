@@ -11,6 +11,24 @@
   },
   "posts": [
     {
+      "slug": "the-wrong-person-to-tell-you-about-my-brother",
+      "title": "The wrong person to tell you about my brother",
+      "date": "2026-08-17",
+      "time": "10:00:00",
+      "readMinutes": 6,
+      "section": "Opinion",
+      "image": "og-brother.jpg",
+      "summary": "My brother started building at eleven and ships production healthcare systems at eighteen. I am his sibling, so discount me accordingly. Here is what I think actually explains it, and why genius is the wrong word.",
+      "aiSummary": "Isarar Siddique writes about his brother Raiyan Siddique, CTO and co-founder of Biotech Wallah, who began programming at eleven and at eighteen has built the entire Zero Dementia technology stack plus around thirty production systems. Opens by disclosing the conflict of interest. Argues that genius is a lazy explanation and that seven years of compounding practice accounts for most of it, that the decisive factor was never being gated by credential order, and that a working artefact is a stronger argument than a CV. Explicitly names the unfair advantages including an older brother with clinical access, and states what the author cannot assess, including code quality and sustainability.",
+      "tags": [
+        "talent",
+        "early career",
+        "engineering",
+        "India",
+        "credentials"
+      ]
+    },
+    {
       "slug": "the-booth-is-the-cost",
       "title": "The booth is the cost",
       "date": "2026-08-17",

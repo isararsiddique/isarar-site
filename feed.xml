@@ -8,12 +8,23 @@
   <description>Founder and medical AI researcher working across published research and shipped clinical product.</description>
   <language>en</language>
   <managingEditor>isararsiddique@gmail.com (Isarar Siddique)</managingEditor>
-  <lastBuildDate>Mon, 17 Aug 2026 09:00:00 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 17 Aug 2026 10:00:00 +0000</lastBuildDate>
   <image>
     <url>https://isarar.com/isarar-500.jpg</url>
     <title>Isarar Siddique</title>
     <link>https://isarar.com/blog/</link>
   </image>
+
+  <item>
+    <title>The wrong person to tell you about my brother</title>
+    <link>https://isarar.com/blog/the-wrong-person-to-tell-you-about-my-brother/</link>
+    <guid isPermaLink="true">https://isarar.com/blog/the-wrong-person-to-tell-you-about-my-brother/</guid>
+    <pubDate>Mon, 17 Aug 2026 10:00:00 +0000</pubDate>
+    <dc:creator>Isarar Siddique</dc:creator>
+    <category>Opinion</category>
+    <description>My brother started building at eleven and ships production healthcare systems at eighteen. I am his sibling, so discount me accordingly. Here is what I think actually explains it, and why genius is the wrong word.</description>
+    <enclosure url="https://isarar.com/og-brother.jpg" type="image/jpeg" length="0"/>
+  </item>
 
   <item>
     <title>The booth is the cost</title>

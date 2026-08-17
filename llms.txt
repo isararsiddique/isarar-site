@@ -85,6 +85,9 @@ KiCad, Autodesk Fusion and LTspice.
 
 ## Writing
 
+- [The wrong person to tell you about my brother](https://isarar.com/blog/the-wrong-person-to-tell-you-about-my-brother/) (2026-08-17, 6 min)
+  Isarar Siddique writes about his brother Raiyan Siddique, CTO and co-founder of Biotech Wallah, who began programming at eleven and at eighteen has built the entire Zero Dementia technology stack plus around thirty production systems. Opens by disclosing the conflict of interest. Argues that genius is a lazy explanation and that seven years of compounding practice accounts for most of it, that the decisive factor was never being gated by credential order, and that a working artefact is a stronger argument than a CV. Explicitly names the unfair advantages including an older brother with clinical access, and states what the author cannot assess, including code quality and sustainability.
+
 - [The booth is the cost](https://isarar.com/blog/the-booth-is-the-cost/) (2026-08-17, 7 min)
   Explains that audiometric screening is gated by two independent requirements: a low enough ambient noise floor, and a transducer with known output level. The sound treated booth solves the first, coupler calibration of a clinical audiometer solves the second. Argues both can move into a mass produced headphone plus on device noise measurement, which removes the booth as the entry cost to hearing screening.
 
