@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skin tone fairness starts at the camera, not the model</title>
+<meta name="description" content="Fairness in dermatology AI gets treated as a loss function problem. Most of the failure happens before the model sees anything, in the dataset and in the camera pipeline itself.">
+<link rel="canonical" href="https://isarar.com/blog/skin-tone-fairness-starts-at-the-camera/">
+<meta name="theme-color" content="#f8f6f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0b0d" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="/style.css">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Skin tone fairness starts at the camera, not the model">
+<meta property="og:description" content="Most of the failure in dermatology AI across skin tones happens before the model sees anything, in the dataset and in the phone camera pipeline.">
+<meta property="og:url" content="https://isarar.com/blog/skin-tone-fairness-starts-at-the-camera/">
+<meta property="og:image" content="https://isarar.com/og-skin.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A ramp of skin tone swatches with the darkest end crossed out">
+<meta property="og:locale" content="en_GB">
+<meta property="article:published_time" content="2026-08-17T15:00:00Z">
+<meta property="article:modified_time" content="2026-08-17T15:00:00Z">
+<meta property="article:section" content="Fairness">
+<meta property="article:tag" content="dermatology AI">
+<meta property="article:tag" content="fairness">
+<meta property="article:tag" content="skin tone">
+<meta property="article:tag" content="computer vision">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://isarar.com/og-skin.jpg">
+<meta name="twitter:image:alt" content="A ramp of skin tone swatches with the darkest end crossed out">
+<meta name="author" content="Isarar Siddique">
+<meta name="keywords" content="dermatology AI, fairness, skin tone, computer vision">
+<link rel="alternate" type="application/rss+xml" title="Isarar Siddique" href="/feed.xml">
+<link rel="author" href="https://isarar.com/">
+
+<script>
+(function(){try{var t=localStorage.getItem("theme");
+if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://isarar.com/blog/skin-tone-fairness-starts-at-the-camera/#post",
+  "headline": "Skin tone fairness starts at the camera, not the model",
+  "description": "Fairness in dermatology AI gets treated as a loss function problem. Most of the failure happens before the model sees anything, in the dataset and in the camera pipeline itself.",
+  "datePublished": "2026-08-17T15:00:00Z",
+  "dateModified": "2026-08-17T15:00:00Z",
+  "url": "https://isarar.com/blog/skin-tone-fairness-starts-at-the-camera/",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://isarar.com/og-skin.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "author": { "@id": "https://isarar.com/#person" },
+  "publisher": { "@id": "https://isarar.com/#person" },
+  "isPartOf": { "@id": "https://isarar.com/blog/#blog" },
+  "mainEntityOfPage": "https://isarar.com/blog/skin-tone-fairness-starts-at-the-camera/",
+  "articleSection": "Fairness",
+  "keywords": ["dermatology AI", "fairness", "skin tone", "computer vision"],
+  "timeRequired": "PT6M",
+  "isAccessibleForFree": true,
+  "inLanguage": "en",
+  "about": [
+    { "@type": "Thing", "name": "algorithmic fairness" },
+    { "@type": "Thing", "name": "dermatology" },
+    { "@type": "Thing", "name": "image signal processing" }
+  ],
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".post h1", ".post p"]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://isarar.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Writing", "item": "https://isarar.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Skin tone fairness starts at the camera, not the model" }
+  ]
+}
+</script>
+</head>
+<body>
+<div id="bar"></div>
+<div id="dot" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="shell">
+    <a class="who" href="/">Isarar Siddique</a>
+    <nav aria-label="Primary">
+      <a href="/#work">Work</a><a href="/#code">Code</a><a href="/blog/">Writing</a>
+    </nav>
+    <button id="theme" type="button" aria-label="Switch theme">
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a7 7 0 0 0 11.1 11.1z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<section class="post">
+<div class="shell">
+<article class="post-wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/blog/">Writing</a></p>
+
+  <h1>Skin tone fairness starts at the camera, not the model</h1>
+  <p class="by"><time datetime="2026-08-17">17 August 2026</time> &nbsp;·&nbsp; 6 min read</p>
+
+  <figure class="cover">
+    <img src="/og-skin.jpg" alt="A ramp of skin tone swatches with the darkest end crossed out"
+         width="1200" height="630" loading="eager" decoding="async">
+    <figcaption>The end of the ramp your sensor throws away before the model gets a vote.</figcaption>
+  </figure>
+
+  <p>
+    Fairness in dermatology AI is usually discussed as a modelling problem. Reweight the
+    loss, resample the minority group, add an adversarial head to strip the protected
+    attribute. Those are real techniques and they are aimed at the wrong stage.
+  </p>
+
+  <p>
+    At Healoncal we assess skin from ordinary phone cameras, which means I have had to
+    look closely at what happens before any model runs. Most of the disparity is already
+    baked in by then, and no loss function reaches back to undo it.
+  </p>
+
+  <h2>The obvious problem: the datasets</h2>
+
+  <p>
+    Public dermatology image sets skew heavily toward lighter skin. This is well
+    documented and widely repeated, so I will not belabour it. Train on a distribution
+    and you inherit it.
+  </p>
+
+  <p>
+    What matters more is that resampling does not fix a data problem of this kind.
+    Upweighting a small number of darker skin images does not add information, it just
+    increases the influence of whatever few examples you happen to have, including their
+    quirks. You get a model that is more confident about a narrow slice, which is worse
+    than one that is visibly uncertain.
+  </p>
+
+  <h2>The less obvious problem: the disease looks different</h2>
+
+  <p>
+    Many dermatological signs are described, taught and annotated in terms tuned to
+    lighter skin. Redness is the clearest example. Inflammation on lighter skin reads as
+    erythema, a recognisable red. On darker skin the same inflammation frequently
+    presents violaceous, brown or grey, or is not visible as a colour change at all and
+    shows up instead as a change in texture, thickness or scale.
+  </p>
+
+  <p>
+    So a model that has learned to key on redness has not learned inflammation. It has
+    learned inflammation as it appears on one part of the population, and on the rest of
+    the population the feature it depends on is simply absent. That is not a bias in the
+    weights you can regularise away. The signal it was trained to find is not there.
+  </p>
+
+  <p>
+    The same holds for the vocabulary in the labels. If the annotation guideline says
+    look for redness, then careful annotators following it correctly will under call
+    inflammation on darker skin, and your ground truth carries the error before training
+    starts.
+  </p>
+
+  <h2>The problem nobody puts in the fairness section: the camera</h2>
+
+  <p>
+    This is the part I did not expect and it changed how I build.
+  </p>
+
+  <p>
+    A phone camera does not hand you the sensor's view. It hands you the output of an
+    image signal processor that has already made a long series of decisions. Auto
+    exposure picks a brightness target. Auto white balance decides what counts as
+    neutral. Tone curves, noise reduction and sharpening all run. Increasingly a learned
+    enhancement stage runs too.
+  </p>
+
+  <p>
+    Those stages are tuned, and historically they have been tuned and evaluated on
+    subjects that skew light. Point a metering system calibrated that way at darker
+    skin and it tends to underexpose, because the frame reads as darker than its target.
+    Underexposure costs you signal in exactly the tonal range where the clinical
+    information lives, and then noise reduction smooths what little texture variation
+    survived, because at low signal the processor cannot distinguish fine texture from
+    noise.
+  </p>
+
+  <blockquote>
+    By the time the JPEG exists, the discriminative information has already been
+    compressed away for one group and preserved for another. The model is being handed
+    two different qualities of evidence and asked to be equally good at both.
+  </blockquote>
+
+  <p>
+    You can train on that output forever and never recover what the pipeline discarded.
+    This is a measurement problem, and it belongs with the hardware, not the optimiser.
+  </p>
+
+  <h2>What we actually do about it</h2>
+
+  <p>
+    Constrain capture rather than hoping to fix it later. Lock exposure and white
+    balance to fixed values where the API allows, so that two captures are comparable
+    and neither has been auto corrected into a different colour space. Capture the least
+    processed format available. Require a reference in frame where practical, because a
+    known patch gives you something to normalise against and turns a colour judgement
+    into a relative measurement.
+  </p>
+
+  <p>
+    Record the conditions as data. Device model, whether the flash fired, ambient light
+    estimate, exposure settings. These belong in the record, because a result that
+    depends on them and does not report them is not reproducible. It also lets you
+    discover after the fact that performance tracks a device rather than a diagnosis.
+  </p>
+
+  <p>
+    Reject bad captures at capture time. If exposure in the region of interest is outside
+    the usable range, ask for another photograph while the person is still holding the
+    phone. The alternative is a confident prediction from evidence that was never
+    adequate.
+  </p>
+
+  <p>
+    Report per band, never aggregate. We stratify metrics across skin tone bands and
+    treat the worst band as the number that describes the product. An aggregate AUC on a
+    population that is mostly one group is a statement about that group with extra steps.
+  </p>
+
+  <p>
+    Do not train the model to be blind to tone. Skin tone is clinically relevant
+    information and adversarially removing it removes signal a dermatologist would use.
+    The goal is not a model that cannot tell, it is a model that is equally reliable
+    either way and honest about when it is not.
+  </p>
+
+  <h2>What I cannot claim</h2>
+
+  <p>
+    We have not solved this. Our own data still under represents the darkest bands
+    relative to where I want it, and the tone banding schemes in common use are coarse
+    proxies that were not designed as measurement instruments. Locking camera settings
+    also loses you some of the quality the processing pipeline genuinely provides, which
+    is a real cost, not a free win.
+  </p>
+
+  <p>
+    What I will claim is that stratified reporting is built in rather than added for a
+    reviewer, and that the worst band is the number we hold ourselves to. That is a
+    commitment about disclosure, which is the part I control. Closing the gap is a data
+    collection programme and it is slower than any modelling change.
+  </p>
+
+  <p>
+    If you are working on this, the useful reframe is that fairness here is largely a
+    measurement problem wearing a machine learning costume. Ask what your camera threw
+    away before you ask what your loss function should weigh.
+  </p>
+
+  <hr>
+  <p class="end">
+    Related: <a href="/blog/a-clinician-who-cannot-see-why/">a clinician who cannot see
+    why will not act</a>, on why per metric output beats a single score.
+  </p>
+</article>
+</div>
+</section>
+</main>
+
+<footer>
+  <div class="shell">
+    <p><a class="back" href="/blog/">All writing</a></p>
+    <p>Isarar Siddique, Lucknow</p>
+  </div>
+</footer>
+<script src="/app.js" defer></script>
+</body>
+</html>

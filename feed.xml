@@ -8,12 +8,67 @@
   <description>Founder and medical AI researcher working across published research and shipped clinical product.</description>
   <language>en</language>
   <managingEditor>isararsiddique@gmail.com (Isarar Siddique)</managingEditor>
-  <lastBuildDate>Mon, 17 Aug 2026 10:00:00 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 17 Aug 2026 15:00:00 +0000</lastBuildDate>
   <image>
     <url>https://isarar.com/isarar-500.jpg</url>
     <title>Isarar Siddique</title>
     <link>https://isarar.com/blog/</link>
   </image>
+
+  <item>
+    <title>Skin tone fairness starts at the camera, not the model</title>
+    <link>https://isarar.com/blog/skin-tone-fairness-starts-at-the-camera/</link>
+    <guid isPermaLink="true">https://isarar.com/blog/skin-tone-fairness-starts-at-the-camera/</guid>
+    <pubDate>Mon, 17 Aug 2026 15:00:00 +0000</pubDate>
+    <dc:creator>Isarar Siddique</dc:creator>
+    <category>Fairness</category>
+    <description>Fairness in dermatology AI gets treated as a loss function problem. Most of the failure happens before the model sees anything, in the dataset and in the phone camera pipeline itself.</description>
+    <enclosure url="https://isarar.com/og-skin.jpg" type="image/jpeg" length="0"/>
+  </item>
+
+  <item>
+    <title>The three minute constraint</title>
+    <link>https://isarar.com/blog/the-three-minute-constraint/</link>
+    <guid isPermaLink="true">https://isarar.com/blog/the-three-minute-constraint/</guid>
+    <pubDate>Mon, 17 Aug 2026 14:00:00 +0000</pubDate>
+    <dc:creator>Isarar Siddique</dc:creator>
+    <category>Field notes</category>
+    <description>None of the things that decide whether a screening tool gets used in a busy outpatient department appear in the paper. Field notes from a trial in a tertiary hospital in India.</description>
+    <enclosure url="https://isarar.com/og-window.jpg" type="image/jpeg" length="0"/>
+  </item>
+
+  <item>
+    <title>Clinical notes do not translate</title>
+    <link>https://isarar.com/blog/clinical-notes-do-not-translate/</link>
+    <guid isPermaLink="true">https://isarar.com/blog/clinical-notes-do-not-translate/</guid>
+    <pubDate>Mon, 17 Aug 2026 13:00:00 +0000</pubDate>
+    <dc:creator>Isarar Siddique</dc:creator>
+    <category>Data</category>
+    <description>Annotating Indian, Malaysian and Igbo clinical notes for a healthcare language model dataset. The same illness is written in three different grammars, and a model trained on one reads the others confidently wrong.</description>
+    <enclosure url="https://isarar.com/og-notes.jpg" type="image/jpeg" length="0"/>
+  </item>
+
+  <item>
+    <title>A screen that is 95 percent accurate is wrong about half the time</title>
+    <link>https://isarar.com/blog/base-rates-break-screening-claims/</link>
+    <guid isPermaLink="true">https://isarar.com/blog/base-rates-break-screening-claims/</guid>
+    <pubDate>Mon, 17 Aug 2026 12:00:00 +0000</pubDate>
+    <dc:creator>Isarar Siddique</dc:creator>
+    <category>Method</category>
+    <description>Accuracy in an abstract tells you almost nothing about a screening tool. Work the base rate and a very good model still hands you a majority of false positives. The arithmetic, and what to report instead.</description>
+    <enclosure url="https://isarar.com/og-baserate.jpg" type="image/jpeg" length="0"/>
+  </item>
+
+  <item>
+    <title>Focus is advice for people who have not found the overlap</title>
+    <link>https://isarar.com/blog/focus-and-the-overlap/</link>
+    <guid isPermaLink="true">https://isarar.com/blog/focus-and-the-overlap/</guid>
+    <pubDate>Mon, 17 Aug 2026 11:00:00 +0000</pubDate>
+    <dc:creator>Isarar Siddique</dc:creator>
+    <category>Opinion</category>
+    <description>I run four companies and everyone tells me to pick one. The advice is correct for most people and wrong for me, and there is a single test that tells you which case you are in.</description>
+    <enclosure url="https://isarar.com/og-overlap.jpg" type="image/jpeg" length="0"/>
+  </item>
 
   <item>
     <title>The wrong person to tell you about my brother</title>

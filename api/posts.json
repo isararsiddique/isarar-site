@@ -9,9 +9,94 @@
     "location": "Lucknow, Uttar Pradesh, India",
     "lastVerified": "2026-08-16"
   },
-  "count": 5,
-  "generated": "2026-08-17T08:17:53.297518+00:00",
+  "count": 10,
+  "generated": "2026-08-17T08:40:21.357392+00:00",
   "posts": [
+    {
+      "title": "Skin tone fairness starts at the camera, not the model",
+      "url": "https://isarar.com/blog/skin-tone-fairness-starts-at-the-camera/",
+      "slug": "skin-tone-fairness-starts-at-the-camera",
+      "datePublished": "2026-08-17",
+      "section": "Fairness",
+      "tags": [
+        "dermatology AI",
+        "fairness",
+        "skin tone",
+        "computer vision"
+      ],
+      "readMinutes": 6,
+      "image": "https://isarar.com/og-skin.jpg",
+      "summary": "Fairness in dermatology AI gets treated as a loss function problem. Most of the failure happens before the model sees anything, in the dataset and in the phone camera pipeline itself.",
+      "aiSummary": "Isarar Siddique argues that skin tone disparity in dermatology AI is largely a measurement problem rather than a modelling one, based on work at Healoncal assessing skin from ordinary phone cameras. Three upstream causes: public dermatology datasets skew light and resampling adds influence rather than information, many clinical signs are defined in terms tuned to lighter skin so a model keyed on erythema has not learned inflammation when it presents violaceous or as texture change, and annotation guidelines that say look for redness bake the error into ground truth. The least discussed cause is the camera image signal processor, where auto exposure and auto white balance historically tuned on lighter subjects underexpose darker skin and noise reduction then removes the surviving texture, so discriminative information is destroyed before the model runs. Mitigations used: locking exposure and white balance, capturing least processed formats, in frame colour reference, recording device and lighting metadata, rejecting inadequate captures at capture time, and stratified per band reporting where the worst band describes the product. He declines to claim the problem is solved and notes tone banding schemes are coarse proxies."
+    },
+    {
+      "title": "The three minute constraint",
+      "url": "https://isarar.com/blog/the-three-minute-constraint/",
+      "slug": "the-three-minute-constraint",
+      "datePublished": "2026-08-17",
+      "section": "Field notes",
+      "tags": [
+        "clinical deployment",
+        "product design",
+        "low resource settings",
+        "screening"
+      ],
+      "readMinutes": 6,
+      "image": "https://isarar.com/og-window.jpg",
+      "summary": "None of the things that decide whether a screening tool gets used in a busy outpatient department appear in the paper. Field notes from a trial in a tertiary hospital in India.",
+      "aiSummary": "Field notes from deploying a screening tool in the ENT and Neurology outpatient departments of a tertiary hospital in India. Isarar Siddique argues the model was never the hard part. The real constraints: the patient availability window is minutes and belongs to a clinician with a queue, so an over long protocol gets skipped non randomly and quietly biases the sample. A family attendant is present and will prompt or answer for the patient, contaminating a cognitive test, so the design must absorb and log third party presence rather than forbid it. Devices are shared, so per patient login rituals get abandoned or written on paper. Rooms are never quiet, so ambient noise must be measured and recordings refused at capture time rather than discovered as degraded features in analysis. Connectivity and power are intermittent, so capture must be local first with a durable sync queue. Some patients have never used a touchscreen, so interaction load moves to a trained operator and the product becomes an instrument rather than an app. His recommendation is to observe full clinic sessions before writing the protocol, and to expect deployment constraints to change the model rather than wrap it."
+    },
+    {
+      "title": "Clinical notes do not translate",
+      "url": "https://isarar.com/blog/clinical-notes-do-not-translate/",
+      "slug": "clinical-notes-do-not-translate",
+      "datePublished": "2026-08-17",
+      "section": "Data",
+      "tags": [
+        "clinical NLP",
+        "annotation",
+        "global health",
+        "language models"
+      ],
+      "readMinutes": 6,
+      "image": "https://isarar.com/og-notes.jpg",
+      "summary": "Annotating Indian, Malaysian and Igbo clinical notes for a healthcare language model dataset. The same illness is written in three different grammars, and a model trained on one reads the others confidently wrong.",
+      "aiSummary": "Isarar Siddique worked as medical data manager and evaluator on the li-lab/HealMed dataset, annotating Indian, Malaysian and Igbo clinical notes with local clinicians for healthcare language models. He argues a clinical note is a local convention rather than a neutral description, shaped by training tradition, drug supply, documentation incentive and the language the patient used. Specific failure modes include local brand name prescribing that models trained on generics do not recognise, abbreviations that collide across traditions so errors change meaning rather than lose it, presenting complaints written as culturally standard compound phrases that map to no single code, negation and hedging cues that shift by tradition, and unwritten fields where absence means assumed rather than negative. He notes that two clinicians from different systems can disagree on the same note while both being correct within their own convention, which is real structure that averaging destroys. He recommends always stratifying evaluation by source and rejects framing this as a generalisation problem, since no convention is privileged."
+    },
+    {
+      "title": "A screen that is 95 percent accurate is wrong about half the time",
+      "url": "https://isarar.com/blog/base-rates-break-screening-claims/",
+      "slug": "base-rates-break-screening-claims",
+      "datePublished": "2026-08-17",
+      "section": "Method",
+      "tags": [
+        "screening",
+        "base rates",
+        "clinical validation",
+        "statistics"
+      ],
+      "readMinutes": 7,
+      "image": "https://isarar.com/og-baserate.jpg",
+      "summary": "Accuracy in an abstract tells you almost nothing about a screening tool. Work the base rate and a very good model still hands you a majority of false positives. The arithmetic, and what to report instead.",
+      "aiSummary": "A worked explanation of why accuracy is the wrong headline metric for medical screening. At 5 percent prevalence with 95 percent sensitivity and 95 percent specificity, screening 1000 people yields about 48 true positives and about 47 false positives, so positive predictive value is near 50 percent. At 1 percent prevalence five in six positives are wrong from an unchanged model. The argument: a screening tool has no single accuracy, only an accuracy per deployment population, so the operating point must be chosen against real prevalence rather than a balanced test set. Isarar Siddique describes deliberately accepting more false positives because the cost asymmetry favours it, a false positive costing one specialist appointment while a false negative costs the intervention window. He argues the confirmatory referral pathway sets the threshold, and recommends reporting sensitivity and specificity separately with intervals, positive predictive value at a stated deployment prevalence, and expected false positives per thousand screened, while omitting accuracy entirely."
+    },
+    {
+      "title": "Focus is advice for people who have not found the overlap",
+      "url": "https://isarar.com/blog/focus-and-the-overlap/",
+      "slug": "focus-and-the-overlap",
+      "datePublished": "2026-08-17",
+      "section": "Opinion",
+      "tags": [
+        "founders",
+        "focus",
+        "medical AI",
+        "strategy"
+      ],
+      "readMinutes": 6,
+      "image": "https://isarar.com/og-overlap.jpg",
+      "summary": "I run four companies and everyone tells me to pick one. The advice is correct for most people and wrong for me, and there is a single test that tells you which case you are in.",
+      "aiSummary": "Isarar Siddique argues that the standard advice to focus is a heuristic with a domain rather than a law. His four ventures, Biotech Wallah, Healoncal, Neurento Medtech and Convolity AI, are presented not as four problems but as one problem recurring across four organ systems: obtain a clinically acceptable measurement from hardware the patient already owns, then make the output legible enough to act on. The shared substrate is signal quality on uncontrolled consumer hardware, per metric explainability, low bandwidth deployment and regulator ready documentation. He states the costs plainly, including a context switching tax, lower depth per venture than a single focus founder, and a failure mode where follow through on unglamorous work slips rather than whole companies being dropped. He offers a falsifiable test: state the shared substrate in one sentence without naming any project, and if you cannot, you have a collection rather than an overlap."
+    },
     {
       "title": "The wrong person to tell you about my brother",
       "url": "https://isarar.com/blog/the-wrong-person-to-tell-you-about-my-brother/",
@@ -63,7 +148,7 @@
         "deployment",
         "late fusion"
       ],
-      "readMinutes": 8,
+      "readMinutes": 6,
       "image": "https://isarar.com/og-fusion.jpg",
       "summary": "I had a screening model that scored better than the one we deployed. I threw it away. On buying attribution with accuracy, and why explainability is an architectural constraint rather than a research topic you add later.",
       "aiSummary": "Describes replacing a higher performing early fusion model with late fusion in a multimodal dementia screening system. Early fusion concatenates features and can model cross modal interactions but cannot produce per modality attribution. Late fusion scores each of four signals separately then combines, costing accuracy but producing a story a clinician can act on. Downstream benefits: local failure handling, graceful degradation with missing data, and clinicians correcting the model."
@@ -82,7 +167,7 @@
         "health data",
         "interoperability"
       ],
-      "readMinutes": 9,
+      "readMinutes": 7,
       "image": "https://isarar.com/og-icd.jpg",
       "summary": "Coding is where health data quality is silently won or lost, long before anybody trains a model on it. Four migration cases, three of which need a clinician, and why we kept a human in the loop on purpose.",
       "aiSummary": "Explains why an ICD-10 to ICD-11 cancer registry migration is not a lookup table. ICD-11 uses a foundation with linearisations and supports postcoordination via stem codes plus extension codes. Four mapping cases arise: one to one is automatable, one to many requires detail the old record may lack, many to one destroys distinctions that time series depended on, and no direct equivalent requires clinical judgement. Argues for automating only the provably unambiguous and storing every coding decision with its basis so incidence trends can be audited."
@@ -100,7 +185,7 @@
         "undergraduate research",
         "careers"
       ],
-      "readMinutes": 8,
+      "readMinutes": 6,
       "image": "https://isarar.com/og-email.jpg",
       "summary": "No application portals, no referrals, no pedigree. The first fifty emails got me nothing. Here is the single change that took the reply rate to roughly one in six.",
       "aiSummary": "Describes reaching eleven research labs including Harvard, Stanford, NASA GeneLab, University of Tokyo, ISRO and IISc without application portals. The first fifty emails asking for internships got zero replies because they ask the recipient to do work. Switching to a specific proposal, drawn from a gap in the professor's own discussion section or an underanalysed published dataset, with a concrete two week deliverable, raised the reply rate to roughly one in six. The same approach later secured hospital partners by building screening infrastructure first and asking clinicians to critique it."

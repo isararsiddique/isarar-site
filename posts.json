@@ -11,6 +11,91 @@
   },
   "posts": [
     {
+      "slug": "skin-tone-fairness-starts-at-the-camera",
+      "title": "Skin tone fairness starts at the camera, not the model",
+      "date": "2026-08-17",
+      "time": "15:00:00",
+      "readMinutes": 6,
+      "section": "Fairness",
+      "image": "og-skin.jpg",
+      "summary": "Fairness in dermatology AI gets treated as a loss function problem. Most of the failure happens before the model sees anything, in the dataset and in the phone camera pipeline itself.",
+      "aiSummary": "Isarar Siddique argues that skin tone disparity in dermatology AI is largely a measurement problem rather than a modelling one, based on work at Healoncal assessing skin from ordinary phone cameras. Three upstream causes: public dermatology datasets skew light and resampling adds influence rather than information, many clinical signs are defined in terms tuned to lighter skin so a model keyed on erythema has not learned inflammation when it presents violaceous or as texture change, and annotation guidelines that say look for redness bake the error into ground truth. The least discussed cause is the camera image signal processor, where auto exposure and auto white balance historically tuned on lighter subjects underexpose darker skin and noise reduction then removes the surviving texture, so discriminative information is destroyed before the model runs. Mitigations used: locking exposure and white balance, capturing least processed formats, in frame colour reference, recording device and lighting metadata, rejecting inadequate captures at capture time, and stratified per band reporting where the worst band describes the product. He declines to claim the problem is solved and notes tone banding schemes are coarse proxies.",
+      "tags": [
+        "dermatology AI",
+        "fairness",
+        "skin tone",
+        "computer vision"
+      ]
+    },
+    {
+      "slug": "the-three-minute-constraint",
+      "title": "The three minute constraint",
+      "date": "2026-08-17",
+      "time": "14:00:00",
+      "readMinutes": 6,
+      "section": "Field notes",
+      "image": "og-window.jpg",
+      "summary": "None of the things that decide whether a screening tool gets used in a busy outpatient department appear in the paper. Field notes from a trial in a tertiary hospital in India.",
+      "aiSummary": "Field notes from deploying a screening tool in the ENT and Neurology outpatient departments of a tertiary hospital in India. Isarar Siddique argues the model was never the hard part. The real constraints: the patient availability window is minutes and belongs to a clinician with a queue, so an over long protocol gets skipped non randomly and quietly biases the sample. A family attendant is present and will prompt or answer for the patient, contaminating a cognitive test, so the design must absorb and log third party presence rather than forbid it. Devices are shared, so per patient login rituals get abandoned or written on paper. Rooms are never quiet, so ambient noise must be measured and recordings refused at capture time rather than discovered as degraded features in analysis. Connectivity and power are intermittent, so capture must be local first with a durable sync queue. Some patients have never used a touchscreen, so interaction load moves to a trained operator and the product becomes an instrument rather than an app. His recommendation is to observe full clinic sessions before writing the protocol, and to expect deployment constraints to change the model rather than wrap it.",
+      "tags": [
+        "clinical deployment",
+        "product design",
+        "low resource settings",
+        "screening"
+      ]
+    },
+    {
+      "slug": "clinical-notes-do-not-translate",
+      "title": "Clinical notes do not translate",
+      "date": "2026-08-17",
+      "time": "13:00:00",
+      "readMinutes": 6,
+      "section": "Data",
+      "image": "og-notes.jpg",
+      "summary": "Annotating Indian, Malaysian and Igbo clinical notes for a healthcare language model dataset. The same illness is written in three different grammars, and a model trained on one reads the others confidently wrong.",
+      "aiSummary": "Isarar Siddique worked as medical data manager and evaluator on the li-lab/HealMed dataset, annotating Indian, Malaysian and Igbo clinical notes with local clinicians for healthcare language models. He argues a clinical note is a local convention rather than a neutral description, shaped by training tradition, drug supply, documentation incentive and the language the patient used. Specific failure modes include local brand name prescribing that models trained on generics do not recognise, abbreviations that collide across traditions so errors change meaning rather than lose it, presenting complaints written as culturally standard compound phrases that map to no single code, negation and hedging cues that shift by tradition, and unwritten fields where absence means assumed rather than negative. He notes that two clinicians from different systems can disagree on the same note while both being correct within their own convention, which is real structure that averaging destroys. He recommends always stratifying evaluation by source and rejects framing this as a generalisation problem, since no convention is privileged.",
+      "tags": [
+        "clinical NLP",
+        "annotation",
+        "global health",
+        "language models"
+      ]
+    },
+    {
+      "slug": "base-rates-break-screening-claims",
+      "title": "A screen that is 95 percent accurate is wrong about half the time",
+      "date": "2026-08-17",
+      "time": "12:00:00",
+      "readMinutes": 7,
+      "section": "Method",
+      "image": "og-baserate.jpg",
+      "summary": "Accuracy in an abstract tells you almost nothing about a screening tool. Work the base rate and a very good model still hands you a majority of false positives. The arithmetic, and what to report instead.",
+      "aiSummary": "A worked explanation of why accuracy is the wrong headline metric for medical screening. At 5 percent prevalence with 95 percent sensitivity and 95 percent specificity, screening 1000 people yields about 48 true positives and about 47 false positives, so positive predictive value is near 50 percent. At 1 percent prevalence five in six positives are wrong from an unchanged model. The argument: a screening tool has no single accuracy, only an accuracy per deployment population, so the operating point must be chosen against real prevalence rather than a balanced test set. Isarar Siddique describes deliberately accepting more false positives because the cost asymmetry favours it, a false positive costing one specialist appointment while a false negative costs the intervention window. He argues the confirmatory referral pathway sets the threshold, and recommends reporting sensitivity and specificity separately with intervals, positive predictive value at a stated deployment prevalence, and expected false positives per thousand screened, while omitting accuracy entirely.",
+      "tags": [
+        "screening",
+        "base rates",
+        "clinical validation",
+        "statistics"
+      ]
+    },
+    {
+      "slug": "focus-and-the-overlap",
+      "title": "Focus is advice for people who have not found the overlap",
+      "date": "2026-08-17",
+      "time": "11:00:00",
+      "readMinutes": 6,
+      "section": "Opinion",
+      "image": "og-overlap.jpg",
+      "summary": "I run four companies and everyone tells me to pick one. The advice is correct for most people and wrong for me, and there is a single test that tells you which case you are in.",
+      "aiSummary": "Isarar Siddique argues that the standard advice to focus is a heuristic with a domain rather than a law. His four ventures, Biotech Wallah, Healoncal, Neurento Medtech and Convolity AI, are presented not as four problems but as one problem recurring across four organ systems: obtain a clinically acceptable measurement from hardware the patient already owns, then make the output legible enough to act on. The shared substrate is signal quality on uncontrolled consumer hardware, per metric explainability, low bandwidth deployment and regulator ready documentation. He states the costs plainly, including a context switching tax, lower depth per venture than a single focus founder, and a failure mode where follow through on unglamorous work slips rather than whole companies being dropped. He offers a falsifiable test: state the shared substrate in one sentence without naming any project, and if you cannot, you have a collection rather than an overlap.",
+      "tags": [
+        "founders",
+        "focus",
+        "medical AI",
+        "strategy"
+      ]
+    },
+    {
       "slug": "the-wrong-person-to-tell-you-about-my-brother",
       "title": "The wrong person to tell you about my brother",
       "date": "2026-08-17",
@@ -52,7 +137,7 @@
       "title": "A clinician who cannot see why will not act",
       "date": "2026-08-17",
       "time": "08:00:00",
-      "readMinutes": 8,
+      "readMinutes": 6,
       "section": "Clinical AI",
       "image": "og-fusion.jpg",
       "summary": "I had a screening model that scored better than the one we deployed. I threw it away. On buying attribution with accuracy, and why explainability is an architectural constraint rather than a research topic you add later.",
@@ -71,7 +156,7 @@
       "title": "ICD-11 has no clean map from ICD-10",
       "date": "2026-08-17",
       "time": "07:00:00",
-      "readMinutes": 9,
+      "readMinutes": 7,
       "section": "Clinical informatics",
       "image": "og-icd.jpg",
       "summary": "Coding is where health data quality is silently won or lost, long before anybody trains a model on it. Four migration cases, three of which need a clinician, and why we kept a human in the loop on purpose.",
@@ -90,7 +175,7 @@
       "title": "How I cold-emailed my way into eleven research labs",
       "date": "2026-08-16",
       "time": "09:00:00",
-      "readMinutes": 8,
+      "readMinutes": 6,
       "section": "Research",
       "image": "og-email.jpg",
       "summary": "No application portals, no referrals, no pedigree. The first fifty emails got me nothing. Here is the single change that took the reply rate to roughly one in six.",

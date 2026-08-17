@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A screen that is 95 percent accurate is wrong about half the time</title>
+<meta name="description" content="Accuracy in a paper abstract tells you almost nothing about a screening tool. Work the base rate and a very good model still hands you a majority of false positives. Here is the arithmetic and what to report instead.">
+<link rel="canonical" href="https://isarar.com/blog/base-rates-break-screening-claims/">
+<meta name="theme-color" content="#f8f6f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0b0d" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="/style.css">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="A screen that is 95 percent accurate is wrong about half the time">
+<meta property="og:description" content="Work the base rate and a very good screening model still hands you a majority of false positives. The arithmetic, and what to report instead of accuracy.">
+<meta property="og:url" content="https://isarar.com/blog/base-rates-break-screening-claims/">
+<meta property="og:image" content="https://isarar.com/og-baserate.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A grid of dots where the flagged ones are split evenly between true and false positives">
+<meta property="og:locale" content="en_GB">
+<meta property="article:published_time" content="2026-08-17T12:00:00Z">
+<meta property="article:modified_time" content="2026-08-17T12:00:00Z">
+<meta property="article:section" content="Method">
+<meta property="article:tag" content="screening">
+<meta property="article:tag" content="base rates">
+<meta property="article:tag" content="clinical validation">
+<meta property="article:tag" content="statistics">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://isarar.com/og-baserate.jpg">
+<meta name="twitter:image:alt" content="A grid of dots where the flagged ones are split evenly between true and false positives">
+<meta name="author" content="Isarar Siddique">
+<meta name="keywords" content="screening, base rates, clinical validation, statistics">
+<link rel="alternate" type="application/rss+xml" title="Isarar Siddique" href="/feed.xml">
+<link rel="author" href="https://isarar.com/">
+
+<script>
+(function(){try{var t=localStorage.getItem("theme");
+if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://isarar.com/blog/base-rates-break-screening-claims/#post",
+  "headline": "A screen that is 95 percent accurate is wrong about half the time",
+  "description": "Accuracy in a paper abstract tells you almost nothing about a screening tool. Work the base rate and a very good model still hands you a majority of false positives.",
+  "datePublished": "2026-08-17T12:00:00Z",
+  "dateModified": "2026-08-17T12:00:00Z",
+  "url": "https://isarar.com/blog/base-rates-break-screening-claims/",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://isarar.com/og-baserate.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "author": { "@id": "https://isarar.com/#person" },
+  "publisher": { "@id": "https://isarar.com/#person" },
+  "isPartOf": { "@id": "https://isarar.com/blog/#blog" },
+  "mainEntityOfPage": "https://isarar.com/blog/base-rates-break-screening-claims/",
+  "articleSection": "Method",
+  "keywords": ["screening", "base rates", "clinical validation", "statistics"],
+  "timeRequired": "PT7M",
+  "isAccessibleForFree": true,
+  "inLanguage": "en",
+  "about": [
+    { "@type": "Thing", "name": "medical screening" },
+    { "@type": "Thing", "name": "positive predictive value" },
+    { "@type": "Thing", "name": "base rate fallacy" }
+  ],
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".post h1", ".post p"]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://isarar.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Writing", "item": "https://isarar.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "A screen that is 95 percent accurate is wrong about half the time" }
+  ]
+}
+</script>
+</head>
+<body>
+<div id="bar"></div>
+<div id="dot" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="shell">
+    <a class="who" href="/">Isarar Siddique</a>
+    <nav aria-label="Primary">
+      <a href="/#work">Work</a><a href="/#code">Code</a><a href="/blog/">Writing</a>
+    </nav>
+    <button id="theme" type="button" aria-label="Switch theme">
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a7 7 0 0 0 11.1 11.1z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<section class="post">
+<div class="shell">
+<article class="post-wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/blog/">Writing</a></p>
+
+  <h1>A screen that is 95 percent accurate is wrong about half the time</h1>
+  <p class="by"><time datetime="2026-08-17">17 August 2026</time> &nbsp;·&nbsp; 7 min read</p>
+
+  <figure class="cover">
+    <img src="/og-baserate.jpg" alt="A grid of dots where the flagged ones are split evenly between true and false positives"
+         width="1200" height="630" loading="eager" decoding="async">
+    <figcaption>Every flagged dot looks identical to the person holding the result.</figcaption>
+  </figure>
+
+  <p>
+    Accuracy is the number everyone puts in the abstract and it is close to useless for
+    a screening tool. Not misleading in a subtle way. Useless in a way that changes
+    whether the tool should be deployed at all.
+  </p>
+
+  <p>
+    This is old statistics and none of it is my idea. I am writing it down because I
+    keep reading screening papers that report accuracy as the headline, and because I
+    had to work through the consequences properly for my own trial before I understood
+    how much it mattered.
+  </p>
+
+  <h2>The arithmetic</h2>
+
+  <p>
+    Take a condition present in 5 percent of the people you screen. That is a realistic
+    figure for early cognitive impairment in an unselected older outpatient population,
+    and the exact value does not matter for the argument.
+  </p>
+
+  <p>
+    Now give yourself a genuinely good model. 95 percent sensitivity, so it catches 95
+    of every 100 people who have the condition. 95 percent specificity, so it correctly
+    clears 95 of every 100 who do not. In a paper that is a strong result and you would
+    be pleased with it.
+  </p>
+
+  <p>
+    Screen 1000 people. 50 have the condition and 950 do not.
+  </p>
+
+  <p>
+    Of the 50, you catch about 48. Of the 950, you wrongly flag 5 percent, which is
+    about 47. So you hand back 95 positive results, and 47 of them are wrong. Slightly
+    under half your positives are people with nothing wrong with them.
+  </p>
+
+  <blockquote>
+    Same model. Same 95 percent. The chance that a positive result means anything is a
+    coin flip, and nothing about the model caused that.
+  </blockquote>
+
+  <p>
+    Drop the prevalence to 1 percent, which is what you get if you screen a general
+    adult population instead of an older one, and it gets worse fast. 10 true cases, 10
+    detected, and about 50 false alarms. Now five out of every six positives are wrong,
+    from an unchanged model.
+  </p>
+
+  <h2>Why this is a design problem and not a footnote</h2>
+
+  <p>
+    The number that matters to the person holding the result is the positive predictive
+    value, and it is not a property of your model. It is a property of your model
+    crossed with the population you point it at.
+  </p>
+
+  <p>
+    Which means a screening tool does not have an accuracy. It has an accuracy per
+    deployment. Validate on a balanced test set with equal positives and negatives, and
+    you have measured performance in a population that does not exist anywhere. That
+    balanced number will always flatter you, and the gap between it and the clinic is
+    not small.
+  </p>
+
+  <p>
+    So the operating point cannot be chosen by maximising a metric on a test set. It
+    has to be chosen against the prevalence where the thing will actually run, and if
+    you deploy the same tool in two settings with different prevalence you arguably
+    need two thresholds.
+  </p>
+
+  <h2>Which error you would rather make</h2>
+
+  <p>
+    Once you accept that you are trading one error for the other, the question becomes
+    which one costs more, and for early screening the asymmetry is stark.
+  </p>
+
+  <p>
+    A false positive costs one specialist appointment and some weeks of avoidable
+    worry. That is a real cost and I do not want to be glib about it, particularly
+    where a specialist visit means travel and lost wages for a family.
+  </p>
+
+  <p>
+    A false negative costs the window. For progressive conditions the entire argument
+    for screening early is that early is when intervention still does something. Miss
+    it and you have not delayed a diagnosis, you have removed the reason the screen
+    existed.
+  </p>
+
+  <p>
+    So for my own work I set the threshold to accept more false positives than a
+    balanced metric would pick. That decision makes the accuracy number look worse and
+    it is the right decision. A screen is a filter in front of a specialist, not a
+    verdict, and it should be tuned like a filter.
+  </p>
+
+  <h2>Which means the referral path is part of the model</h2>
+
+  <p>
+    This is the part I did not appreciate at first. If half your positives are false,
+    the value of the whole system depends on what happens after a positive.
+  </p>
+
+  <p>
+    If a positive routes into a cheap, fast confirmatory step, then a high false
+    positive rate is completely fine. You built a triage layer, and triage layers are
+    supposed to over include. If a positive routes straight into an expensive scan, a
+    long wait, or a conversation where somebody hears the word dementia, then the same
+    false positive rate is doing real harm.
+  </p>
+
+  <p>
+    So the confirmatory pathway is not somebody else's problem downstream of my model.
+    It sets the threshold. You cannot pick an operating point without knowing what a
+    positive triggers, which means you cannot finish the model before you know how the
+    clinic is organised.
+  </p>
+
+  <h2>What I think should be reported</h2>
+
+  <p>
+    Sensitivity and specificity, separately, with confidence intervals, because they
+    are the properties that actually belong to the model.
+  </p>
+
+  <p>
+    Then positive predictive value computed at the prevalence of the intended
+    deployment population, with that prevalence stated and sourced. If you do not know
+    it, say so, and give a range.
+  </p>
+
+  <p>
+    Then the expected count of false positives per thousand screened, in plain numbers,
+    because that is the sentence a clinical partner can actually reason about. Forty
+    seven unnecessary referrals per thousand is a thing a department can plan around. A
+    number like 0.95 is not.
+  </p>
+
+  <p>
+    And leave accuracy out of the abstract. On any imbalanced problem it mostly reports
+    the prevalence back at you. A model that flags nobody at all scores 95 percent
+    accuracy on a 5 percent condition, which should be enough to retire the metric.
+  </p>
+
+  <h2>Where I am with this</h2>
+
+  <p>
+    Both arms of our trial are close to complete and I am not going to quote numbers
+    from an unpublished study, including ones that would look good. What I will say is
+    that the balanced test set figure and the figure that matters in the department
+    were not close to each other, and that the gap was the most useful thing I learned
+    from the whole exercise.
+  </p>
+
+  <p>
+    If you are building a screening tool, work the base rate before you tune anything.
+    It will tell you whether you are building a triage step or claiming a diagnosis,
+    and those are different products with different obligations.
+  </p>
+
+  <hr>
+  <p class="end">
+    Related: <a href="/blog/a-clinician-who-cannot-see-why/">a clinician who cannot see
+    why will not act</a>, on the other half of why a good score is not enough.
+  </p>
+</article>
+</div>
+</section>
+</main>
+
+<footer>
+  <div class="shell">
+    <p><a class="back" href="/blog/">All writing</a></p>
+    <p>Isarar Siddique, Lucknow</p>
+  </div>
+</footer>
+<script src="/app.js" defer></script>
+</body>
+</html>

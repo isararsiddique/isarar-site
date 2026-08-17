@@ -25,6 +25,66 @@
   </url>
 
   <url>
+    <loc>https://isarar.com/blog/skin-tone-fairness-starts-at-the-camera/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://isarar.com/og-skin.jpg</image:loc>
+      <image:title>Skin tone fairness starts at the camera, not the model</image:title>
+      <image:caption>Fairness in dermatology AI gets treated as a loss function problem. Most of the failure happens before the model sees anything, in the dataset and in the phone camera pipeline itse</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://isarar.com/blog/the-three-minute-constraint/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://isarar.com/og-window.jpg</image:loc>
+      <image:title>The three minute constraint</image:title>
+      <image:caption>None of the things that decide whether a screening tool gets used in a busy outpatient department appear in the paper. Field notes from a trial in a tertiary hospital in India.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://isarar.com/blog/clinical-notes-do-not-translate/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://isarar.com/og-notes.jpg</image:loc>
+      <image:title>Clinical notes do not translate</image:title>
+      <image:caption>Annotating Indian, Malaysian and Igbo clinical notes for a healthcare language model dataset. The same illness is written in three different grammars, and a model trained on one re</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://isarar.com/blog/base-rates-break-screening-claims/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://isarar.com/og-baserate.jpg</image:loc>
+      <image:title>A screen that is 95 percent accurate is wrong about half the time</image:title>
+      <image:caption>Accuracy in an abstract tells you almost nothing about a screening tool. Work the base rate and a very good model still hands you a majority of false positives. The arithmetic, and</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://isarar.com/blog/focus-and-the-overlap/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://isarar.com/og-overlap.jpg</image:loc>
+      <image:title>Focus is advice for people who have not found the overlap</image:title>
+      <image:caption>I run four companies and everyone tells me to pick one. The advice is correct for most people and wrong for me, and there is a single test that tells you which case you are in.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://isarar.com/blog/the-wrong-person-to-tell-you-about-my-brother/</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
