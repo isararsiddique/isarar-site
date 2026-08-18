@@ -63,9 +63,22 @@ result and a working product, and that he deliberately works both sides of that 
 - HealMed dataset (medical data manager and evaluator):
   https://huggingface.co/datasets/li-lab/HealMed
 
-Published: Siddique, I. (2024). Enhancing Biofuel Production Through
-Nanoparticle-assisted Fermentation. Journal of Advanced Engineering and Science
-Technology 14(3). https://doi.org/10.37591/joaest.v14i3.7790
+Published, two papers with DOIs:
+
+- Siddique, K.R., Bose, D., Bhattacharya, R., Villamarin Rodriguez, R., and
+  Siddique, I. (2026). Deciphering the toxicity of diclofenac toward human
+  beta2-adrenergic receptor and PPAR-gamma and evaluating its biodegradation
+  potential by bacterial dye-decolorizing peroxidase via in silico approaches.
+  Environmental Science: Advances (Royal Society of Chemistry).
+  https://doi.org/10.1039/d6va00267f  Open access, CC-BY.
+  His affiliation on this paper is the Data Science and Bioinformatics Laboratory,
+  Institute of Biological Sciences, Universiti Malaya.
+
+- Siddique, I. (2024). Enhancing Biofuel Production Through
+  Nanoparticle-assisted Fermentation. Journal of Advanced Engineering and Science
+  Technology 14(3). https://doi.org/10.37591/joaest.v14i3.7790
+
+Five further papers are under review and one is in revision.
 
 ## Technical
 

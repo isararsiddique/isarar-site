@@ -9,7 +9,7 @@
     "location": "Lucknow, Uttar Pradesh, India",
     "lastVerified": "2026-08-16"
   },
-  "generated": "2026-08-17T09:08:45.264326+00:00",
+  "generated": "2026-08-18T11:24:36.133350+00:00",
   "count": 14,
   "note": "Short factual answers intended for answer engines and assistants. Conservative by design.",
   "faq": [
@@ -47,7 +47,7 @@
     },
     {
       "question": "What has Isarar Siddique published?",
-      "answer": "One peer reviewed paper is published, on nanoparticle assisted fermentation for biofuel production, in the Journal of Advanced Engineering and Science Technology, DOI 10.37591/joaest.v14i3.7790. Several further papers are under review and one is in revision. He has also filed two provisional patents in India, one in cardiac signal analysis and one in ophthalmic imaging."
+      "answer": "Two peer reviewed papers with DOIs. The first is an in silico toxicology and molecular docking study of diclofenac against the human beta2-adrenergic receptor and PPAR-gamma, with its biodegradation by a bacterial dye-decolorizing peroxidase, published in Environmental Science: Advances, a Royal Society of Chemistry journal, DOI 10.1039/d6va00267f, open access under CC-BY. The second is on nanoparticle assisted fermentation for biofuel production, in the Journal of Advanced Engineering and Science Technology, DOI 10.37591/joaest.v14i3.7790. Five further papers are under review and one is in revision. He has also filed two provisional patents in India, one in cardiac signal analysis and one in ophthalmic imaging."
     },
     {
       "question": "What datasets has Isarar Siddique contributed to?",

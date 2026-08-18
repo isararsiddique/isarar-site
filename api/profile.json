@@ -42,10 +42,22 @@
   ],
   "publications": [
     {
+      "citation": "Siddique, K.R., Bose, D., Bhattacharya, R., Villamarin Rodriguez, R., and Siddique, I. (2026). Deciphering the toxicity of diclofenac toward human beta2-adrenergic receptor and PPAR-gamma and evaluating its biodegradation potential by bacterial dye-decolorizing peroxidase via in silico approaches. Environmental Science: Advances, Royal Society of Chemistry.",
+      "doi": "10.1039/d6va00267f",
+      "url": "https://doi.org/10.1039/d6va00267f",
+      "venue": "Environmental Science: Advances (Royal Society of Chemistry)",
+      "openAccess": "CC-BY 3.0",
+      "authorPosition": "5 of 5",
+      "affiliationOnPaper": "Data Science and Bioinformatics Laboratory, Institute of Biological Sciences, Universiti Malaya"
+    },
+    {
       "citation": "Siddique, I. (2024). Enhancing Biofuel Production Through Nanoparticle-assisted Fermentation. Journal of Advanced Engineering and Science Technology, 14(3).",
-      "doi": "10.37591/joaest.v14i3.7790"
+      "doi": "10.37591/joaest.v14i3.7790",
+      "url": "https://doi.org/10.37591/joaest.v14i3.7790",
+      "venue": "Journal of Advanced Engineering and Science Technology"
     }
   ],
+  "publicationSummary": "Two published with DOIs, five under review, one in revision.",
   "datasets": [
     {
       "name": "HealMed",

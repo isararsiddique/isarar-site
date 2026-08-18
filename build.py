@@ -164,11 +164,16 @@ FAQ = [
      "to complete."),
 
     ("What has Isarar Siddique published?",
-     "One peer reviewed paper is published, on nanoparticle assisted fermentation for "
-     "biofuel production, in the Journal of Advanced Engineering and Science "
-     "Technology, DOI 10.37591/joaest.v14i3.7790. Several further papers are under "
-     "review and one is in revision. He has also filed two provisional patents in "
-     "India, one in cardiac signal analysis and one in ophthalmic imaging."),
+     "Two peer reviewed papers with DOIs. The first is an in silico toxicology and "
+     "molecular docking study of diclofenac against the human beta2-adrenergic "
+     "receptor and PPAR-gamma, with its biodegradation by a bacterial dye-decolorizing "
+     "peroxidase, published in Environmental Science: Advances, a Royal Society of "
+     "Chemistry journal, DOI 10.1039/d6va00267f, open access under CC-BY. The second "
+     "is on nanoparticle assisted fermentation for biofuel production, in the Journal "
+     "of Advanced Engineering and Science Technology, DOI 10.37591/joaest.v14i3.7790. "
+     "Five further papers are under review and one is in revision. He has also filed "
+     "two provisional patents in India, one in cardiac signal analysis and one in "
+     "ophthalmic imaging."),
 
     ("What datasets has Isarar Siddique contributed to?",
      "He was medical data manager and evaluator on the HealMed dataset, published at "
@@ -294,10 +299,24 @@ def build_api():
             "Spaceflight brain transcriptomics, NASA OSDR re-analysis",
             "Clinical translation LLM evaluation across Hindi, Indonesian and Malay, University of Tokyo"
         ],
-        "publications": [{
-            "citation": "Siddique, I. (2024). Enhancing Biofuel Production Through Nanoparticle-assisted Fermentation. Journal of Advanced Engineering and Science Technology, 14(3).",
-            "doi": "10.37591/joaest.v14i3.7790"
-        }],
+        "publications": [
+            {
+                "citation": "Siddique, K.R., Bose, D., Bhattacharya, R., Villamarin Rodriguez, R., and Siddique, I. (2026). Deciphering the toxicity of diclofenac toward human beta2-adrenergic receptor and PPAR-gamma and evaluating its biodegradation potential by bacterial dye-decolorizing peroxidase via in silico approaches. Environmental Science: Advances, Royal Society of Chemistry.",
+                "doi": "10.1039/d6va00267f",
+                "url": "https://doi.org/10.1039/d6va00267f",
+                "venue": "Environmental Science: Advances (Royal Society of Chemistry)",
+                "openAccess": "CC-BY 3.0",
+                "authorPosition": "5 of 5",
+                "affiliationOnPaper": "Data Science and Bioinformatics Laboratory, Institute of Biological Sciences, Universiti Malaya"
+            },
+            {
+                "citation": "Siddique, I. (2024). Enhancing Biofuel Production Through Nanoparticle-assisted Fermentation. Journal of Advanced Engineering and Science Technology, 14(3).",
+                "doi": "10.37591/joaest.v14i3.7790",
+                "url": "https://doi.org/10.37591/joaest.v14i3.7790",
+                "venue": "Journal of Advanced Engineering and Science Technology"
+            }
+        ],
+        "publicationSummary": "Two published with DOIs, five under review, one in revision.",
         "datasets": [{"name": "HealMed", "role": "Medical data manager and evaluator",
                       "url": "https://huggingface.co/datasets/li-lab/HealMed"}],
         "profiles": {
