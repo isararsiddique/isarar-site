@@ -5,6 +5,117 @@ Every post below is reproduced in full for machine reading.
 
 ==========================================================================
 
+## Operations is where the science survives
+
+URL: https://isarar.com/blog/operations-is-where-the-science-survives/
+Published: 2026-08-31   Section: Field notes
+Tags: clinical trials, research operations, team, study design, confounders
+
+Home / Writing
+Operations is where the science survives
+31 August 2026  ·  5 min read
+
+
+The overlap is not a nice-to-have. It is where studies are won or quietly lost.
+
+
+Jamyang Ugyen Tshomo has joined Biotech Wallah as Chief Operating Officer. She owns
+research and development alongside operations, clinical coordination, trial logistics
+and hiring. That combination is deliberate rather than a matter of headcount, so it is
+worth explaining why we put them together.
+
+
+Trial logistics is research design wearing a different hat
+
+I have written before that in our screening trial the model was never the hard part.
+What decided whether the tool got used was everything around it: a consultation window
+of under three minutes, a clinician with a queue outside the door, consent that had to
+work for people who could not read it.
+
+
+The part that is easy to miss is that those are not administrative problems sitting
+downstream of the science. They are the science.
+
+
+Every session in our trial captures paired audiometry alongside the voice recording.
+That single decision is the reason I can say anything defensible about hearing loss as
+a confound, and hearing loss matters enormously here. It lowers Montreal Cognitive
+Assessment scores by around 1.66 points independently of cognition (PMID 32458435),
+and removing the auditory subtests collapses sensitivity for mild cognitive impairment
+from roughly 90 percent to between 43 and 56 percent (PMID 31018015). It also changes
+voice production, because auditory feedback is part of the control loop, so an elderly
+hearing impaired speaker is not simply a harder instance of the same distribution.
+
+
+If the person running recruitment does not understand why that measurement matters, it
+does not get collected. And there is no later substitute for a covariate you failed to
+measure. You cannot model your way back to it, you cannot impute it honestly, and no
+amount of care in analysis recovers information that was never captured. The cheapest
+moment to measure a confound is while you are collecting, and after that the moment is
+gone.
+
+
+So who runs logistics is not separable from whether the study is any good. A
+coordinator who is only a coordinator will optimise for throughput, because throughput
+is the visible metric and nobody gets thanked for a slow clinic. Someone who also does
+the research will protect the measurements that make the results mean something,
+including the ones that lengthen the queue. That tension has to live inside one head,
+or it becomes an argument between two departments and the queue wins.
+
+
+That is the job, and it is why research and operations sit with the same person here
+rather than in two boxes on an org chart.
+
+
+What she brings to it
+
+Jamyang read Biotechnology at NIIT University in Neemrana, on a four year project
+based programme, which matters more than it sounds: she arrives having built things
+and reported on them rather than only having attended. Before that she was at The
+Royal Academy in Paro, a residential school for Grades 7 to 12 under the Druk Gyalpo's
+Institute in Bhutan.
+
+
+I want to be careful here, because explaining a colleague by where she is from is both
+lazy and unfair. So let me name the one place it genuinely changes the work.
+
+
+We build clinical tools for South Asia, and nearly every assumption we hold is
+calibrated to one health system and one language ecology. Bhutan is structured
+differently from India in both. Someone who grew up inside a different arrangement
+notices the defaults we cannot see, because to her they are not defaults, they are
+choices. That is a narrow and specific research asset, and it is worth more than any
+general claim about perspective.
+
+
+It also bears directly on something I argued
+earlier this month :
+that evaluation for Indian language health tools is largely borrowed, tested in
+registers that do not occur in a real clinic. Having someone on the team whose
+linguistic intuitions were not formed in the Hindi belt is a check on that rather than
+a garnish.
+
+
+What changes now
+
+Concretely: recruitment protocols, consent instruments, site coordination and the
+hiring of the next few people move to her, and she has the authority to slow a study
+down in order to protect a measurement. I keep model and method work. Of everything
+being handed over, trial logistics is the one I care most about getting right, because
+that is where a study quietly stops being valid without anyone noticing.
+
+
+Welcome, Jamyang.
+
+
+
+Related: the three minute constraint ,
+on what a real outpatient window does to a design, and
+a screen that is 95 percent
+accurate is wrong about half the time .
+
+==========================================================================
+
 ## Sovereign models need sovereign benchmarks
 
 URL: https://isarar.com/blog/sovereign-models-need-sovereign-benchmarks/

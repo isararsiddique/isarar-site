@@ -8,12 +8,23 @@
   <description>Founder and medical AI researcher working across published research and shipped clinical product.</description>
   <language>en</language>
   <managingEditor>isararsiddique@gmail.com (Isarar Siddique)</managingEditor>
-  <lastBuildDate>Mon, 31 Aug 2026 14:00:00 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 31 Aug 2026 16:30:00 +0000</lastBuildDate>
   <image>
     <url>https://isarar.com/isarar-500.jpg</url>
     <title>Isarar Siddique</title>
     <link>https://isarar.com/blog/</link>
   </image>
+
+  <item>
+    <title>Operations is where the science survives</title>
+    <link>https://isarar.com/blog/operations-is-where-the-science-survives/</link>
+    <guid isPermaLink="true">https://isarar.com/blog/operations-is-where-the-science-survives/</guid>
+    <pubDate>Mon, 31 Aug 2026 16:30:00 +0000</pubDate>
+    <dc:creator>Isarar Siddique</dc:creator>
+    <category>Field notes</category>
+    <description>Trial logistics is research design wearing a different hat. A covariate you failed to measure has no later substitute, which is why research and operations sit with one person at Biotech Wallah. Jamyang Ugyen Tshomo has joined as Chief Operating Officer and now owns both.</description>
+    <enclosure url="https://isarar.com/og-ops.jpg" type="image/jpeg" length="0"/>
+  </item>
 
   <item>
     <title>Sovereign models need sovereign benchmarks</title>
