@@ -20,16 +20,17 @@ The sheet is bounded. Almost nothing that matters afterwards happens inside it.
 
 
 Arshi
-Niyaz is Chief Science Officer at Biotech Wallah, and she was there before there
-was a company to be an officer of.
+Niyaz is Co-Founder and Chief Science Officer at Biotech Wallah. She was there
+before there was a company to be an officer of, which is why the first title matters
+more than the second.
 
 
 
 
 Arshi Niyaz
-Chief Science Officer, Biotech Wallah. Co-started the company. Biotechnology with
-honours, AKTU. Summer trainee at Stanford, remote. A year junior to me at the same
-college in the same department.
+Co-Founder and Chief Science Officer, Biotech Wallah. Biotechnology with honours,
+AKTU. Summer trainee at Stanford, remote. A year junior to me at the same college in
+the same department.
 linkedin.com/in/arshi-niyaz
 
 
@@ -42,22 +43,28 @@ had already spent years learning how the other person behaves when an experiment
 failed for the fourth week running.
 
 
-The mark sheet was a lagging indicator
+The mark sheet was a lagging indicator, twice
 
 I should be precise here, because the obvious reading of my title is wrong.
 
 
-Arshi graduated with honours. She is on the AKTU honours list, and she earned that the
-slow way, semester after semester, without a single term where she coasted. So the
-final transcript does reflect her. My claim is narrower and I think more useful: it
-never once predicted her. It recorded what was already happening, and it recorded it
-late.
+Start at school. Her marks at a rural CBSE school were average. A Class XII mark
+sheet could describe that moment, but it could not predict what followed. Her father
+supported her education throughout. His support belongs in this account because the
+barriers around her were never a simple story of her family standing in her way.
 
 
-Nobody looking at an early mark sheet would have picked her out. I certainly would not
-have, and I was in the room. The honours came at the end of a long compounding process
-that was invisible in any single semester's numbers, and by the time the sheet showed
-it, everyone who had worked with her already knew.
+Then college. Arshi graduated with honours. She is on the AKTU honours list, and she
+earned it the slow way, semester after semester, without a single term where she
+coasted. So the final transcript does reflect her. My claim is narrower and I think
+more useful: it never once predicted her. It recorded what was already happening, and
+it recorded it late.
+
+
+That is the same instrument failing twice in a row. The school sheet did not predict
+the honours degree. The early college marks did not predict that she would later become
+a Co-Founder and Chief Science Officer. Two independent measurements, taken years
+apart, both described a position and told you nothing about a direction.
 
 
 So the useful distinction is not grades against no grades. It is the snapshot against
@@ -69,6 +76,12 @@ somebody currently is depends heavily on where they started. For a student who b
 further back, an early mark sheet is largely a measurement of the starting gap rather
 than of the person. The slope measures what they do with time, which is the thing you
 actually wanted to know and the only thing that transfers.
+
+
+For girls who look at an ordinary school record and read it as a ceiling, Arshi's
+trajectory is a concrete counterexample. Average school marks were followed by an AKTU
+honours degree through consistent work. The lesson is not that marks are meaningless.
+It is that a current mark is not a final limit.
 
 
 That distinction matters even more once the work stops being coursework. A transcript
@@ -96,18 +109,18 @@ the one I think is true. It is also, I think, where the honours degree actually 
 from.
 
 
-She is from a village. She is a Muslim woman. In India both of those facts add friction
-to a girl's education that has nothing whatsoever to do with her ability, and she has
-spent years pushing against that friction in order to keep studying. She was the
-eldest, and the first girl in her family to study in the city. Her younger sister and
-brother walked a path she had to cut first.
+She is from a village. She is a Muslim woman. In India those facts can add social
+and geographic friction to a girl's education that has nothing to do with ability.
+Her father's support was consistent, so this is not a story of family opposition.
+She was the eldest, and the first girl in her family to study in the city. Her younger
+sister and brother then had a path she had helped make possible.
 
 
-None of that is written here as inspiration. It is written as a causal account.
+None of that is here to decorate the story. It is part of the causal account.
 
 
-Someone who had to argue for the right to be in a classroom does not treat a place in
-one as ambient. That shows up in the work in a way I can point at. It is the reason
+Someone who has had to work around that friction does not treat a place in a classroom
+as ambient. That shows up in the work in a way I can point at. It is the reason
 participant two hundred in our screening trial gets the same instructions, in the same
 order, with the same refusal to accept a bad capture, as participant three. It is the
 reason the audiometry still gets taken at the end of a long afternoon, when the queue
