@@ -58,7 +58,7 @@ if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)
   "mainEntityOfPage": "https://isarar.com/blog/operations-is-where-the-science-survives/",
   "articleSection": "Field notes",
   "keywords": ["clinical trials", "research operations", "team", "study design"],
-  "timeRequired": "PT5M",
+  "timeRequired": "PT7M",
   "isAccessibleForFree": true,
   "inLanguage": "en",
   "about": [
@@ -105,7 +105,7 @@ if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)
 <article class="post-wrap">
   <p class="crumb"><a href="/">Home</a> / <a href="/blog/">Writing</a></p>
   <h1>Operations is where the science survives</h1>
-  <p class="by"><time datetime="2026-08-31">31 August 2026</time> &nbsp;·&nbsp; 5 min read</p>
+  <p class="by"><time datetime="2026-08-31">31 August 2026</time> &nbsp;·&nbsp; 7 min read</p>
   <figure class="cover">
     <img src="/og-ops.jpg" alt="Two overlapping circles labelled research and operations, the intersection captioned the measurement you either take or lose"
          width="1200" height="630" loading="eager" decoding="async">
@@ -155,9 +155,53 @@ if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)
     including the ones that lengthen the queue. That tension has to live inside one head,
     or it becomes an argument between two departments and the queue wins.
   </p>
+
+  <h2>What separating them actually costs</h2>
   <p>
-    That is the job, and it is why research and operations sit with the same person here
-    rather than in two boxes on an org chart.
+    Three failures, in rough order of how badly they hurt and inverse order of how visible
+    they are.
+  </p>
+  <p>
+    <b>Throughput pressure produces missingness that flatters you.</b> This is the one I
+    find most alarming, because the incentive runs the wrong way and the damage looks like
+    success. When a clinic is under time pressure, the sessions that get abandoned are the
+    slow ones. The slow ones are slow for reasons: the participant is frailer, more
+    impaired, harder to instruct, cannot hear the prompt. So the people who drop out are
+    systematically the people nearest the decision boundary, and removing them makes the
+    remaining problem easier. Your numbers improve. Nothing about the tool improved. A
+    dropout log that records only a count, rather than who dropped and at which task, will
+    never show you this, and most studies keep exactly that kind of log.
+  </p>
+  <p>
+    <b>Recruitment fixes the confound structure before any feature exists.</b> Who walks
+    through the door decides what correlates with your outcome. If participants arrive
+    through a route that is enriched for one comorbidity, that comorbidity becomes
+    associated with the label before a single number is computed, and no covariate added in
+    analysis repairs it, because it is a sampling problem rather than a measurement one.
+    That distinction is easy to state and easy to lose, and the person who can see it
+    coming is the person designing the recruitment path, not the person who receives the
+    dataset three months later.
+  </p>
+  <p>
+    <b>Protocol drift is silent and cumulative.</b> Over months, a coordinator solving
+    practical problems makes analysis decisions without knowing they are analysis
+    decisions. This participant could not manage the drawing task, so skip it. That room
+    was noisy, so use the other one. Each choice is locally sensible and each one changes
+    the data generating process. Unless the deviation is recorded as a deviation, the
+    dataset quietly contains two different studies stapled together, and you will find out
+    when a subgroup behaves inexplicably and you cannot reconstruct why.
+  </p>
+  <p>
+    A fourth, smaller one worth naming: the decision to reject a bad capture has to be
+    made at capture. Our hardware abstains on a channel when contact impedance is poor
+    rather than emitting a number the model will treat as real, and the same logic applies
+    to a human operator. If nobody declines the unusable recording in the room, it enters
+    the dataset with the same status as a good one.
+  </p>
+  <p>
+    None of these are caught by better analysis. They are all decided in the corridor, on
+    the day, by whoever is standing there. That is why research and operations sit with
+    the same person here rather than in two boxes on an org chart.
   </p>
 
   <h2>What she brings to it</h2>
