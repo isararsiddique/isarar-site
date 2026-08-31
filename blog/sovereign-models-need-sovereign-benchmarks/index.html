@@ -131,16 +131,21 @@ if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)
     Worth being specific, because the public conversation tends to collapse a stack into
     a single name. As of writing, the
     <a href="https://docs.sarvam.ai/api-reference-docs/getting-started/models">published
-    lineup</a> is Saaras v3 for speech to text, Bulbul v3 for text to speech, Mayura and
+    lineup</a> is Saaras for speech to text, Bulbul v3 for text to speech, Mayura and
     Sarvam-Translate for translation, Sarvam-30B and Sarvam-105B as chat models at 64K
     and 128K context, and Sarvam Vision for document intelligence. Sarvam-M, which got
-    most of the early attention, is deprecated in favour of the larger chat models.
+    most of the early attention, is deprecated in favour of the larger chat models. On
+    the speech side the versioning is worth reading carefully:
+    <a href="https://docs.sarvam.ai/api/getting-started/models/saaras">v4 is the latest</a>,
+    adding Global English alongside Indian English across all output modes with the same
+    22 Indic languages, while v3 remains the default and recommended model.
   </p>
   <p>
-    The item I find most interesting is not the flagship. It is a mode. Saaras v3
-    exposes transcribe, translate, verbatim, transliterate and <b>codemix</b>. That last
-    one is a bet on how Indians actually speak, and I have not been able to find an
-    independent public evaluation of it.
+    The item I find most interesting is not the flagship. It is a mode. Saaras exposes
+    transcribe, translate, verbatim, transliterate and <b>codemix</b>, the last of which
+    returns English words in English and Indic words in native script rather than forcing
+    the whole utterance into one script. That is a bet on how Indians actually speak, and
+    I have not been able to find an independent public evaluation of it.
   </p>
   <p>
     It deserves one. In an Indian consultation, code switching is the default register
