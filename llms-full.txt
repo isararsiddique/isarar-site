@@ -5,6 +5,202 @@ Every post below is reproduced in full for machine reading.
 
 ==========================================================================
 
+## Sovereign models need sovereign benchmarks
+
+URL: https://isarar.com/blog/sovereign-models-need-sovereign-benchmarks/
+Published: 2026-08-31   Section: Evaluation
+Tags: Indian language models, benchmarking, clinical NLP, speech recognition, sovereignty
+
+Home / Writing
+Sovereign models need sovereign benchmarks
+31 August 2026  ·  7 min read
+
+
+You can own the model and still borrow the thing that decides whether it works.
+
+
+The sovereignty argument in Indian AI is mostly conducted over weights, compute and
+where the data physically sits. Those are real questions. But if the application is
+healthcare, they are not the binding constraint. You can train a model in India, on
+Indian data, on Indian silicon, and then hand the decision about whether it works to
+a benchmark built somewhere else, in a register that does not occur in an Indian
+clinic. At that point you own the model and you have outsourced the verdict.
+
+
+I run a multimodal screening tool for early cognitive impairment in the outpatient
+departments of a tertiary hospital in India. Most of what I have learned there is
+about measurement rather than modelling, and it has changed what I think a useful
+Indian benchmark would have to contain.
+
+
+What Sarvam is actually shipping
+
+Worth being specific, because the public conversation tends to collapse a stack into
+a single name. As of writing, the
+published
+lineup is Saaras v3 for speech to text, Bulbul v3 for text to speech, Mayura and
+Sarvam-Translate for translation, Sarvam-30B and Sarvam-105B as chat models at 64K
+and 128K context, and Sarvam Vision for document intelligence. Sarvam-M, which got
+most of the early attention, is deprecated in favour of the larger chat models.
+
+
+The item I find most interesting is not the flagship. It is a mode. Saaras v3
+exposes transcribe, translate, verbatim, transliterate and codemix . That last
+one is a bet on how Indians actually speak, and I have not been able to find an
+independent public evaluation of it.
+
+
+It deserves one. In an Indian consultation, code switching is the default register
+rather than an edge case. It happens mid sentence and often mid clause, and clinical
+vocabulary in particular stays in English inside a Hindi frame. A patient does not
+say the Hindi word for palpitations. A benchmark written in clean formal Hindi is
+measuring a register that essentially never occurs in the room, and it will report a
+number that looks fine and predicts nothing. A model with a codemix mode is at least
+aimed at the right target. Whether it hits is an empirical question nobody outside
+the company appears to have answered in public.
+
+
+Four things a clinical benchmark would have to measure
+
+These come from the trial rather than from the literature, and each one breaks a
+common assumption about how the audio arrives.
+
+
+The patient is frequently not the historian. In geriatrics especially, a son
+or daughter gives the history while the patient sits beside them. That is a triadic
+exchange, not the dyadic doctor and patient structure most conversational systems are
+built around. Worse, for cognitive assessment the divergence between the informant's
+account and the patient's own account is itself the clinical signal, so a system that
+merges the two speakers has destroyed the thing you wanted. Diarisation is not an
+optional extra here. It is load bearing.
+
+
+The consultation is short. A government outpatient consultation frequently
+runs under three minutes. A model optimised for thorough history taking is
+optimising the wrong objective for the setting with the largest unmet need. Latency
+and partial transcript quality matter more than an offline word error rate on clean
+audio.
+
+
+Many of the speakers cannot hear well. This is the one I did not expect.
+Hearing loss lowers Montreal Cognitive Assessment scores by around 1.66 points
+independent of cognition (PMID 32458435), and dropping the auditory subtests
+collapses sensitivity for mild cognitive impairment from roughly 90 percent to
+between 43 and 56 percent (PMID 31018015). For speech technology the relevant point
+is upstream of scoring: hearing loss changes voice production, because auditory
+feedback is part of the control loop. So an elderly hearing impaired speaker is not
+simply a harder instance of the same distribution. Any Indian clinical speech
+benchmark that does not stratify by hearing status is reporting an average over two
+different problems.
+
+
+Digits decide whether document intelligence is safe. Sarvam Vision on Indian
+handwritten prescriptions is an obviously valuable capability. It is also the place
+where a single misread character stops being an accuracy statistic and becomes a
+dose. An aggregate character error rate is the wrong headline. Digit level accuracy,
+and the rate at which the system declines to read rather than guessing, are the
+numbers that matter.
+
+
+The annotation problem, which is worse than it sounds
+
+I was medical data manager and evaluator on a multilingual clinical notes dataset
+covering Indian, Malaysian and Igbo records, annotated with practising clinicians.
+The finding that stayed with me is that two clinicians from different health systems
+can label the same note differently and both be correct within their own convention.
+
+
+That is structure, not annotator noise, and the standard response of pooling
+annotations and reporting agreement destroys it. Worse, it flatters the resulting
+score, because the disagreement that carried real information has been averaged into
+a single ground truth that matches neither convention. If a sovereign benchmark is
+going to mean anything, it has to be willing to publish more than one defensible
+answer and report performance against each.
+
+
+What an open benchmark should report
+
+Four things, none of which are technically hard and all of which are unusual.
+
+
+Per group, with the worst group as the headline. Report by language, by region,
+by age band, by hearing status. Then quote the worst performing group as the number
+that describes the system, because that is the number a deployment will actually
+experience. Averages hide exactly the populations a sovereignty argument claims to
+serve.
+
+
+The abstain rate, as a first class metric. Every deployed system declines to
+answer sometimes, whether by design or by silent failure. Almost nobody publishes how
+often. In my own work, moving abstention from a hidden preprocessing step to a
+reported quantity changed how much I trusted the results, and it is the number a
+clinician asks about first.
+
+
+Site held out, not just speaker held out. Frozen features from a clinical
+model can identify the recruiting site with near perfect separation, which means a
+model can score well by learning the room rather than the patient. Holding out
+speakers does not catch this. Holding out entire collection sites does.
+
+
+The construction of the test set, not only the score. A leaderboard number
+without the recruitment protocol, the consent basis and the annotation guideline is
+not reproducible and not auditable. If the point of building locally is that the
+evaluation reflects local reality, then the evaluation design is the artifact, and it
+should be released under a licence that lets a hospital audit it.
+
+
+Forward deployed rather than forward looking
+
+The pattern I would argue for in health specifically is evaluation co located with
+use. Not a lab benchmark followed by a pilot, but a small permanent evaluation
+harness sitting inside a working clinic, capturing paired ground truth alongside
+every sample.
+
+
+Concretely, in our trial every session captures audiometry alongside the voice
+recording. That single decision converts hearing loss from a confound we would have
+argued about into a covariate we can condition on. It cost very little at design
+time and it is the reason I can say anything defensible about sensory status at all.
+The general form of the suggestion is that if you know what will confound your model,
+the cheapest moment to measure it is while you are collecting, and there is no later
+substitute.
+
+
+The same logic applies to language. If a model is going to be deployed in an
+outpatient department in Uttar Pradesh, the register it will meet is not available in
+any corpus, and it cannot be simulated by asking fluent speakers to read prompts. It
+has to be collected where it occurs, with consent designed for low literacy, which
+is slow and unglamorous and the only thing that works.
+
+
+What I have not done
+
+I have not run these evaluations against Sarvam's models. This post is an argument
+about what would be worth measuring, not a result, and it would be dishonest to
+present it as one. The codemix evaluation is the piece I intend to do first, on self
+recorded and synthetic code switched clinical speech rather than on trial audio,
+because pushing patient recordings from a consented clinical study to a third party
+endpoint is not something the consent covers and not something I would do.
+
+
+That constraint is itself part of the argument. A genuinely sovereign evaluation
+ecosystem has to solve the boring problem of how a hospital can benchmark a vendor
+without exporting its patients, and that is a governance design question as much as
+a technical one. Federated evaluation, where the test set never leaves the
+institution and only metrics are returned, is the obvious shape. I have not seen an
+Indian implementation of it for language models, and it strikes me as a more useful
+thing to build than another leaderboard.
+
+
+
+Related: clinical notes do not
+translate , on why two correct annotators are a feature, and
+the three minute constraint , on what
+a real outpatient window does to a design.
+
+==========================================================================
+
 ## Skin tone fairness starts at the camera, not the model
 
 URL: https://isarar.com/blog/skin-tone-fairness-starts-at-the-camera/

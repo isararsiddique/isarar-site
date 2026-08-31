@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sovereign models need sovereign benchmarks</title>
+<meta name="description" content="India is building its own models. The evaluation is still borrowed. Notes on Sarvam's stack, the codemix bet, and what a clinical benchmark would have to measure to be worth anything.">
+<link rel="canonical" href="https://isarar.com/blog/sovereign-models-need-sovereign-benchmarks/">
+<meta name="theme-color" content="#f8f6f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0b0d" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="/style.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sovereign models need sovereign benchmarks">
+<meta property="og:description" content="Sovereignty gets argued as weights and compute. For healthcare the binding constraint is that the evaluation is still borrowed.">
+<meta property="og:url" content="https://isarar.com/blog/sovereign-models-need-sovereign-benchmarks/">
+<meta property="og:image" content="https://isarar.com/og-sarvam.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A ruler measuring a shape it does not fit, captioned the benchmark is the borrowed part">
+<meta property="og:locale" content="en_GB">
+<meta property="article:published_time" content="2026-08-31T14:00:00Z">
+<meta property="article:modified_time" content="2026-08-31T14:00:00Z">
+<meta property="article:section" content="Evaluation">
+<meta property="article:tag" content="Indian language models">
+<meta property="article:tag" content="benchmarking">
+<meta property="article:tag" content="clinical NLP">
+<meta property="article:tag" content="speech recognition">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://isarar.com/og-sarvam.jpg">
+<meta name="twitter:image:alt" content="A ruler measuring a shape it does not fit, captioned the benchmark is the borrowed part">
+<meta name="author" content="Isarar Siddique">
+<meta name="keywords" content="Indian language models, benchmarking, clinical NLP, speech recognition">
+<link rel="alternate" type="application/rss+xml" title="Isarar Siddique" href="/feed.xml">
+<link rel="author" href="https://isarar.com/">
+<script>
+(function(){try{var t=localStorage.getItem("theme");
+if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://isarar.com/blog/sovereign-models-need-sovereign-benchmarks/#post",
+  "headline": "Sovereign models need sovereign benchmarks",
+  "description": "India is building its own models. The evaluation is still borrowed. Notes on Sarvam's stack, the codemix bet, and what a clinical benchmark would have to measure to be worth anything.",
+  "datePublished": "2026-08-31T14:00:00Z",
+  "dateModified": "2026-08-31T14:00:00Z",
+  "url": "https://isarar.com/blog/sovereign-models-need-sovereign-benchmarks/",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://isarar.com/og-sarvam.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "author": { "@id": "https://isarar.com/#person" },
+  "publisher": { "@id": "https://isarar.com/#person" },
+  "isPartOf": { "@id": "https://isarar.com/blog/#blog" },
+  "mainEntityOfPage": "https://isarar.com/blog/sovereign-models-need-sovereign-benchmarks/",
+  "articleSection": "Evaluation",
+  "keywords": ["Indian language models", "benchmarking", "clinical NLP", "speech recognition"],
+  "timeRequired": "PT7M",
+  "isAccessibleForFree": true,
+  "inLanguage": "en",
+  "about": [
+    { "@type": "Thing", "name": "model evaluation" },
+    { "@type": "Thing", "name": "Indian language technology" }
+  ],
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".post h1", ".post p"]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://isarar.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Writing", "item": "https://isarar.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Sovereign models need sovereign benchmarks" }
+  ]
+}
+</script>
+</head>
+<body>
+<div id="bar"></div>
+<div id="dot" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="shell">
+    <a class="who" href="/">Isarar Siddique</a>
+    <nav aria-label="Primary">
+      <a href="/#work">Work</a><a href="/#code">Code</a><a href="/blog/">Writing</a>
+    </nav>
+    <button id="theme" type="button" aria-label="Switch theme">
+      <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a7 7 0 0 0 11.1 11.1z"/></svg>
+    </button>
+  </div>
+</header>
+<main id="main">
+<section class="post">
+<div class="shell">
+<article class="post-wrap">
+  <p class="crumb"><a href="/">Home</a> / <a href="/blog/">Writing</a></p>
+  <h1>Sovereign models need sovereign benchmarks</h1>
+  <p class="by"><time datetime="2026-08-31">31 August 2026</time> &nbsp;·&nbsp; 7 min read</p>
+  <figure class="cover">
+    <img src="/og-sarvam.jpg" alt="A ruler measuring a shape it does not fit, captioned the benchmark is the borrowed part"
+         width="1200" height="630" loading="eager" decoding="async">
+    <figcaption>You can own the model and still borrow the thing that decides whether it works.</figcaption>
+  </figure>
+  <p>
+    The sovereignty argument in Indian AI is mostly conducted over weights, compute and
+    where the data physically sits. Those are real questions. But if the application is
+    healthcare, they are not the binding constraint. You can train a model in India, on
+    Indian data, on Indian silicon, and then hand the decision about whether it works to
+    a benchmark built somewhere else, in a register that does not occur in an Indian
+    clinic. At that point you own the model and you have outsourced the verdict.
+  </p>
+  <p>
+    I run a multimodal screening tool for early cognitive impairment in the outpatient
+    departments of a tertiary hospital in India. Most of what I have learned there is
+    about measurement rather than modelling, and it has changed what I think a useful
+    Indian benchmark would have to contain.
+  </p>
+
+  <h2>What Sarvam is actually shipping</h2>
+  <p>
+    Worth being specific, because the public conversation tends to collapse a stack into
+    a single name. As of writing, the
+    <a href="https://docs.sarvam.ai/api-reference-docs/getting-started/models">published
+    lineup</a> is Saaras v3 for speech to text, Bulbul v3 for text to speech, Mayura and
+    Sarvam-Translate for translation, Sarvam-30B and Sarvam-105B as chat models at 64K
+    and 128K context, and Sarvam Vision for document intelligence. Sarvam-M, which got
+    most of the early attention, is deprecated in favour of the larger chat models.
+  </p>
+  <p>
+    The item I find most interesting is not the flagship. It is a mode. Saaras v3
+    exposes transcribe, translate, verbatim, transliterate and <b>codemix</b>. That last
+    one is a bet on how Indians actually speak, and I have not been able to find an
+    independent public evaluation of it.
+  </p>
+  <p>
+    It deserves one. In an Indian consultation, code switching is the default register
+    rather than an edge case. It happens mid sentence and often mid clause, and clinical
+    vocabulary in particular stays in English inside a Hindi frame. A patient does not
+    say the Hindi word for palpitations. A benchmark written in clean formal Hindi is
+    measuring a register that essentially never occurs in the room, and it will report a
+    number that looks fine and predicts nothing. A model with a codemix mode is at least
+    aimed at the right target. Whether it hits is an empirical question nobody outside
+    the company appears to have answered in public.
+  </p>
+
+  <h2>Four things a clinical benchmark would have to measure</h2>
+  <p>
+    These come from the trial rather than from the literature, and each one breaks a
+    common assumption about how the audio arrives.
+  </p>
+  <p>
+    <b>The patient is frequently not the historian.</b> In geriatrics especially, a son
+    or daughter gives the history while the patient sits beside them. That is a triadic
+    exchange, not the dyadic doctor and patient structure most conversational systems are
+    built around. Worse, for cognitive assessment the divergence between the informant's
+    account and the patient's own account is itself the clinical signal, so a system that
+    merges the two speakers has destroyed the thing you wanted. Diarisation is not an
+    optional extra here. It is load bearing.
+  </p>
+  <p>
+    <b>The consultation is short.</b> A government outpatient consultation frequently
+    runs under three minutes. A model optimised for thorough history taking is
+    optimising the wrong objective for the setting with the largest unmet need. Latency
+    and partial transcript quality matter more than an offline word error rate on clean
+    audio.
+  </p>
+  <p>
+    <b>Many of the speakers cannot hear well.</b> This is the one I did not expect.
+    Hearing loss lowers Montreal Cognitive Assessment scores by around 1.66 points
+    independent of cognition (PMID 32458435), and dropping the auditory subtests
+    collapses sensitivity for mild cognitive impairment from roughly 90 percent to
+    between 43 and 56 percent (PMID 31018015). For speech technology the relevant point
+    is upstream of scoring: hearing loss changes voice production, because auditory
+    feedback is part of the control loop. So an elderly hearing impaired speaker is not
+    simply a harder instance of the same distribution. Any Indian clinical speech
+    benchmark that does not stratify by hearing status is reporting an average over two
+    different problems.
+  </p>
+  <p>
+    <b>Digits decide whether document intelligence is safe.</b> Sarvam Vision on Indian
+    handwritten prescriptions is an obviously valuable capability. It is also the place
+    where a single misread character stops being an accuracy statistic and becomes a
+    dose. An aggregate character error rate is the wrong headline. Digit level accuracy,
+    and the rate at which the system declines to read rather than guessing, are the
+    numbers that matter.
+  </p>
+
+  <h2>The annotation problem, which is worse than it sounds</h2>
+  <p>
+    I was medical data manager and evaluator on a multilingual clinical notes dataset
+    covering Indian, Malaysian and Igbo records, annotated with practising clinicians.
+    The finding that stayed with me is that two clinicians from different health systems
+    can label the same note differently and both be correct within their own convention.
+  </p>
+  <p>
+    That is structure, not annotator noise, and the standard response of pooling
+    annotations and reporting agreement destroys it. Worse, it flatters the resulting
+    score, because the disagreement that carried real information has been averaged into
+    a single ground truth that matches neither convention. If a sovereign benchmark is
+    going to mean anything, it has to be willing to publish more than one defensible
+    answer and report performance against each.
+  </p>
+
+  <h2>What an open benchmark should report</h2>
+  <p>
+    Four things, none of which are technically hard and all of which are unusual.
+  </p>
+  <p>
+    <b>Per group, with the worst group as the headline.</b> Report by language, by region,
+    by age band, by hearing status. Then quote the worst performing group as the number
+    that describes the system, because that is the number a deployment will actually
+    experience. Averages hide exactly the populations a sovereignty argument claims to
+    serve.
+  </p>
+  <p>
+    <b>The abstain rate, as a first class metric.</b> Every deployed system declines to
+    answer sometimes, whether by design or by silent failure. Almost nobody publishes how
+    often. In my own work, moving abstention from a hidden preprocessing step to a
+    reported quantity changed how much I trusted the results, and it is the number a
+    clinician asks about first.
+  </p>
+  <p>
+    <b>Site held out, not just speaker held out.</b> Frozen features from a clinical
+    model can identify the recruiting site with near perfect separation, which means a
+    model can score well by learning the room rather than the patient. Holding out
+    speakers does not catch this. Holding out entire collection sites does.
+  </p>
+  <p>
+    <b>The construction of the test set, not only the score.</b> A leaderboard number
+    without the recruitment protocol, the consent basis and the annotation guideline is
+    not reproducible and not auditable. If the point of building locally is that the
+    evaluation reflects local reality, then the evaluation design is the artifact, and it
+    should be released under a licence that lets a hospital audit it.
+  </p>
+
+  <h2>Forward deployed rather than forward looking</h2>
+  <p>
+    The pattern I would argue for in health specifically is evaluation co located with
+    use. Not a lab benchmark followed by a pilot, but a small permanent evaluation
+    harness sitting inside a working clinic, capturing paired ground truth alongside
+    every sample.
+  </p>
+  <p>
+    Concretely, in our trial every session captures audiometry alongside the voice
+    recording. That single decision converts hearing loss from a confound we would have
+    argued about into a covariate we can condition on. It cost very little at design
+    time and it is the reason I can say anything defensible about sensory status at all.
+    The general form of the suggestion is that if you know what will confound your model,
+    the cheapest moment to measure it is while you are collecting, and there is no later
+    substitute.
+  </p>
+  <p>
+    The same logic applies to language. If a model is going to be deployed in an
+    outpatient department in Uttar Pradesh, the register it will meet is not available in
+    any corpus, and it cannot be simulated by asking fluent speakers to read prompts. It
+    has to be collected where it occurs, with consent designed for low literacy, which
+    is slow and unglamorous and the only thing that works.
+  </p>
+
+  <h2>What I have not done</h2>
+  <p>
+    I have not run these evaluations against Sarvam's models. This post is an argument
+    about what would be worth measuring, not a result, and it would be dishonest to
+    present it as one. The codemix evaluation is the piece I intend to do first, on self
+    recorded and synthetic code switched clinical speech rather than on trial audio,
+    because pushing patient recordings from a consented clinical study to a third party
+    endpoint is not something the consent covers and not something I would do.
+  </p>
+  <p>
+    That constraint is itself part of the argument. A genuinely sovereign evaluation
+    ecosystem has to solve the boring problem of how a hospital can benchmark a vendor
+    without exporting its patients, and that is a governance design question as much as
+    a technical one. Federated evaluation, where the test set never leaves the
+    institution and only metrics are returned, is the obvious shape. I have not seen an
+    Indian implementation of it for language models, and it strikes me as a more useful
+    thing to build than another leaderboard.
+  </p>
+  <hr>
+  <p class="end">
+    Related: <a href="/blog/clinical-notes-do-not-translate/">clinical notes do not
+    translate</a>, on why two correct annotators are a feature, and
+    <a href="/blog/the-three-minute-constraint/">the three minute constraint</a>, on what
+    a real outpatient window does to a design.
+  </p>
+</article>
+</div>
+</section>
+</main>
+<footer>
+  <div class="shell">
+    <p><a class="back" href="/blog/">All writing</a></p>
+    <p>Isarar Siddique, Lucknow</p>
+  </div>
+</footer>
+<script src="/app.js" defer></script>
+</body>
+</html>

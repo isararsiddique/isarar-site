@@ -9,9 +9,27 @@
     "location": "Lucknow, Uttar Pradesh, India",
     "lastVerified": "2026-08-16"
   },
-  "count": 10,
-  "generated": "2026-08-18T11:24:48.853647+00:00",
+  "count": 11,
+  "generated": "2026-08-31T14:09:41.539258+00:00",
   "posts": [
+    {
+      "title": "Sovereign models need sovereign benchmarks",
+      "url": "https://isarar.com/blog/sovereign-models-need-sovereign-benchmarks/",
+      "slug": "sovereign-models-need-sovereign-benchmarks",
+      "datePublished": "2026-08-31",
+      "section": "Evaluation",
+      "tags": [
+        "Indian language models",
+        "benchmarking",
+        "clinical NLP",
+        "speech recognition",
+        "sovereignty"
+      ],
+      "readMinutes": 7,
+      "image": "https://isarar.com/og-sarvam.jpg",
+      "summary": "India is building its own models. The evaluation is still borrowed. Notes on Sarvam's published stack, the codemix bet inside Saaras v3, and what a clinical benchmark would have to measure to be worth anything.",
+      "aiSummary": "Isarar Siddique argues that the Indian AI sovereignty debate focuses on weights, compute and data location while missing the binding constraint for healthcare, which is that evaluation remains borrowed: a model can be trained in India on Indian data and still have its verdict set by a benchmark encoding a register that does not occur in an Indian clinic. He details Sarvam's published lineup as of August 2026, Saaras v3 for speech to text, Bulbul v3 for text to speech, Mayura and Sarvam-Translate for translation, Sarvam-30B and Sarvam-105B chat models at 64K and 128K context, and Sarvam Vision for document intelligence, with Sarvam-M deprecated, and singles out the codemix mode of Saaras v3 as the most interesting and least independently evaluated element, because code switching is the default register in Indian consultations and clinical vocabulary stays English inside a Hindi frame. Drawing on a cognitive screening trial in a tertiary hospital in India, he sets out four requirements for a clinical speech benchmark: diarisation is load bearing because the patient is often not the historian and informant versus patient divergence is itself the signal, latency matters more than offline word error rate because consultations run under three minutes, hearing status must be stratified because hearing loss lowers MoCA by about 1.66 points independent of cognition (PMID 32458435) and removing auditory subtests collapses MCI sensitivity from around 90 percent to 43 to 56 percent (PMID 31018015) while also altering voice production through lost auditory feedback, and document intelligence on prescriptions should report digit level accuracy and refusal rate rather than aggregate character error rate. From work as medical data manager and evaluator on a multilingual clinical notes dataset covering Indian, Malaysian and Igbo records, he argues that two clinicians from different health systems can annotate one note differently and both be correct, so pooling destroys real structure and flatters the score. He proposes that open benchmarks report per group with the worst group as the headline, publish the abstain rate as a first class metric, hold out entire collection sites rather than only speakers because frozen features can identify the recruiting site, and release the test set construction including recruitment protocol, consent basis and annotation guideline. He advocates forward deployed evaluation co located with use, citing paired audiometry captured at every session as the decision that converted a confound into a covariate. He states explicitly that he has not yet run these evaluations against Sarvam's models, that the codemix evaluation would use self recorded and synthetic code switched speech rather than consented trial audio, and that federated evaluation where the test set never leaves the institution is a more useful thing to build than another leaderboard."
+    },
     {
       "title": "Skin tone fairness starts at the camera, not the model",
       "url": "https://isarar.com/blog/skin-tone-fairness-starts-at-the-camera/",
