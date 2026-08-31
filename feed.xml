@@ -8,12 +8,23 @@
   <description>Founder and medical AI researcher working across published research and shipped clinical product.</description>
   <language>en</language>
   <managingEditor>isararsiddique@gmail.com (Isarar Siddique)</managingEditor>
-  <lastBuildDate>Mon, 31 Aug 2026 16:30:00 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 31 Aug 2026 18:00:00 +0000</lastBuildDate>
   <image>
     <url>https://isarar.com/isarar-500.jpg</url>
     <title>Isarar Siddique</title>
     <link>https://isarar.com/blog/</link>
   </image>
+
+  <item>
+    <title>The transcript did not predict any of it</title>
+    <link>https://isarar.com/blog/the-transcript-did-not-predict-any-of-it/</link>
+    <guid isPermaLink="true">https://isarar.com/blog/the-transcript-did-not-predict-any-of-it/</guid>
+    <pubDate>Mon, 31 Aug 2026 18:00:00 +0000</pubDate>
+    <dc:creator>Isarar Siddique</dc:creator>
+    <category>Field notes</category>
+    <description>A mark sheet measures performance on bounded tasks with known answers. Research has none of those properties. On why class rank carried no information about who would still be doing the work three years later, and on Arshi Niyaz, who co-started Biotech Wallah and is its Chief Science Officer.</description>
+    <enclosure url="https://isarar.com/og-arshi.jpg" type="image/jpeg" length="0"/>
+  </item>
 
   <item>
     <title>Operations is where the science survives</title>

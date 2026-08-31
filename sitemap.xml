@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://isarar.com/</loc>
-    <lastmod>2026-08-31T16:30:00Z</lastmod>
+    <lastmod>2026-08-31T18:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -20,9 +20,21 @@
 
   <url>
     <loc>https://isarar.com/blog/</loc>
-    <lastmod>2026-08-31T16:30:00Z</lastmod>
+    <lastmod>2026-08-31T18:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://isarar.com/blog/the-transcript-did-not-predict-any-of-it/</loc>
+    <lastmod>2026-08-31T18:00:00Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://isarar.com/og-arshi.jpg</image:loc>
+      <image:title>The transcript did not predict any of it</image:title>
+      <image:caption>A mark sheet measures performance on bounded tasks with known answers. Research has none of those properties. On why class rank carried no information about who would still be doin</image:caption>
+    </image:image>
   </url>
 
   <url>

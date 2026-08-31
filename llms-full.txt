@@ -5,6 +5,152 @@ Every post below is reproduced in full for machine reading.
 
 ==========================================================================
 
+## The transcript did not predict any of it
+
+URL: https://isarar.com/blog/the-transcript-did-not-predict-any-of-it/
+Published: 2026-08-31   Section: Field notes
+Tags: hiring, research practice, team, consistency, research culture
+
+Home / Writing
+The transcript did not predict any of it
+31 August 2026  ·  6 min read
+
+
+The sheet is bounded. Almost nothing that matters afterwards happens inside it.
+
+
+Arshi
+Niyaz is Chief Science Officer at Biotech Wallah, and she was there before there
+was a company to be an officer of.
+
+
+
+
+Arshi Niyaz
+Chief Science Officer, Biotech Wallah. Co-started the company. Biotechnology, and a
+year junior to me at the same college in the same department.
+linkedin.com/in/arshi-niyaz
+
+
+
+
+We met at college. I was in second year, she was in first, same department. We ended up
+on projects together, then internships, then the thing that became Biotech Wallah. That
+sequence matters more than the title does. By the time there was a company to join, we
+had already spent years learning how the other person behaves when an experiment has
+failed for the fourth week running.
+
+
+She was not top of the class, and that turned out to carry no information
+
+I want to be direct about this, because it is the most useful thing I have learned
+about choosing who to work with.
+
+
+Arshi was not the highest scoring student in our cohort. Neither was I, and I have
+since removed a line about batch position from my own CV, because I did not think it
+was supportable or interesting. What I did not expect was how completely uninformative
+the ranking would turn out to be about who would still be doing the work three years
+later.
+
+
+Here is my best account of why. A transcript measures performance on bounded tasks. The
+scope is defined, the deadline is published, the method has been taught, and somebody
+already knows the answer. Research has none of those properties. The scope is unclear,
+no deadline is enforced by anyone, the method usually has to be invented for your
+particular mess, and nobody knows the answer, including your supervisor. Very little of
+what makes a person good at the second thing is measured by the first.
+
+
+There is a sharper version of this. Students who have been rewarded for getting things
+right on the first attempt often struggle most in a lab, because the structure they
+grew up inside taught them that repeated failure indicates personal inadequacy. In
+research, repeated failure indicates Tuesday. The people who last are the ones for whom
+an uninformative result is data rather than a verdict.
+
+
+Where the consistency comes from
+
+I used to describe what Arshi has as consistency and leave it there, as though it were
+a personality trait she happened to be issued. That is not an explanation, so here is
+the one I think is true.
+
+
+She is from a village. She is a Muslim woman. In India both of those facts add friction
+to a girl's education that has nothing whatsoever to do with her ability, and she has
+spent years pushing against that friction in order to keep studying. She was the
+eldest, and the first girl in her family to study in the city. Her younger sister and
+brother walked a path she had to cut first.
+
+
+None of that is written here as inspiration. It is written as a causal account.
+
+
+Someone who had to argue for the right to be in a classroom does not treat a place in
+one as ambient. That shows up in the work in a way I can point at. It is the reason
+participant two hundred in our screening trial gets the same instructions, in the same
+order, with the same refusal to accept a bad capture, as participant three. It is the
+reason the audiometry still gets taken at the end of a long afternoon, when the queue
+is out of the door and nobody would notice if it were quietly skipped.
+
+
+That last one matters more than it sounds. The entire validity of a screening study
+rests on treating the two hundredth person exactly like the third. Standardisation is
+not a bureaucratic virtue, it is the only reason the numbers mean anything, and
+standardisation is entirely a question of whether a person can be bothered on a bad
+day. I wrote recently that
+a covariate you failed to
+measure has no later substitute . The people who keep measuring it tend to be the
+people for whom the opportunity was never free.
+
+
+Consistency, concretely
+
+Research is mostly failed runs. The rate limiting factor is almost never insight,
+because ideas are cheap and most of us have more of them than we can test. The limit is
+willingness to build the twentieth version of a pipeline after nineteen produced
+nothing worth writing down. Anyone can be excellent for a fortnight. The rare thing is
+arriving on day four hundred with the attention you had on day four.
+
+
+I have watched that from the year below me in a college corridor through to a running
+clinical trial, and I have never once seen it correlate with a mark sheet.
+
+
+She does not shrink the problem
+
+The other thing I would say, and it is harder to evidence so read it as my opinion
+rather than a claim, is that she refuses to reduce a question to fit the resources
+available.
+
+
+The characteristic failure of a resource constrained lab is quiet ambition collapse. You
+cannot afford the good instrument, so the question narrows to whatever the cheap
+instrument can answer, and two years later you are working on something nobody needed.
+Arshi consistently argues the other way: hold the question, find another route to it.
+Several design decisions in our screening work exist because she would not accept a
+smaller version of the problem when the obvious path was blocked.
+
+
+One more thing
+
+Everything above is my account, from my side of it. Her own account of how she got here
+is hers to give, and if she ever writes it down it will be better than this, because she
+was there for the parts I only heard about afterwards.
+
+
+She is at
+linkedin.com/in/arshi-niyaz .
+
+
+
+Related: operations is where
+the science survives , on why trial logistics is a research decision, and
+the wrong person to tell
+you about my brother , on seven years of compounding.
+
+==========================================================================
+
 ## Operations is where the science survives
 
 URL: https://isarar.com/blog/operations-is-where-the-science-survives/
